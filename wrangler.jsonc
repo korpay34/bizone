@@ -1,0 +1,15 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "bizone",
+  "main": "dist/worker.js",
+  "compatibility_date": "2026-09-18",
+  "workers_dev": true,
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "bizone-db",
+      "database_id": "366fa980-9b86-4777-a4de-f1f5ae900522",
+      "migrations_dir": "drizzle"
+    }
+  ]
+}

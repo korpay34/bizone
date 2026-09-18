@@ -1,0 +1,14 @@
+{
+  "name": "bizone-cloudflare-worker",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "bash scripts/build.sh",
+    "validate": "node scripts/validate-artifact.mjs",
+    "deploy": "npm run build && npm run validate && wrangler deploy",
+    "db:migrate": "wrangler d1 migrations apply bizone-db --remote"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  }
+}
