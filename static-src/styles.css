@@ -424,7 +424,7 @@ footer a { margin-left: auto; color: var(--ink); font-size: 13px; font-weight: 8
 .site-footer .footer-details p { margin: 2px 0; color: #aebbd0; font-size: 14px; line-height: 1.75; }
 .site-footer .footer-details i { display: inline-block; width: 1px; height: 11px; margin: 0 9px; background: #53627a; vertical-align: -1px; }
 .site-footer .footer-terms { display: flex; flex-wrap: wrap; justify-content: flex-start; gap: 9px 25px; margin-top: 30px; text-align: left; }
-.site-footer .footer-terms a { color: #e9eff8; font-size: 14px; font-weight: 750; }
+.site-footer .footer-terms a { margin: 0; color: #e9eff8; font-size: 14px; font-weight: 750; }
 .site-footer .footer-terms a:hover,.site-footer .footer-terms a:focus-visible { color: #fff; text-decoration: underline; text-underline-offset: 4px; }
 .site-footer .footer-copyright { margin: 14px 0 0; color: #7f8fa7; font-size: 12px; line-height: 1.6; text-align: left; }
 .site-footer .footer-nav { display: flex; align-items: center; gap: 28px; flex: 0 0 auto; }
