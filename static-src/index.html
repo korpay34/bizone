@@ -3,33 +3,47 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="고객의 성공과 신뢰를 기술로 연결하는 주식회사 코페이 비즈원 소개" />
+  <meta name="description" content="POS, ERP, APP을 하나로 연결하는 비즈원 통합 매장 운영 솔루션" />
   <meta name="theme-color" content="#09275f" />
-  <title>BizOne | 소개 및 인사말</title>
-  <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
-  <link rel="stylesheet" href="../styles.css" />
+  <title>BizOne | 매장 운영을 하나로</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
-<body class="company-page">
+<body>
   <header class="site-header" id="top">
     <div class="header-inner">
-      <a class="brand" href="../index.html" aria-label="비즈원 홈"><img src="../bizone-logo-text-only.png" alt="BizOne by KORPAY" /></a>
-      <button class="menu-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="main-nav"><span></span><span></span></button>
+      <a class="brand" href="#top" aria-label="비즈원 홈">
+        <img src="bizone-logo-text-only.png" alt="BizOne by KORPAY" />
+      </a>
+
+      <button class="menu-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="main-nav">
+        <span></span><span></span>
+      </button>
+
       <nav class="main-nav" id="main-nav" aria-label="주요 메뉴">
         <div class="nav-item">
           <button class="nav-trigger" type="button" aria-expanded="false">About</button>
-          <div class="submenu"><a href="index.html" aria-current="page">소개 및 인사말</a><a href="location/">오시는길</a></div>
+          <div class="submenu">
+            <a href="about/">소개 및 인사말</a><a href="about/location/">오시는길</a>
+          </div>
         </div>
         <div class="nav-item">
           <button class="nav-trigger" type="button" aria-expanded="false">Solutions</button>
-          <div class="submenu"><a href="../#products">POS</a><a href="../#products">ERP</a><a href="../#products">APP</a></div>
+          <div class="submenu">
+            <a href="#products">POS</a><a href="#products">ERP</a><a href="#products">APP</a>
+          </div>
         </div>
         <div class="nav-item">
           <button class="nav-trigger" type="button" aria-expanded="false">Product</button>
-          <div class="submenu wide"><a href="../#products">카드단말기</a><a href="../#products">바코드스캐너</a><a href="../#products">라벨프린터</a><a href="../#products">골프거리측정기</a></div>
+          <div class="submenu wide">
+            <a href="#products">카드단말기</a><a href="#products">바코드스캐너</a><a href="#products">라벨프린터</a><a href="#products">골프거리측정기</a>
+          </div>
         </div>
         <div class="nav-item">
           <button class="nav-trigger" type="button" aria-expanded="false">Support</button>
-          <div class="submenu"><a href="/support/notices/">공지사항</a><a href="../#company">FAQ</a><a href="../#company">교육일정</a><a href="/support/resources/">자료실</a></div>
+          <div class="submenu">
+            <a href="/support/notices/">공지사항</a><a href="#company">FAQ</a><a href="#company">교육일정</a><a href="/support/resources/">자료실</a>
+          </div>
         </div>
         <a class="mall-link" href="https://www.bizonemall.com/?NaPm=ct%3Dmu6ei0o5%7Cci%3Dcheckout%7Ctr%3Dds%7Ctrx%3Dnull%7Chk%3D93b7e4cdaab0e4c602b2d8798e6ba85df9776ad3" target="_blank" rel="noopener noreferrer">Mall ↗</a>
         <a class="merchant-login-link" href="https://pops.wavepos.co.kr/login" target="_blank" rel="noopener noreferrer">가맹점 로그인</a>
@@ -38,96 +52,203 @@
   </header>
 
   <main>
-    <section class="company-hero">
-      <div class="company-hero-inner">
-        <div>
-          <p class="eyebrow"><span></span> ABOUT BIZONE</p>
-          <h1>고객의 성공을 향한 기술,<br /><em>신뢰를 지키는 기업.</em></h1>
-          <p>비즈원은 결제부터 POS·ERP·APP까지 매장 운영의 모든 흐름을 연결합니다.<br />현장을 이해하는 기술로 더 정확하고 안정적인 비즈니스 환경을 만듭니다.</p>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-glow hero-glow-a"></div>
+      <div class="hero-glow hero-glow-b"></div>
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow"><span></span> STORE OPERATING SYSTEM</p>
+          <h1 id="hero-title">매장의 모든 순간을<br /><em>하나로 연결합니다.</em></h1>
+          <p class="hero-description">결제부터 재고·매출 관리, 모바일 운영까지.<br />POS·ERP·APP이 유기적으로 연결되는 비즈원 통합 솔루션입니다.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#products">제품 둘러보기</a>
+            <a class="button button-ghost" href="#connection">연동 구조 보기</a>
+          </div>
+          <div class="hero-proof" aria-label="비즈원 솔루션 특징">
+            <span>실시간 데이터 연동</span>
+            <span>매장별 맞춤 구성</span>
+            <span>언제 어디서나 확인</span>
+          </div>
         </div>
-        <div class="company-fact-board" aria-label="회사 주요 정보">
-          <span>COMPANY PROFILE</span>
-          <dl><div><dt>설립</dt><dd>2004. 05. 12</dd></div><div><dt>대표이사</dt><dd>채수철</dd></div><div><dt>사업영역</dt><dd>PAY · POS · ERP · APP</dd></div><div><dt>핵심가치</dt><dd>고객 성공 · 신뢰 · 혁신</dd></div></dl>
+
+        <div class="system-map" aria-label="POS, ERP, APP 통합 연동 구성">
+          <div class="map-status"><span></span> All systems connected</div>
+          <article class="map-card card-pos">
+            <div class="product-icon icon-pos" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M5 4h14v10H5zM8 18h8M12 14v4M8 8h8"/></svg>
+            </div>
+            <div><small>매장 판매</small><strong>BizOne POS</strong></div>
+            <span class="live-dot">LIVE</span>
+          </article>
+          <div class="map-line line-one"></div>
+          <article class="map-card card-erp">
+            <div class="product-icon icon-erp" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 6h16M6 3v6M18 3v6M4 10v10h16V10M8 14h3M8 17h7"/></svg>
+            </div>
+            <div><small>통합 경영관리</small><strong>BizOne ERP</strong></div>
+            <span class="live-dot">SYNC</span>
+          </article>
+          <div class="map-line line-two"></div>
+          <article class="map-card card-app">
+            <div class="product-icon icon-app" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><rect x="7" y="2.5" width="10" height="19" rx="2"/><path d="M10 6h4M11 18h2"/></svg>
+            </div>
+            <div><small>모바일 운영</small><strong>BizOne APP</strong></div>
+            <span class="live-dot">NOW</span>
+          </article>
+          <div class="map-metric metric-a"><b>99.9%</b><span>데이터 연결 상태</span></div>
+          <div class="map-metric metric-b"><b>실시간</b><span>판매·재고 반영</span></div>
         </div>
       </div>
     </section>
 
-    <section class="company-intro">
-      <div class="company-heading">
-        <p class="section-label">WHO WE ARE</p>
-        <h2><span class="company-title-line">결제와 경영관리의 경험을</span><br /><em>하나의 운영 가치로.</em></h2>
+    <section class="section products" id="products" aria-labelledby="products-title">
+      <div class="section-heading">
+        <p class="section-label">OUR PRODUCTS</p>
+        <h2 id="products-title">세 가지 제품,<br /><em>하나의 운영 흐름</em></h2>
+        <p>필요한 제품부터 시작하고, 운영 규모에 맞춰 연결할 수 있습니다.</p>
       </div>
-      <div class="company-copy">
-        <p class="lead">주식회사 코페이는 2004년 설립 이후 지불결제 산업을 기반으로 POS·ERP 솔루션 개발, 카드단말기와 POS 관련 기기 공급, 클라우드 운영 서비스를 이어온 통합 비즈니스 솔루션 기업입니다.</p>
-        <p>매장에서 발생하는 결제와 판매 데이터가 재고·매입·매출 관리로 자연스럽게 이어지고,<br />필요한 정보가 모바일 환경까지 연결되도록 고객의 업무 흐름에 맞춘 시스템을 설계합니다.</p>
+
+      <div class="product-grid">
+        <article class="product-card product-pos">
+          <div class="product-number">01</div>
+          <div class="product-icon large icon-pos" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M5 4h14v10H5zM8 18h8M12 14v4M8 8h8"/></svg>
+          </div>
+          <p class="product-kicker">빠르고 쉬운 매장 판매</p>
+          <h3>BizOne POS</h3>
+          <p>결제와 주문, 매출 집계를 한 화면에서 처리하는 매장 중심 판매 시스템</p>
+          <ul>
+            <li>간편한 판매·결제</li>
+            <li>실시간 매출 확인</li>
+            <li>다양한 업종 지원</li>
+          </ul>
+          <button type="button" class="text-link product-selector" data-product="pos">POS 살펴보기 <span>→</span></button>
+        </article>
+
+        <article class="product-card product-erp">
+          <div class="product-number">02</div>
+          <div class="product-icon large icon-erp" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M4 6h16M6 3v6M18 3v6M4 10v10h16V10M8 14h3M8 17h7"/></svg>
+          </div>
+          <p class="product-kicker">정확한 통합 경영관리</p>
+          <h3>BizOne ERP</h3>
+          <p>매입·재고·매출 데이터를 연결해 운영 현황을 정확하게 관리하는 시스템</p>
+          <ul>
+            <li>상품·재고 통합관리</li>
+            <li>매입·매출 분석</li>
+            <li>다매장 운영관리</li>
+          </ul>
+          <button type="button" class="text-link product-selector" data-product="erp">ERP 살펴보기 <span>→</span></button>
+        </article>
+
+        <article class="product-card product-app">
+          <div class="product-number">03</div>
+          <div class="product-icon large icon-app" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><rect x="7" y="2.5" width="10" height="19" rx="2"/><path d="M10 6h4M11 18h2"/></svg>
+          </div>
+          <p class="product-kicker">언제 어디서나 모바일 운영</p>
+          <h3>BizOne APP</h3>
+          <p>매장 밖에서도 핵심 현황을 확인하고 필요한 업무를 이어가는 모바일 앱</p>
+          <ul>
+            <li>모바일 현황 조회</li>
+            <li>주요 알림 확인</li>
+            <li>간편한 원격 업무</li>
+          </ul>
+          <button type="button" class="text-link product-selector" data-product="app">APP 살펴보기 <span>→</span></button>
+        </article>
       </div>
     </section>
 
-    <section class="company-values" aria-label="비즈원의 약속">
-      <article><span>01</span><h3>고객의 성공</h3><p>기능을 제공하는 데서 멈추지 않고 고객사의<br />안정적인 운영과 성장을 기준으로 생각합니다.</p></article>
-      <article><span>02</span><h3>관계의 신뢰</h3><p>오랜 현장 경험과 책임 있는 지원을 바탕으로<br />모든 관계에서 지켜야 할 신뢰를 우선합니다.</p></article>
-      <article><span>03</span><h3>지속적인 혁신</h3><p>온·오프라인의 경계가 사라지는 변화에 대응하며 더 효율적인 결제·운영 환경을 만듭니다.</p></article>
-    </section>
+    <section class="section connection" id="connection" aria-labelledby="connection-title">
+      <div class="connection-inner">
+        <div class="section-heading light">
+          <p class="section-label">ONE CONNECTED FLOW</p>
+          <h2 id="connection-title">판매가 일어나는 순간,<br /><em>운영 데이터가 움직입니다.</em></h2>
+          <p>각 제품이 따로 움직이지 않습니다. POS의 판매 데이터를 ERP가 반영하고, APP에서 핵심 현황을 이어서 확인합니다.</p>
+        </div>
 
-    <section class="ceo-message">
-      <div class="ceo-title">
-        <p class="section-label">CEO MESSAGE</p>
-        <h2>변화에 앞서고,<br />신뢰에는<br />한결같겠습니다.</h2>
-        <div class="ceo-sign"><span>주식회사 코페이</span><strong>대표이사 채수철</strong></div>
-      </div>
-      <div class="ceo-body">
-        <p class="ceo-opening">비즈원 홈페이지를 찾아주신 고객 여러분께 감사드립니다.</p>
-        <p>코페이는 신용카드 VAN 사업을 기반으로 POS·ERP 솔루션을 개발하고 카드단말기와 POS 관련 기기를 직접 공급하며, 지불결제 산업 전반을 연결하는 역량을 쌓아왔습니다.</p>
-        <p>핀테크와 간편결제의 확산, 온라인과 오프라인의 경계가 사라지는 변화 속에서 가맹점과 소비자가 기대하는 서비스 역시 빠르게 달라지고 있습니다. 비즈원은 과거의 성과에 머무르지 않고 통합 결제 플랫폼과 효율적인 운영 시스템을 꾸준히 고도화하겠습니다.</p>
-        <p>고객의 성공을 위한 헌신과 모든 관계에서 신뢰를 지키는 자세를 바탕으로, 국내를 넘어 글로벌 시장에서도 인정받는 기술 기업으로 성장하겠습니다.</p>
-        <p>감사합니다.</p>
-      </div>
-    </section>
-
-    <section class="company-overview">
-      <div class="overview-head"><p class="section-label">COMPANY OVERVIEW</p><h2>현장을 이해하는<br />통합 솔루션 전문기업</h2></div>
-      <div class="overview-grid">
-        <article><small>01</small><h3>맞춤형 솔루션</h3><p>고객사별 업무 구조에 맞춘 POS·ERP 설계와 클라우드 운영</p></article>
-        <article><small>02</small><h3>토탈 결제 서비스</h3><p>결제 시스템부터 매장 운영 소프트웨어와 관련 기기까지 통합 제공</p></article>
-        <article><small>03</small><h3>검증된 안정성</h3><p>20년 이상 축적한 구축·운영 경험과 폭넓은 인프라를 통한 안정적인 지원</p></article>
-        <article><small>04</small><h3>직접 개발 역량</h3><p>직접 개발과 공급 체계를 기반으로 변화에 빠르게 대응하는 제품과 서비스</p></article>
-      </div>
-      <dl class="company-data"><div><dt>자본금</dt><dd>26억 5천만원</dd></div><div><dt>연매출</dt><dd>590억원 <small>2021년 연결 기준</small></dd></div><div><dt>본사</dt><dd>서울 성동구 성수일로 77</dd></div><div><dt>고객센터</dt><dd>1644-3475</dd></div></dl>
-    </section>
-
-    <section class="company-history" id="history">
-      <div class="history-heading">
-        <p class="section-label">COMPANY HISTORY</p>
-        <h2><span>고객의 비즈니스와 함께한</span><em>도전과 성장의 기록</em></h2>
-        <p>언제나 고객사의 비즈니스 성공을 최우선으로 생각하며 결제와 매장 운영 기술의 가능성을 넓혀왔습니다.</p>
-      </div>
-      <div class="history-list">
-        <article class="history-latest"><time>2025</time><ul><li>특허 결제 기술 기반 ‘운송료 D+1 선지급 서비스’ 출시</li><li>ISMS 정보보호 및 개인정보보호 관리체계 인증 획득 <small>인증번호 ISMS-KISA-2025-101</small></li></ul></article>
-        <article><time>2024</time><ul><li>베트남 IT기업 AHT테크와 업무협약(MOU) 체결</li></ul></article>
-        <article><time>2023</time><ul><li>파이낸스 비즈니스 출범 <small>국내 및 해외 3개국 법인</small></li></ul></article>
-        <article><time>2022</time><ul><li>‘빅데이터 기반의 전자결제매출 실시간 선지급 시스템’ 특허 등록</li></ul></article>
-        <article><time>2021</time><ul><li>과학기술정보통신부 주관 블록체인 확산사업(기부 분야) 최종 사업자 선정</li><li>기부 플랫폼 ‘기브어클락’ 앱 iOS·Android 출시</li><li>라벨프린터 NIIMBOT D110 정식 출시 및 오프라인 총판 선정</li><li>이글맨 골프거리측정기 EM-01·EM-02 출시</li></ul></article>
-        <article><time>2020</time><ul><li>전자지급결제대행서비스(PG) ‘Korpay’ 개시</li></ul></article>
-        <article><time>2019</time><ul><li>전자금융업 ‘전자지급결제대행업’ 등록 <small>등록번호 02-004-00152</small></li></ul></article>
-        <article><time>2018</time><ul><li>BIZONE 지불결제 애플리케이션(Android) 개발</li><li>무선 블루투스 결제단말기 CBP-2000 출시</li><li>무선 카드단말기 KIS-8610 LTE 출시</li><li>비즈원ERP 경영관리솔루션 LITE·PLUS·PRO 출시</li><li>바코드스캐너 수입 및 유통 개시</li></ul></article>
-        <article><time>2017</time><ul><li>온라인 쇼핑몰 ‘Bizonemall’ 개설</li><li>스마트폰 결제 솔루션 ‘비즈원POS’ 출시</li><li>SKT 대리점 이동단말 부문 3년 연속 전국 1위 <small>2015~2017</small></li><li>연매출 219억원 달성</li></ul></article>
-        <article><time>2016</time><ul><li>통합재고관리 솔루션 ‘비즈원ERP’ 출시</li></ul></article>
-        <article><time>2015</time><ul><li>사후면세점 POS 솔루션 개발 완료</li></ul></article>
-        <article><time>2014</time><ul><li>신용카드단말기 제조회사 ㈜시원아이티 설립</li><li>경영관리 프로그램 ‘알짜경영’ 출시</li></ul></article>
-        <article><time>2013</time><ul><li>서울숲IT밸리로 본사 이전</li><li>GS칼텍스 전국 직영점 TLG 총괄관리 계약 체결</li><li>공군비행단 TLG 공급사업자 선정</li></ul></article>
-        <article><time>2012</time><ul><li>㈜코밴 총판대리점 계약 체결</li><li>㈜LG U+ POS 장비 회선 취급 총판 업무협약 체결</li></ul></article>
-        <article><time>2011</time><ul><li>SKTelecom IoT 사업 분야 대리점 계약 체결</li><li>주식회사 코페이로 상호 변경</li></ul></article>
-        <article><time>2010</time><ul><li>POS 솔루션 및 서비스 ‘POSMAN’ 브랜드 출시</li><li>㈜코밴 POS 장비 공급사 지정</li></ul></article>
-        <article><time>2009</time><ul><li>포스뱅크 POS 장비 및 솔루션 총판 계약</li><li>제이티넷 POS 장비 공급사 지정</li></ul></article>
-        <article><time>2008</time><ul><li>KIS정보통신 POS 장비 공급사 지정</li></ul></article>
-        <article><time>2007</time><ul><li>유통·외식 POS 솔루션 ‘POS24’ 개발</li><li>POS 장비 GP-1000·GP-2000 제작 및 출시</li></ul></article>
-        <article><time>2006</time><ul><li>도시바텍코리아 POS 기기 총판 계약 체결</li><li>국내 최초 포스시스템 B2B 플랫폼 ‘posmall.kr’ 개설</li></ul></article>
-        <article><time>2005</time><ul><li>㈜도시바텍코리아 POS 시스템 총판 계약 체결</li><li>㈜삼성네트웍스 인터넷전화 전국망 파트너사 선정</li></ul></article>
-        <article><time>2004</time><ul><li>㈜한국페이먼트에스티 설립 <small>사업자등록번호 206-81-90716</small></li><li>KIS정보통신 총판 계약 체결</li></ul></article>
+        <div class="flow" aria-label="제품 데이터 연동 흐름">
+          <div class="flow-item">
+            <span>01</span><b>POS</b><small>판매·결제 발생</small>
+          </div>
+          <div class="flow-arrow" aria-hidden="true">→</div>
+          <div class="flow-item">
+            <span>02</span><b>ERP</b><small>재고·매출 자동 반영</small>
+          </div>
+          <div class="flow-arrow" aria-hidden="true">→</div>
+          <div class="flow-item">
+            <span>03</span><b>APP</b><small>현황·알림 즉시 확인</small>
+          </div>
+        </div>
       </div>
     </section>
 
-    <div class="company-location-space" aria-hidden="true"></div>
+    <section class="section value" id="value" aria-labelledby="value-title">
+      <div class="value-copy">
+        <p class="section-label">WHY BIZONE</p>
+        <h2 id="value-title"><span>연결될수록</span><em><span>운영은</span><span>더 단순해집니다.</span></em></h2>
+      </div>
+      <div class="value-list">
+        <article>
+          <span>01</span>
+          <div><h3>중복 입력은 줄이고</h3><p>판매와 재고 데이터를 자동으로 연결해 반복 업무를 줄입니다.</p></div>
+        </article>
+        <article>
+          <span>02</span>
+          <div><h3>운영 현황은 정확하게</h3><p>매장과 본사의 데이터를 한 흐름으로 관리해 판단 기준을 명확하게 만듭니다.</p></div>
+        </article>
+        <article>
+          <span>03</span>
+          <div><h3>확인은 언제 어디서나</h3><p>PC와 모바일을 오가며 필요한 정보를 놓치지 않고 확인합니다.</p></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="cta-section" id="company">
+      <div>
+        <p class="section-label">START WITH BIZONE</p>
+        <h2>매장에 필요한 변화,<br />비즈원과 함께 시작하세요.</h2>
+      </div>
+      <a class="button button-light" href="#products">솔루션 구성 확인하기 <span aria-hidden="true">→</span></a>
+    </section>
+
+    <section class="extension-section" id="merchant">
+      <div class="extension-heading">
+        <p class="section-label">MERCHANT SOLUTION</p>
+        <h2>가맹점 운영에 필요한 기능을<br><em>한 번에 연결합니다.</em></h2>
+        <p>결제부터 매장 관리까지, 업종과 운영 환경에 맞는 비즈원 솔루션을 구성해드립니다.</p>
+      </div>
+      <div class="extension-cards">
+        <article><span>01</span><h3>통합 결제</h3><p>카드·간편결제와 매장 판매 데이터를 안정적으로 연결합니다.</p></article>
+        <article><span>02</span><h3>운영 자동화</h3><p class="fixed-copy"><span>상품·재고·매출을 한 흐름으로 관리해</span><span>반복 업무를 줄입니다.</span></p></article>
+        <article><span>03</span><h3>맞춤 지원</h3><p>매장 규모와 업종에 맞춰 필요한 장비와 시스템을 제안합니다.</p></article>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div>
+        <p class="section-label">CONTACT US</p>
+        <h2><span>비즈원 도입과 제품 상담이</span><span>필요하신가요?</span></h2>
+        <p>매장 환경에 맞는 구성부터 설치와 운영 지원까지 상담해드립니다.</p>
+      </div>
+      <div class="contact-box">
+        <a href="tel:16445145"><span>도입·제품 상담</span><strong>1644-5145</strong></a>
+        <a href="tel:16443475"><span>A/S 문의</span><strong>1644-3475</strong></a>
+        <a href="mailto:tndusdl0128@korpay.com"><span>이메일</span><strong>tndusdl0128@korpay.com</strong></a>
+      </div>
+    </section>
+
+    <section class="family-section" aria-labelledby="family-title">
+      <div>
+        <p class="section-label">FAMILY SITE</p>
+        <h2 id="family-title">함께 만드는<br>비즈니스 네트워크</h2>
+      </div>
+      <div class="family-links">
+        <a href="https://www.korpay.com/" target="_blank" rel="noopener noreferrer"><span>KORPAY</span><b>코페이 공식 홈페이지</b><i>↗</i></a>
+        <a href="https://www.c1it.co.kr/" target="_blank" rel="noopener noreferrer"><span>C1 IT</span><b>시원아이티 공식 홈페이지</b><i>↗</i></a>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
@@ -145,7 +266,8 @@
       <nav class="footer-nav" aria-label="하단 메뉴"><a href="/support/resources/">자료실</a><a id="top-button" href="#top" aria-label="현재 페이지 최상단으로 이동">TOP ↑</a></nav>
     </div>
   </footer>
-  <script src="../navigation.js"></script>
-  <script src="../script.js"></script>
+
+  <script src="navigation.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
