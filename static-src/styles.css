@@ -35,7 +35,7 @@ svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width:
 }
 .header-inner { max-width: var(--max); height: 78px; margin: auto; padding: 0 24px; display: flex; align-items: center; gap: 44px; }
 .brand, .footer-brand { font-size: 31px; font-weight: 850; line-height: 1; letter-spacing: -2px; }
-.brand img { display:block; width:232px; height:60px; object-fit:contain; object-position:left center; transform:translate(-10px,5px); }
+.brand img { display:block; width:205px; height:60px; object-fit:contain; object-position:left center; }
 .brand-biz { color: #0877ac; }
 .brand-one { color: var(--orange); }
 .main-nav { display: flex; gap: 34px; margin-left: auto; }
@@ -175,7 +175,7 @@ footer a { margin-left: auto; color: var(--ink); font-size: 13px; font-weight: 8
 .consult-honey { position: absolute!important; left: -9999px!important; opacity: 0!important; }
 .dialog-open { overflow: hidden; }
 @media(max-width:950px){.extension-cards{grid-template-columns:1fr}.contact-section,.family-section{grid-template-columns:1fr;gap:45px}.contact-section{margin-left:18px;margin-right:18px;padding:55px 38px}}
-@media(max-width:660px){.brand img{width:190px;height:50px;transform:translate(-4px,4px)}.extension-section,.family-section{padding:85px 20px}.contact-section{padding:48px 25px;border-radius:22px}.family-links a{grid-template-columns:72px 1fr auto;gap:12px;padding:21px 18px}.family-links b{font-size:15px}}
+@media(max-width:660px){.brand img{width:180px;height:50px}.extension-section,.family-section{padding:85px 20px}.contact-section{padding:48px 25px;border-radius:22px}.family-links a{grid-template-columns:72px 1fr auto;gap:12px;padding:21px 18px}.family-links b{font-size:15px}}
 @media(max-width:660px){.consult-float{right:16px;bottom:18px;width:78px;height:78px;border-width:4px}.consult-float span,.consult-float strong{font-size:16px}.consult-dialog{width:calc(100vw - 24px);border-radius:20px}.consult-heading{padding:29px 24px 25px}.consult-heading h2{font-size:28px}.consult-dialog form{padding:24px}.region-selects{grid-template-columns:1fr}.merchant-login-link{margin:7px 0 2px;padding:12px 14px!important;text-align:center}}
 @media(max-width:620px){.company-heading h2{font-size:27px;letter-spacing:-.065em}}
 
