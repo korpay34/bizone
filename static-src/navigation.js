@@ -206,6 +206,8 @@ const preserveSpacing = (value, replacement) => value.replace(value.trim(), repl
 function dynamicTranslation(source, locale) {
   if (locale === 'ko') return source;
   const splitCopy = {
+    '운영은': { en: 'Operations Become', ja: '運営は', zh: '运营' },
+    '더 단순해집니다.': { en: 'Simpler.', ja: 'さらにシンプルに。', zh: '更加简单。' },
     '상품·재고·매출을 한 흐름으로 관리해': { en: 'Manage products, inventory, and sales in one flow', ja: '商品・在庫・売上を一元管理し、', zh: '统一管理商品、库存与销售，' },
     '반복 업무를 줄입니다.': { en: 'to reduce repetitive work.', ja: '反復業務を削減します。', zh: '减少重复工作。' }
   };
