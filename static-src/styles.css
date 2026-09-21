@@ -35,6 +35,7 @@ svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width:
 }
 .header-inner { max-width: var(--max); height: 78px; margin: auto; padding: 0 24px; display: flex; align-items: center; gap: 44px; }
 .brand, .footer-brand { font-size: 31px; font-weight: 850; line-height: 1; letter-spacing: -2px; }
+.brand { transform: translateY(8px); }
 .brand img { display:block; width:205px; height:60px; object-fit:contain; object-position:left center; }
 .brand-biz { color: #0877ac; }
 .brand-one { color: var(--orange); }
@@ -401,6 +402,19 @@ footer a { margin-left: auto; color: var(--ink); font-size: 13px; font-weight: 8
 .main-nav > a.merchant-login-link:hover,.main-nav > a.merchant-login-link:focus-visible { color: #fff!important; background: #0757ba; }
 .main-nav > a.merchant-login-link::after { display: none; }
 
+/* Language menu */
+.language-selector { position: relative; display: flex; align-items: center; align-self: stretch; margin-left: 2px; }
+.language-toggle { display: inline-flex; align-items: center; gap: 7px; min-height: 40px; padding: 0 4px; border: 0; background: transparent; color: #27354e; font-size: 13px; font-weight: 750; cursor: pointer; white-space: nowrap; }
+.language-toggle svg { width: 17px; height: 17px; stroke-width: 1.7; }
+.language-toggle .language-chevron { width: 7px; height: 7px; margin: -3px 2px 0 1px; border-right: 1.5px solid #66758d; border-bottom: 1.5px solid #66758d; transform: rotate(45deg); transition: transform .18s; }
+.language-selector.open .language-chevron { margin-top: 3px; transform: rotate(225deg); }
+.language-menu { position: absolute; top: calc(100% - 8px); right: 0; z-index: 100; width: 148px; padding: 8px; opacity: 0; visibility: hidden; pointer-events: none; transform: translateY(8px); background: #fff; border: 1px solid var(--line); border-radius: 12px; box-shadow: 0 16px 40px rgba(7,28,70,.16); transition: .18s; }
+.language-selector.open .language-menu { opacity: 1; visibility: visible; pointer-events: auto; transform: translateY(0); }
+.language-option { width: 100%; display: flex; align-items: center; justify-content: space-between; padding: 9px 10px; border: 0; border-radius: 7px; background: transparent; color: #26344d; font-size: 14px; text-align: left; cursor: pointer; }
+.language-option:hover,.language-option:focus-visible { background: var(--blue-light); }
+.language-option.active { color: #0967db; font-weight: 800; }
+.language-option.active::after { content: "✓"; color: #0967db; }
+
 /* Business information footer */
 .site-footer { max-width: none; min-height: 0; margin: 0; padding: 0; color: #aebbd0; background: #071934; }
 .site-footer .footer-inner { width: 100%; max-width: var(--max); margin: auto; padding: 56px 24px 52px; display: flex; align-items: flex-start; justify-content: space-between; gap: 70px; }
@@ -410,7 +424,8 @@ footer a { margin-left: auto; color: var(--ink); font-size: 13px; font-weight: 8
 .site-footer .footer-details p { margin: 2px 0; color: #aebbd0; font-size: 14px; line-height: 1.75; }
 .site-footer .footer-details i { display: inline-block; width: 1px; height: 11px; margin: 0 9px; background: #53627a; vertical-align: -1px; }
 .site-footer .footer-terms { display: flex; flex-wrap: wrap; gap: 9px 25px; margin-top: 30px; }
-.site-footer .footer-terms span { color: #e9eff8; font-size: 14px; font-weight: 750; }
+.site-footer .footer-terms a { color: #e9eff8; font-size: 14px; font-weight: 750; }
+.site-footer .footer-terms a:hover,.site-footer .footer-terms a:focus-visible { color: #fff; text-decoration: underline; text-underline-offset: 4px; }
 .site-footer .footer-nav { display: flex; align-items: center; gap: 28px; flex: 0 0 auto; }
 .site-footer .footer-nav a { margin: 0; color: #fff; font-size: 14px; font-weight: 800; }
 .site-footer .footer-nav a:first-child { padding-bottom: 3px; border-bottom: 2px solid var(--blue); }
@@ -426,6 +441,11 @@ footer a { margin-left: auto; color: var(--ink); font-size: 13px; font-weight: 8
   .submenu a { padding: 9px 12px; }
   .nav-item.open .submenu { display: flex; transform: none; }
   .main-nav > a.merchant-login-link { width: 100%; margin: 9px 0 0; }
+  .language-selector { width: 100%; align-self: auto; margin: 6px 0 0; flex-direction: column; align-items: stretch; }
+  .language-toggle { min-height: 46px; justify-content: flex-start; padding: 0; }
+  .language-toggle .language-chevron { margin-left: auto; margin-right: 5px; }
+  .language-menu { position: static; width: 100%; display: none; padding: 6px; opacity: 1; visibility: visible; pointer-events: auto; transform: none; box-shadow: none; background: #f6f9fd; }
+  .language-selector.open .language-menu { display: block; }
   .site-footer .footer-inner { gap: 40px; }
 }
 
@@ -436,3 +456,31 @@ footer a { margin-left: auto; color: var(--ink); font-size: 13px; font-weight: 8
   .site-footer .footer-terms { align-items: flex-start; flex-direction: column; gap: 8px; }
   .site-footer .footer-nav { width: 100%; justify-content: space-between; }
 }
+
+/* Privacy policy */
+.privacy-page { background: #f5f8fc; }
+.privacy-hero { padding: 82px 24px 65px; color: #fff; background: linear-gradient(130deg,#071c46,#0b3d83); }
+.privacy-hero-inner,.privacy-content { width: 100%; max-width: var(--max); margin: auto; }
+.privacy-hero .section-label { color: #82bdff; }
+.privacy-hero h1 { margin: 0; font-size: clamp(38px,5vw,60px); letter-spacing: -.055em; }
+.privacy-hero p:last-child { margin: 18px 0 0; color: #c6d8f2; }
+.privacy-content { padding: 56px 24px 90px; }
+.privacy-card { padding: clamp(26px,5vw,58px); background: #fff; border: 1px solid #e0e7f0; border-radius: 22px; box-shadow: 0 18px 55px rgba(7,28,70,.08); }
+.privacy-version { display: inline-flex; margin: 0 0 24px; padding: 7px 11px; color: #176fd9; background: #eaf3ff; border-radius: 999px; font-size: 13px; font-weight: 800; }
+.privacy-intro { margin: 0; color: #4d5a70; line-height: 1.9; }
+.privacy-toc { margin: 34px 0 10px; padding: 24px 28px; display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 8px 28px; background: #f6f9fd; border-radius: 14px; }
+.privacy-toc a { color: #33435c; font-size: 14px; }
+.privacy-toc a:hover { color: var(--blue); }
+.privacy-section { padding-top: 46px; scroll-margin-top: 96px; }
+.privacy-section h2 { margin: 0 0 20px; padding-bottom: 14px; color: #10264c; border-bottom: 2px solid #183b70; font-size: 23px; letter-spacing: -.035em; }
+.privacy-section h3 { margin: 24px 0 9px; color: #18345f; font-size: 17px; }
+.privacy-section p,.privacy-section li { color: #4d5a70; font-size: 15px; line-height: 1.85; }
+.privacy-section ul { margin: 10px 0; padding-left: 20px; }
+.privacy-table-wrap { margin: 18px 0 8px; overflow-x: auto; border: 1px solid #dce4ef; border-radius: 12px; }
+.privacy-table { width: 100%; min-width: 720px; border-collapse: collapse; font-size: 14px; }
+.privacy-table th,.privacy-table td { padding: 15px 16px; border-right: 1px solid #e3e9f1; border-bottom: 1px solid #e3e9f1; text-align: left; vertical-align: top; line-height: 1.7; }
+.privacy-table th:last-child,.privacy-table td:last-child { border-right: 0; }
+.privacy-table tr:last-child td { border-bottom: 0; }
+.privacy-table th { color: #17345f; background: #f3f7fc; font-weight: 800; }
+.privacy-contact { padding: 20px 22px; background: #f3f7fc; border-radius: 12px; }
+@media(max-width:660px){.brand{transform:translateY(4px)}.privacy-hero{padding:60px 20px 48px}.privacy-content{padding:30px 14px 60px}.privacy-card{padding:25px 19px}.privacy-toc{grid-template-columns:1fr;padding:20px}.privacy-section{padding-top:38px}.privacy-section h2{font-size:20px}}

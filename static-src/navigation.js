@@ -160,3 +160,112 @@ consultForm.addEventListener('submit', async (event) => {
     button.firstChild.textContent = '상담신청 ';
   }
 });
+
+const localeLabels = { ko: '한국어', en: 'English', ja: '日本語', zh: '简体中文' };
+const translations = {
+  en: {
+    '소개 및 인사말':'Company Introduction','오시는길':'Location','카드단말기':'Card Terminals','바코드스캐너':'Barcode Scanners','라벨프린터':'Label Printers','골프거리측정기':'Golf Rangefinders','공지사항':'Notices','교육일정':'Training Schedule','자료실':'Resources','가맹점 로그인':'Merchant Login',
+    '매장의 모든 순간을':'Connect Every Moment','하나로 연결합니다.':'of Your Store.','결제부터 재고·매출 관리, 모바일 운영까지.':'From payments and inventory to sales management and mobile operations.','POS·ERP·APP이 유기적으로 연결되는 비즈원 통합 솔루션입니다.':'BizOne is an integrated solution that seamlessly connects POS, ERP, and mobile applications.','제품 둘러보기':'Explore Products','연동 구조 보기':'View Integration','실시간 데이터 연동':'Real-time Data Sync','매장별 맞춤 구성':'Store-specific Setup','언제 어디서나 확인':'Access Anywhere, Anytime','매장 판매':'Store Sales','통합 경영관리':'Integrated Management','모바일 운영':'Mobile Operations','데이터 연결 상태':'Data Connection Status','판매·재고 반영':'Sales & Inventory Sync',
+    '매장 운영에 필요한 핵심 솔루션을':'Essential Solutions for Store Operations','하나의 흐름으로 제공합니다.':'Delivered in One Connected Flow.','판매부터 경영관리, 모바일 확인까지 업무 흐름에 맞춰 연결됩니다.':'Sales, management, and mobile monitoring are connected around the way your business works.','판매의 시작':'Start of Sales','매장 판매·결제·영수증·마감 관리':'Sales, payments, receipts, and daily closing','통합 운영':'Integrated Operations','재고·매입·매출·거래처·경영 현황 관리':'Inventory, purchasing, sales, partners, and business performance','모바일 확장':'Mobile Access','언제 어디서나 주요 현황을 확인하고 업무 처리':'Monitor key business data and work from anywhere',
+    '하나의 데이터가':'One Source of Data','매장 전체를 움직입니다.':'Runs Your Entire Store.','판매 데이터는 재고와 매출에 반영되고, 경영 정보는 모바일로 이어집니다.':'Sales data updates inventory and revenue, while management information stays available on mobile.','고객의 업무 방식에 맞춘':'Built Around Your Workflow','운영 시스템을 설계합니다.':'We Design Your Operating System.','매장 규모와 업종, 관리 방식에 맞춰 필요한 기능을 유연하게 연결합니다.':'We flexibly connect the functions you need based on store size, industry, and management style.','통합 솔루션 상담하기':'Request a Solution Consultation',
+    '주식회사 코페이':'KORPAY Co., Ltd.','사업자등록번호: 206-81-90716':'Business Registration No.: 206-81-90716','대표: 채수철':'CEO: Soo Cheol Chae','주소: 서울 성동구 성수일로 77 서울숲IT밸리 608-611호':'Address: Seoul Forest IT Valley 608–611, 77 Seongsuil-ro, Seongdong-gu, Seoul','대표번호: 1644-5145':'Main: 1644-5145','개인정보 처리방침':'Privacy Policy',
+    '고객의 성공을 향한 기술,':'Technology for Customer Success,','신뢰를 지키는 기업.':'A Company Built on Trust.','비즈원은 결제부터 POS·ERP·APP까지 매장 운영의 모든 흐름을 연결합니다.':'BizOne connects every aspect of store operations, from payments to POS, ERP, and mobile applications.','현장을 이해하는 기술로 더 정확하고 안정적인 비즈니스 환경을 만듭니다.':'Our practical technology creates a more accurate and reliable business environment.','설립':'Established','대표이사':'CEO','사업영역':'Business Areas','핵심가치':'Core Values','고객 성공 · 신뢰 · 혁신':'Customer Success · Trust · Innovation','결제와 경영관리의 경험을':'Payment and Management Expertise','하나의 운영 가치로.':'United into One Operating Value.','고객의 성공':'Customer Success','관계의 신뢰':'Trust in Every Relationship','지속적인 혁신':'Continuous Innovation','변화에 앞서고,':'Leading Change,','신뢰에는':'Unwavering in','한결같겠습니다.':'Our Commitment to Trust.','비즈원 홈페이지를 찾아주신 고객 여러분께 감사드립니다.':'Thank you for visiting the BizOne website.','맞춤형 솔루션':'Tailored Solutions','토탈 결제 서비스':'Total Payment Services','검증된 안정성':'Proven Reliability','직접 개발 역량':'In-house Development','자본금':'Capital','연매출':'Annual Revenue','본사':'Head Office','고객센터':'Customer Center','고객의 비즈니스와 함께한':'Growing Together with Our Customers','도전과 성장의 기록':'A Record of Challenge and Growth',
+    '본사 위치와 교통편을 안내드립니다.':'Find our head office and transportation information below.','주소':'Address','대중교통 이용시':'By Public Transportation','차량 이용시 주차안내':'Parking Information','카카오맵에서 보기 ↗':'View on Kakao Map ↗','네이버지도에서 보기 ↗':'View on Naver Map ↗','대표전화':'Main Phone','팩스':'Fax','이메일':'Email',
+    '상담':'Contact','신청':'Us','상담신청':'Request a Consultation','남겨주신 정보를 확인한 후 담당자가 연락드리겠습니다.':'A representative will contact you after reviewing your information.','성명':'Name','연락처':'Phone','지역':'Region','상담내용':'Inquiry','성명을 입력해주세요':'Enter your name','상담받으실 내용을 입력해주세요':'Tell us how we can help','시·도 선택':'Select province','시·군·구 선택':'Select city/district','상담을 위한 개인정보 수집 및 이용에 동의합니다.':'I consent to the collection and use of my personal information for this consultation.','상담신청이 접수되었습니다. 담당자가 확인 후 연락드리겠습니다.':'Your request has been received. A representative will contact you shortly.','전송하지 못했습니다. 잠시 후 다시 시도해주세요.':'Unable to submit. Please try again shortly.','검색':'Search','제목':'Title','작성자':'Author','등록일':'Date','조회':'Views','다운로드':'Download','첨부파일':'Attachment','목록':'Back to List','관리자':'Admin','검색어를 입력하세요':'Enter a search term','등록된 자료가 없습니다.':'No resources are available.','등록된 공지사항이 없습니다.':'No notices are available.'
+  },
+  ja: {
+    '소개 및 인사말':'会社紹介・ご挨拶','오시는길':'アクセス','카드단말기':'カード決済端末','바코드스캐너':'バーコードスキャナー','라벨프린터':'ラベルプリンター','골프거리측정기':'ゴルフ距離計','공지사항':'お知らせ','교육일정':'研修日程','자료실':'資料室','가맹점 로그인':'加盟店ログイン',
+    '매장의 모든 순간을':'店舗のあらゆる瞬間を','하나로 연결합니다.':'ひとつにつなぎます。','결제부터 재고·매출 관리, 모바일 운영까지.':'決済から在庫・売上管理、モバイル運営まで。','POS·ERP·APP이 유기적으로 연결되는 비즈원 통합 솔루션입니다.':'POS・ERP・アプリがシームレスにつながるBizOne統合ソリューションです。','제품 둘러보기':'製品を見る','연동 구조 보기':'連携構成を見る','실시간 데이터 연동':'リアルタイムデータ連携','매장별 맞춤 구성':'店舗別カスタマイズ','언제 어디서나 확인':'いつでもどこでも確認','매장 판매':'店舗販売','통합 경영관리':'統合経営管理','모바일 운영':'モバイル運営','데이터 연결 상태':'データ接続状況','판매·재고 반영':'販売・在庫反映',
+    '매장 운영에 필요한 핵심 솔루션을':'店舗運営に必要な主要ソリューションを','하나의 흐름으로 제공합니다.':'ひとつの流れで提供します。','판매부터 경영관리, 모바일 확인까지 업무 흐름에 맞춰 연결됩니다.':'販売から経営管理、モバイル確認まで、業務フローに合わせて連携します。','판매의 시작':'販売の起点','매장 판매·결제·영수증·마감 관리':'店舗販売・決済・レシート・締め管理','통합 운영':'統合運営','재고·매입·매출·거래처·경영 현황 관리':'在庫・仕入・売上・取引先・経営状況の管理','모바일 확장':'モバイル拡張','언제 어디서나 주요 현황을 확인하고 업무 처리':'いつでもどこでも主要状況を確認し業務を処理',
+    '하나의 데이터가':'ひとつのデータが','매장 전체를 움직입니다.':'店舗全体を動かします。','판매 데이터는 재고와 매출에 반영되고, 경영 정보는 모바일로 이어집니다.':'販売データは在庫と売上に反映され、経営情報はモバイルにつながります。','고객의 업무 방식에 맞춘':'お客様の業務方式に合わせた','운영 시스템을 설계합니다.':'運営システムを設計します。','매장 규모와 업종, 관리 방식에 맞춰 필요한 기능을 유연하게 연결합니다.':'店舗規模・業種・管理方式に合わせ、必要な機能を柔軟に連携します。','통합 솔루션 상담하기':'統合ソリューション相談',
+    '주식회사 코페이':'株式会社KORPAY','사업자등록번호: 206-81-90716':'事業者登録番号：206-81-90716','대표: 채수철':'代表：チェ・スチョル','주소: 서울 성동구 성수일로 77 서울숲IT밸리 608-611호':'住所：ソウル特別市城東区聖水一路77 ソウルフォレストITバレー608–611号','대표번호: 1644-5145':'代表電話：1644-5145','개인정보 처리방침':'プライバシーポリシー',
+    '고객의 성공을 향한 기술,':'お客様の成功を支える技術、','신뢰를 지키는 기업.':'信頼を守る企業。','비즈원은 결제부터 POS·ERP·APP까지 매장 운영의 모든 흐름을 연결합니다.':'BizOneは決済からPOS・ERP・アプリまで、店舗運営のすべての流れをつなぎます。','현장을 이해하는 기술로 더 정확하고 안정적인 비즈니스 환경을 만듭니다.':'現場を理解した技術で、より正確で安定したビジネス環境を実現します。','설립':'設立','대표이사':'代表取締役','사업영역':'事業分野','핵심가치':'中核価値','고객 성공 · 신뢰 · 혁신':'顧客の成功・信頼・革新','결제와 경영관리의 경험을':'決済と経営管理の経験を','하나의 운영 가치로.':'ひとつの運営価値へ。','고객의 성공':'お客様の成功','관계의 신뢰':'信頼ある関係','지속적인 혁신':'継続的な革新','변화에 앞서고,':'変化を先取りし、','신뢰에는':'信頼には','한결같겠습니다.':'常に誠実であり続けます。','비즈원 홈페이지를 찾아주신 고객 여러분께 감사드립니다.':'BizOneのウェブサイトをご覧いただき、誠にありがとうございます。','맞춤형 솔루션':'カスタムソリューション','토탈 결제 서비스':'総合決済サービス','검증된 안정성':'実証された安定性','직접 개발 역량':'自社開発力','자본금':'資本金','연매출':'年間売上高','본사':'本社','고객센터':'カスタマーセンター','고객의 비즈니스와 함께한':'お客様のビジネスと歩んだ','도전과 성장의 기록':'挑戦と成長の軌跡',
+    '본사 위치와 교통편을 안내드립니다.':'本社所在地と交通アクセスをご案内します。','주소':'住所','대중교통 이용시':'公共交通機関をご利用の場合','차량 이용시 주차안내':'お車での駐車案内','카카오맵에서 보기 ↗':'Kakaoマップで見る ↗','네이버지도에서 보기 ↗':'NAVERマップで見る ↗','대표전화':'代表電話','팩스':'FAX','이메일':'メール',
+    '상담':'相談','신청':'申請','상담신청':'お問い合わせ','남겨주신 정보를 확인한 후 담당자가 연락드리겠습니다.':'ご入力内容を確認後、担当者よりご連絡いたします。','성명':'お名前','연락처':'ご連絡先','지역':'地域','상담내용':'お問い合わせ内容','성명을 입력해주세요':'お名前をご入力ください','상담받으실 내용을 입력해주세요':'お問い合わせ内容をご入力ください','시·도 선택':'都道府県を選択','시·군·구 선택':'市区町村を選択','상담을 위한 개인정보 수집 및 이용에 동의합니다.':'お問い合わせ対応のための個人情報の収集・利用に同意します。','상담신청이 접수되었습니다. 담당자가 확인 후 연락드리겠습니다.':'お問い合わせを受け付けました。確認後、担当者よりご連絡いたします。','전송하지 못했습니다. 잠시 후 다시 시도해주세요.':'送信できませんでした。しばらくしてからもう一度お試しください。','검색':'検索','제목':'タイトル','작성자':'作成者','등록일':'登録日','조회':'閲覧','다운로드':'ダウンロード','첨부파일':'添付ファイル','목록':'一覧','관리자':'管理者','검색어를 입력하세요':'検索語を入力してください','등록된 자료가 없습니다.':'登録された資料はありません。','등록된 공지사항이 없습니다.':'登録されたお知らせはありません。'
+  },
+  zh: {
+    '소개 및 인사말':'公司介绍与致辞','오시는길':'交通指南','카드단말기':'银行卡终端','바코드스캐너':'条码扫描器','라벨프린터':'标签打印机','골프거리측정기':'高尔夫测距仪','공지사항':'公告','교육일정':'培训日程','자료실':'资料中心','가맹점 로그인':'商户登录',
+    '매장의 모든 순간을':'连接门店运营的','하나로 연결합니다.':'每一个环节。','결제부터 재고·매출 관리, 모바일 운영까지.':'从支付、库存和销售管理到移动运营。','POS·ERP·APP이 유기적으로 연결되는 비즈원 통합 솔루션입니다.':'BizOne是一套将POS、ERP和移动应用无缝连接的综合解决方案。','제품 둘러보기':'查看产品','연동 구조 보기':'查看集成架构','실시간 데이터 연동':'实时数据同步','매장별 맞춤 구성':'门店专属配置','언제 어디서나 확인':'随时随地查看','매장 판매':'门店销售','통합 경영관리':'综合经营管理','모바일 운영':'移动运营','데이터 연결 상태':'数据连接状态','판매·재고 반영':'销售与库存同步',
+    '매장 운영에 필요한 핵심 솔루션을':'门店运营所需的核心解决方案','하나의 흐름으로 제공합니다.':'通过统一流程提供。','판매부터 경영관리, 모바일 확인까지 업무 흐름에 맞춰 연결됩니다.':'从销售、经营管理到移动查看，均按业务流程顺畅连接。','판매의 시작':'销售起点','매장 판매·결제·영수증·마감 관리':'门店销售、支付、票据及结算管理','통합 운영':'综合运营','재고·매입·매출·거래처·경영 현황 관리':'库存、采购、销售、客户及经营状况管理','모바일 확장':'移动扩展','언제 어디서나 주요 현황을 확인하고 업무 처리':'随时随地查看主要经营数据并处理业务',
+    '하나의 데이터가':'统一的数据','매장 전체를 움직입니다.':'驱动整个门店。','판매 데이터는 재고와 매출에 반영되고, 경영 정보는 모바일로 이어집니다.':'销售数据同步至库存与营收，经营信息可通过移动端持续查看。','고객의 업무 방식에 맞춘':'根据客户业务方式','운영 시스템을 설계합니다.':'设计运营系统。','매장 규모와 업종, 관리 방식에 맞춰 필요한 기능을 유연하게 연결합니다.':'根据门店规模、行业和管理方式，灵活连接所需功能。','통합 솔루션 상담하기':'咨询综合解决方案',
+    '주식회사 코페이':'KORPAY股份有限公司','사업자등록번호: 206-81-90716':'营业执照号：206-81-90716','대표: 채수철':'代表：蔡洙澈','주소: 서울 성동구 성수일로 77 서울숲IT밸리 608-611호':'地址：韩国首尔市城东区圣水一路77 首尔林IT Valley 608–611室','대표번호: 1644-5145':'总机：1644-5145','개인정보 처리방침':'隐私政策',
+    '고객의 성공을 향한 기술,':'以技术助力客户成功，','신뢰를 지키는 기업.':'以行动守护信任。','비즈원은 결제부터 POS·ERP·APP까지 매장 운영의 모든 흐름을 연결합니다.':'BizOne连接从支付到POS、ERP及移动应用的全部门店运营流程。','현장을 이해하는 기술로 더 정확하고 안정적인 비즈니스 환경을 만듭니다.':'以深刻理解现场的技术，打造更精准、更稳定的商业环境。','설립':'成立','대표이사':'代表董事','사업영역':'业务领域','핵심가치':'核心价值','고객 성공 · 신뢰 · 혁신':'客户成功・信任・创新','결제와 경영관리의 경험을':'将支付与经营管理经验','하나의 운영 가치로.':'凝聚为统一运营价值。','고객의 성공':'客户成功','관계의 신뢰':'合作信任','지속적인 혁신':'持续创新','변화에 앞서고,':'引领变化，','신뢰에는':'始终坚守','한결같겠습니다.':'信任与承诺。','비즈원 홈페이지를 찾아주신 고객 여러분께 감사드립니다.':'感谢您访问BizOne官方网站。','맞춤형 솔루션':'定制解决方案','토탈 결제 서비스':'综合支付服务','검증된 안정성':'成熟可靠','직접 개발 역량':'自主研发能力','자본금':'注册资本','연매출':'年销售额','본사':'总部','고객센터':'客户中心','고객의 비즈니스와 함께한':'与客户业务共同走过的','도전과 성장의 기록':'挑战与成长历程',
+    '본사 위치와 교통편을 안내드립니다.':'以下为总部位置及交通信息。','주소':'地址','대중교통 이용시':'乘坐公共交通','차량 이용시 주차안내':'驾车及停车指南','카카오맵에서 보기 ↗':'在Kakao地图查看 ↗','네이버지도에서 보기 ↗':'在NAVER地图查看 ↗','대표전화':'总机','팩스':'传真','이메일':'电子邮箱',
+    '상담':'咨询','신청':'申请','상담신청':'申请咨询','남겨주신 정보를 확인한 후 담당자가 연락드리겠습니다.':'工作人员将在确认您提交的信息后与您联系。','성명':'姓名','연락처':'联系电话','지역':'地区','상담내용':'咨询内容','성명을 입력해주세요':'请输入姓名','상담받으실 내용을 입력해주세요':'请输入咨询内容','시·도 선택':'请选择省/市','시·군·구 선택':'请选择区/县','상담을 위한 개인정보 수집 및 이용에 동의합니다.':'我同意为处理咨询而收集和使用个人信息。','상담신청이 접수되었습니다. 담당자가 확인 후 연락드리겠습니다.':'咨询申请已受理，工作人员确认后将与您联系。','전송하지 못했습니다. 잠시 후 다시 시도해주세요.':'提交失败，请稍后重试。','검색':'搜索','제목':'标题','작성자':'作者','등록일':'日期','조회':'浏览','다운로드':'下载','첨부파일':'附件','목록':'返回列表','관리자':'管理','검색어를 입력하세요':'请输入搜索词','등록된 자료가 없습니다.':'暂无资料。','등록된 공지사항이 없습니다.':'暂无公告。'
+  }
+};
+
+const textSources = new WeakMap();
+const attributeSources = new WeakMap();
+const translatableAttributes = ['placeholder','aria-label','title'];
+const preserveSpacing = (value, replacement) => value.replace(value.trim(), replacement);
+
+function dynamicTranslation(source, locale) {
+  if (locale === 'ko') return source;
+  let match = source.match(/^총\s*(\d+)개의 자료$/);
+  if (match) return locale === 'en' ? `${match[1]} resources` : locale === 'ja' ? `資料 ${match[1]}件` : `共 ${match[1]} 份资料`;
+  match = source.match(/^총\s*(\d+)개의 공지$/);
+  if (match) return locale === 'en' ? `${match[1]} notices` : locale === 'ja' ? `お知らせ ${match[1]}件` : `共 ${match[1]} 条公告`;
+  return translations[locale]?.[source] || source;
+}
+
+function applyLocale(locale) {
+  const dictionary = translations[locale] || {};
+  document.documentElement.lang = locale === 'zh' ? 'zh-CN' : locale;
+  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+  const nodes = [];
+  while (walker.nextNode()) nodes.push(walker.currentNode);
+  nodes.forEach((node) => {
+    if (node.parentElement?.closest('script,style,noscript,.language-selector')) return;
+    if (!textSources.has(node)) textSources.set(node, node.nodeValue);
+    const original = textSources.get(node);
+    const source = original.trim();
+    if (!source) return;
+    node.nodeValue = preserveSpacing(original, dynamicTranslation(source, locale));
+  });
+  document.querySelectorAll('*').forEach((element) => {
+    if (element.closest('.language-selector')) return;
+    if (!attributeSources.has(element)) attributeSources.set(element, {});
+    const stored = attributeSources.get(element);
+    translatableAttributes.forEach((attribute) => {
+      if (!element.hasAttribute(attribute)) return;
+      if (!(attribute in stored)) stored[attribute] = element.getAttribute(attribute);
+      const source = stored[attribute];
+      element.setAttribute(attribute, dictionary[source] || source);
+    });
+  });
+  document.querySelectorAll('.language-option').forEach((button) => button.classList.toggle('active', button.dataset.locale === locale));
+  const current = document.querySelector('.language-current');
+  if (current) current.textContent = localeLabels[locale];
+  try { localStorage.setItem('bizone-locale', locale); } catch (_) {}
+}
+
+function initLanguageSelector() {
+  if (!navigation || navigation.querySelector('.language-selector')) return;
+  const selector = document.createElement('div');
+  selector.className = 'language-selector';
+  selector.innerHTML = `<button class="language-toggle" type="button" aria-haspopup="true" aria-expanded="false" aria-label="언어 선택"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18"></path></svg><span class="language-current">한국어</span><span class="language-chevron" aria-hidden="true"></span></button><div class="language-menu" role="menu">${Object.entries(localeLabels).map(([code,label]) => `<button class="language-option" type="button" data-locale="${code}" role="menuitem">${label}</button>`).join('')}</div>`;
+  navigation.appendChild(selector);
+  const toggle = selector.querySelector('.language-toggle');
+  toggle.addEventListener('click', (event) => {
+    event.stopPropagation();
+    const open = selector.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', String(open));
+  });
+  selector.querySelectorAll('.language-option').forEach((button) => button.addEventListener('click', () => {
+    applyLocale(button.dataset.locale);
+    selector.classList.remove('open');
+    toggle.setAttribute('aria-expanded','false');
+  }));
+  document.addEventListener('click', (event) => {
+    if (!event.target.closest('.language-selector')) {
+      selector.classList.remove('open');
+      toggle.setAttribute('aria-expanded','false');
+    }
+  });
+  let saved = 'ko';
+  try { saved = localStorage.getItem('bizone-locale') || 'ko'; } catch (_) {}
+  applyLocale(localeLabels[saved] ? saved : 'ko');
+}
+
+initLanguageSelector();
