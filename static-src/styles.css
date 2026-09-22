@@ -502,3 +502,65 @@ html[lang="en"] .family-links a { padding: 20px 22px; }
 .privacy-table th { color: #17345f; background: #f3f7fc; font-weight: 800; }
 .privacy-contact { padding: 20px 22px; background: #f3f7fc; border-radius: 12px; }
 @media(max-width:660px){.brand{transform:translateY(4px)}.privacy-hero{padding:60px 20px 48px}.privacy-content{padding:30px 14px 60px}.privacy-card{padding:25px 19px}.privacy-toc{grid-template-columns:1fr;padding:20px}.privacy-section{padding-top:38px}.privacy-section h2{font-size:20px}}
+
+/* Card terminal product page */
+.terminal-page { background: #fff; }
+.terminal-hero { position: relative; overflow: hidden; color: #fff; background: linear-gradient(122deg,#061a42 0%,#0a2d6e 65%,#0b58ae 100%); }
+.terminal-hero::after { content: ""; position: absolute; inset: 0; opacity: .13; background-image: linear-gradient(rgba(255,255,255,.15) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.15) 1px,transparent 1px); background-size: 64px 64px; mask-image: linear-gradient(90deg,transparent,#000); }
+.terminal-hero-glow { position: absolute; right: -130px; top: -270px; width: 650px; height: 650px; border-radius: 50%; background: #1684ff; filter: blur(8px); opacity: .42; }
+.terminal-hero-inner { position: relative; z-index: 1; max-width: var(--max); min-height: 520px; margin: auto; padding: 116px 24px 104px; }
+.terminal-hero h1 { max-width: 820px; margin: 0; font-size: clamp(44px,5.7vw,72px); line-height: 1.12; letter-spacing: -.06em; }
+.terminal-hero h1 span,.terminal-hero h1 em { display: block; }
+.terminal-hero h1 em { color: #69b7ff; font-style: normal; }
+.terminal-hero-inner>p:not(.eyebrow) { margin: 27px 0 34px; color: #c7d8ef; font-size: 18px; line-height: 1.8; }
+.terminal-intro { max-width: var(--max); margin: auto; padding: 122px 24px 72px; display: grid; grid-template-columns: 1.1fr .9fr; gap: 80px; align-items: end; }
+.terminal-intro h2 { margin: 0; color: var(--ink); font-size: clamp(36px,4.6vw,58px); line-height: 1.15; letter-spacing: -.055em; }
+.terminal-intro h2 span,.terminal-intro h2 em { display: block; }
+.terminal-intro h2 em { color: var(--blue); font-style: normal; }
+.terminal-intro>p { max-width: 480px; margin: 0 0 5px; color: var(--muted); font-size: 17px; }
+.terminal-products { max-width: var(--max); margin: auto; padding: 0 24px 120px; display: grid; gap: 28px; }
+.terminal-product-card { min-height: 500px; display: grid; grid-template-columns: 1fr 1fr; overflow: hidden; border: 1px solid var(--line); border-radius: 28px; background: #fff; box-shadow: 0 22px 65px rgba(15,45,91,.07); }
+.terminal-product-card.reverse .terminal-product-visual { order: 2; }
+.terminal-product-visual { position: relative; min-height: 500px; display: grid; place-items: center; padding: 58px; background: linear-gradient(145deg,#f8fbff,#edf4fd); }
+.terminal-product-visual>span { position: absolute; left: 31px; top: 25px; color: var(--blue); font-size: 12px; font-weight: 900; letter-spacing: .12em; }
+.terminal-product-visual img { display: block; width: 100%; max-width: 390px; max-height: 345px; object-fit: contain; filter: drop-shadow(0 24px 26px rgba(16,43,80,.13)); }
+.terminal-product-pair img { max-width: 470px; }
+.terminal-product-copy { display: flex; flex-direction: column; justify-content: center; padding: 65px 66px; }
+.terminal-product-type { margin: 0 0 15px; color: var(--blue); font-size: 12px; font-weight: 900; letter-spacing: .15em; }
+.terminal-product-copy h2 { margin: 0; color: var(--ink); font-size: clamp(32px,3.4vw,47px); line-height: 1.2; letter-spacing: -.055em; }
+.terminal-product-copy>p:not(.terminal-product-type) { margin: 25px 0 0; color: var(--muted); font-size: 17px; line-height: 1.85; }
+.terminal-note { width: fit-content; margin-top: 26px; padding: 9px 13px; color: #0d5ebc; background: var(--blue-light); border-radius: 8px; font-size: 13px; font-weight: 800; }
+.terminal-uses { margin-top: 29px; padding-top: 24px; display: flex; flex-wrap: wrap; gap: 9px; border-top: 1px solid var(--line); }
+.terminal-uses strong { flex-basis: 100%; margin-bottom: 4px; color: var(--ink); font-size: 14px; }
+.terminal-uses span { padding: 8px 11px; color: #42516a; background: var(--paper); border: 1px solid var(--line); border-radius: 999px; font-size: 13px; }
+.terminal-contact { max-width: calc(var(--max) - 48px); margin: 0 auto 70px; padding: 64px 70px; display: grid; grid-template-columns: 1fr 350px; gap: 70px; align-items: end; color: #fff; background: var(--navy); border-radius: 28px; }
+.terminal-contact h2 { margin: 0; font-size: clamp(32px,4vw,50px); line-height: 1.17; letter-spacing: -.055em; }
+.terminal-contact h2 span { display: block; white-space: nowrap; }
+.terminal-contact p:last-child { margin: 20px 0 0; color: #aebed8; }
+.terminal-contact>a { padding: 22px 0; display: flex; justify-content: space-between; gap: 20px; border-top: 1px solid rgba(255,255,255,.18); border-bottom: 1px solid rgba(255,255,255,.18); }
+.terminal-contact>a span { color: #9db0ce; font-size: 14px; }
+.terminal-contact>a strong { font-size: 18px; }
+
+@media(max-width:900px){
+  .terminal-intro { grid-template-columns: 1fr; gap: 28px; }
+  .terminal-product-card { grid-template-columns: 1fr; }
+  .terminal-product-card.reverse .terminal-product-visual { order: 0; }
+  .terminal-product-visual { min-height: 420px; }
+  .terminal-contact { grid-template-columns: 1fr; gap: 35px; margin-left: 18px; margin-right: 18px; }
+}
+@media(max-width:660px){
+  .terminal-hero-inner { min-height: 455px; padding: 90px 20px 75px; }
+  .terminal-hero h1 { font-size: 42px; }
+  .terminal-hero-inner>p:not(.eyebrow) { font-size: 16px; }
+  .terminal-intro { padding: 86px 20px 48px; }
+  .terminal-intro h2 { font-size: 35px; }
+  .terminal-products { padding: 0 14px 85px; gap: 18px; }
+  .terminal-product-card { min-height: 0; border-radius: 22px; }
+  .terminal-product-visual { min-height: 330px; padding: 45px 30px 30px; }
+  .terminal-product-visual img { max-height: 260px; }
+  .terminal-product-pair img { max-width: 390px; }
+  .terminal-product-copy { padding: 38px 25px 42px; }
+  .terminal-product-copy>p:not(.terminal-product-type) { font-size: 15px; line-height: 1.8; }
+  .terminal-contact { padding: 48px 25px; border-radius: 22px; }
+  .terminal-contact h2 span { white-space: normal; }
+}
