@@ -541,6 +541,13 @@ html[lang="en"] .family-links a { padding: 20px 22px; }
 .terminal-contact>a span { color: #9db0ce; font-size: 14px; }
 .terminal-contact>a strong { font-size: 18px; }
 
+.scanner-hero { background: linear-gradient(122deg,#061a42 0%,#0a2d6e 58%,#0879c9 100%); }
+.scanner-page .terminal-product-visual { background: radial-gradient(circle at 50% 38%,#fff 0%,#f4f8fd 48%,#eaf1fa 100%); }
+.scanner-page .terminal-product-visual img { max-width: 420px; max-height: 370px; }
+.scanner-page .scanner-handheld img { transform: rotate(-2deg); }
+.scanner-page .scanner-pocket img { max-width: 270px; }
+.scanner-page .scanner-desktop img { max-width: 390px; }
+
 @media(max-width:900px){
   .terminal-intro { grid-template-columns: 1fr; gap: 28px; }
   .terminal-product-card { grid-template-columns: 1fr; }
@@ -563,4 +570,6 @@ html[lang="en"] .family-links a { padding: 20px 22px; }
   .terminal-product-copy>p:not(.terminal-product-type) { font-size: 15px; line-height: 1.8; }
   .terminal-contact { padding: 48px 25px; border-radius: 22px; }
   .terminal-contact h2 span { white-space: normal; }
+  .scanner-page .terminal-product-visual img { max-height: 270px; }
+  .scanner-page .scanner-pocket img { max-width: 190px; }
 }
