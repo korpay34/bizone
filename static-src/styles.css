@@ -548,12 +548,39 @@ html[lang="en"] .family-links a { padding: 20px 22px; }
 .scanner-page .scanner-pocket img { max-width: 270px; }
 .scanner-page .scanner-desktop img { max-width: 390px; }
 
+.golf-hero { background: linear-gradient(122deg,#06172d 0%,#0a2b51 58%,#12573f 100%); }
+.golf-hero .terminal-hero-glow { background: #47bd7d; opacity: .25; }
+.golf-hero h1 em { color: #78e6a6; }
+.golf-hero-mark { position: absolute; right: max(24px,calc((100vw - var(--max))/2)); bottom: -18px; color: rgba(255,255,255,.045); font-size: clamp(70px,12vw,168px); font-weight: 950; letter-spacing: -.07em; white-space: nowrap; }
+.golf-page .terminal-product-type { color: #16794a; }
+.golf-page .terminal-product-visual>span { color: #16794a; }
+.golf-page .terminal-product-visual { background: radial-gradient(circle at 50% 44%,#fff 0%,#f3f8f5 53%,#e9f2ed 100%); }
+.golf-page .golf-product-visual img { max-width: 430px; max-height: 390px; }
+.golf-page .terminal-uses span { background: #f0f8f3; border-color: #d6e9dc; }
+.golf-accessories { max-width: var(--max); margin: auto; padding: 15px 24px 125px; }
+.golf-accessories-heading { max-width: 760px; margin-bottom: 46px; }
+.golf-accessories-heading h2 { margin: 0; color: var(--ink); font-size: clamp(35px,4.4vw,56px); line-height: 1.18; letter-spacing: -.055em; }
+.golf-accessories-heading h2 em { color: #16794a; font-style: normal; }
+.golf-accessories-heading>p:last-child { margin: 22px 0 0; color: var(--muted); font-size: 17px; }
+.golf-accessory-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 24px; }
+.golf-accessory-grid article { overflow: hidden; border: 1px solid var(--line); border-radius: 26px; background: #fff; box-shadow: 0 20px 60px rgba(15,45,91,.06); }
+.golf-accessory-image { min-height: 335px; display: grid; place-items: center; padding: 38px; background: linear-gradient(145deg,#f7faf8,#edf4f0); }
+.golf-accessory-image img { width: 100%; max-width: 430px; max-height: 280px; object-fit: contain; filter: drop-shadow(0 22px 25px rgba(16,43,35,.13)); }
+.golf-accessory-grid article>div:last-child { padding: 34px 38px 40px; }
+.golf-accessory-grid p { margin: 0 0 11px; color: #16794a; font-size: 11px; font-weight: 900; letter-spacing: .16em; }
+.golf-accessory-grid h3 { margin: 0; color: var(--ink); font-size: 28px; letter-spacing: -.045em; }
+.golf-accessory-grid span { display: block; margin-top: 15px; color: var(--muted); line-height: 1.75; }
+.golf-accessory-grid ul { margin: 22px 0 0; padding: 18px 0 0; display: flex; flex-wrap: wrap; gap: 8px; border-top: 1px solid var(--line); list-style: none; }
+.golf-accessory-grid li { padding: 8px 11px; color: #42516a; background: #f3f7f4; border-radius: 999px; font-size: 13px; }
+.golf-contact { background: linear-gradient(125deg,#071a32,#123b35); }
+
 @media(max-width:900px){
   .terminal-intro { grid-template-columns: 1fr; gap: 28px; }
   .terminal-product-card { grid-template-columns: 1fr; }
   .terminal-product-card.reverse .terminal-product-visual { order: 0; }
   .terminal-product-visual { min-height: 420px; }
   .terminal-contact { grid-template-columns: 1fr; gap: 35px; margin-left: 18px; margin-right: 18px; }
+  .golf-accessory-grid { grid-template-columns: 1fr; }
 }
 @media(max-width:660px){
   .terminal-hero-inner { min-height: 455px; padding: 90px 20px 75px; }
@@ -572,4 +599,12 @@ html[lang="en"] .family-links a { padding: 20px 22px; }
   .terminal-contact h2 span { white-space: normal; }
   .scanner-page .terminal-product-visual img { max-height: 270px; }
   .scanner-page .scanner-pocket img { max-width: 190px; }
+  .golf-page .golf-product-visual img { max-height: 275px; }
+  .golf-accessories { padding: 5px 14px 85px; }
+  .golf-accessories-heading { padding: 0 6px; margin-bottom: 30px; }
+  .golf-accessories-heading h2 { font-size: 34px; }
+  .golf-accessory-grid { gap: 18px; }
+  .golf-accessory-grid article { border-radius: 22px; }
+  .golf-accessory-image { min-height: 280px; padding: 28px; }
+  .golf-accessory-grid article>div:last-child { padding: 28px 24px 34px; }
 }
