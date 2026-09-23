@@ -5,6 +5,11 @@ window.bizoneAppTranslations = {
   '비즈원 홈': { en: 'BizOne home', ja: 'BizOne ホーム', zh: 'BizOne 首页' },
   '주요 메뉴': { en: 'Main navigation', ja: 'メインメニュー', zh: '主导航' },
   '오시는 길': { en: 'Directions', ja: 'アクセス', zh: '交通指南' },
+  'A/S: 1644-3475': { en: 'Support: 1644-3475', ja: 'アフターサービス：1644-3475', zh: '售后服务：1644-3475' },
+  'FAX: 0505-380-0884': { en: 'Fax: 0505-380-0884', ja: 'FAX：0505-380-0884', zh: '传真：0505-380-0884' },
+  '이용약관 안내': { en: 'Policies and terms', ja: 'ご利用規約のご案内', zh: '条款与政策' },
+  '하단 메뉴': { en: 'Footer navigation', ja: 'フッターメニュー', zh: '页脚导航' },
+  '현재 페이지 최상단으로 이동': { en: 'Back to top', ja: 'ページの先頭へ戻る', zh: '返回页面顶部' },
   '결제와 매출 관리,': { en: 'Payments and sales,', ja: '決済と売上の管理を、', zh: '支付与销售管理，' },
   '코페이장부 하나로': { en: 'all in Korpay Ledger', ja: 'Korpay帳簿ひとつで', zh: '尽在Korpay账簿' },
   '사업자가 아니어도 전화로 간단히 신청하세요. 가입비와 월 사용료 없이, 멀리 있는 고객의 카드결제부터 매출·정산 확인까지 한 앱에서 이용할 수 있습니다.': {

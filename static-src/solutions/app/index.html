@@ -7,8 +7,8 @@
   <meta name="description" content="코페이장부로 매출과 거래내역, 정산 및 결제 업무를 모바일에서 확인하세요.">
   <title>코페이장부 | BizOne APP</title>
   <style>
-    :root{--navy:#102448;--deep:#0b1e40;--blue:#1769d7;--sky:#8ac1ff;--ink:#1c2d49;--muted:#65748b;--line:#dce5f1;--pale:#f5f8fc;--red:#ef1740}
-    html{zoom:.95}
+    :root{--navy:#102448;--deep:#0b1e40;--blue:#1769d7;--sky:#8ac1ff;--ink:#1c2d49;--muted:#65748b;--line:#dce5f1;--pale:#f5f8fc;--red:#ef1740;--max:1200px}
+    @media(min-width:901px){html{zoom:.95}}
     *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Pretendard,"Noto Sans KR","Apple SD Gothic Neo",Inter,system-ui,sans-serif;color:var(--ink);word-break:keep-all}button,a{font:inherit}a{text-decoration:none;color:inherit}button{cursor:pointer}img{display:block;max-width:100%}
     .container{width:min(1160px,calc(100% - 48px));margin:auto}.eyebrow{font-size:12px;font-weight:850;letter-spacing:.19em;color:var(--blue);text-transform:uppercase}.section-title{font-size:clamp(30px,3.5vw,46px);line-height:1.24;letter-spacing:-.055em;margin:14px 0 16px;color:var(--deep)}.section-lead{color:var(--muted);line-height:1.8;font-size:16px;margin:0}.accent{color:var(--blue)}
     .site-header{height:74px;background:#fff;border-bottom:1px solid #e8eef7;position:sticky;top:0;z-index:50}.header-inner{width:min(1160px,calc(100% - 48px));height:100%;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:26px}.brand img{width:132px;height:auto}.header-actions{display:flex;align-items:center;gap:12px}.main-nav{display:flex;align-items:center;gap:27px}.nav-item{position:relative}.nav-trigger{border:0;background:none;padding:25px 0;font-size:14px;font-weight:750;color:#33435c}.nav-trigger:hover,.nav-trigger:focus-visible{color:var(--blue)}.submenu{position:absolute;top:65px;left:-20px;background:#fff;box-shadow:0 14px 36px #0f27402b;border:1px solid #e5edf7;border-radius:12px;padding:10px;min-width:185px;display:none}.nav-item:hover .submenu,.nav-item:focus-within .submenu,.nav-item.open .submenu{display:grid}.submenu a{font-size:14px;padding:10px 12px;border-radius:7px;white-space:nowrap}.submenu a:hover{background:#edf5ff;color:var(--blue)}.mall-link{font-size:14px;font-weight:800;color:#2869bd}.login{background:#1767c9;color:white;font-size:13px;font-weight:800;border-radius:9px;padding:11px 15px;box-shadow:0 5px 15px #1767c932}.menu-toggle{display:none;background:none;border:0;padding:9px}.menu-toggle span{display:block;width:22px;height:2px;background:var(--deep);margin:5px}
@@ -71,7 +71,7 @@
 .language-option.active::after { content: "✓"; color: #0967db; }
 
 /* Business information footer */
-.site-footer { max-width: none; min-height: 0; margin: 0; padding: 0; color: #aebbd0; background: #071934; }
+.site-footer { max-width: none; min-height: 0; margin: 0; padding: 0; color: #aebbd0; background: #071934; line-height: 1.6; }
 .site-footer .footer-inner { width: 100%; max-width: var(--max); margin: auto; padding: 56px 24px 52px; display: flex; align-items: flex-start; justify-content: space-between; gap: 70px; }
 .site-footer .footer-company { min-width: 0; }
 .site-footer .footer-company > strong { display: block; color: #fff; font-size: 20px; letter-spacing: -.025em; }
@@ -84,10 +84,11 @@
 .site-footer .footer-copyright { margin: 14px 0 0; color: #7f8fa7; font-size: 12px; line-height: 1.6; text-align: left; }
 .site-footer .footer-nav { display: flex; align-items: center; gap: 28px; flex: 0 0 auto; }
 .site-footer .footer-nav a { margin: 0; color: #fff; font-size: 14px; font-weight: 800; }
-.site-footer .footer-nav a:first-child { padding-bottom: 3px; border-bottom: 2px solid var(--blue); }
-.top-link { position:fixed; z-index:89; right:39px; bottom:34px; padding:9px 13px; color:#fff; background:#071c46; border:1px solid #344762; border-radius:8px; box-shadow:0 10px 28px rgba(7,28,70,.24); font-size:14px; font-weight:800; line-height:1.6; }
-.top-link:hover,.top-link:focus-visible { color:#fff; border-color:#6c84a4; }
-@media(max-width:660px){.top-link{right:25px;bottom:18px;padding:8px 11px;font-size:12px}}
+.site-footer .footer-nav a:first-child { padding-bottom: 3px; border-bottom: 2px solid #1977f3; }
+.site-footer #top-button { position:fixed;z-index:89;right:39px;bottom:34px;padding:9px 13px;color:#fff;background:#071c46;border:1px solid #344762;border-radius:8px;box-shadow:0 10px 28px rgba(7,28,70,.24); }
+.site-footer #top-button:hover { color:#fff; border-color:#6c84a4; }
+@media(max-width:950px){.site-footer .footer-inner{gap:40px}}
+@media(max-width:660px){.site-footer .footer-inner{padding:44px 20px 40px;flex-direction:column;gap:34px}.site-footer .footer-details p{font-size:13px}.site-footer .footer-details i{margin:0 5px}.site-footer .footer-terms{align-items:flex-start;flex-direction:column;gap:8px}.site-footer .footer-nav{width:100%;justify-content:space-between}.site-footer #top-button{right:25px;bottom:18px;padding:8px 11px;font-size:12px}}
 
 
     .language-toggle svg{fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round}
@@ -168,8 +169,21 @@
     <section class="how" id="download" aria-labelledby="how-title"><div class="container how-grid"><div><div class="eyebrow">GET STARTED</div><h2 id="how-title">전화 신청 후 바로 시작하세요</h2><p>사업자 여부와 관계없이 전화로 간단한 신청 절차를 안내받으세요. 신청 후 사용하는 휴대폰에 Korpay장부를 설치하면 됩니다.</p><p class="note">화면 예시는 공식 앱 등록 이미지입니다. 실제 화면과 이용 가능한 기능은 계정 권한 및 앱 버전에 따라 다를 수 있습니다.</p></div><div class="steps"><a class="step" href="tel:16445145"><strong>STEP 01</strong>1644-5145로 전화해 사용 신청</a><div class="step"><strong>STEP 02</strong>안내받은 계정으로 앱 이용 준비</div><div class="step"><strong>STEP 03</strong>Android 또는 iOS 앱 설치 후 로그인</div></div></div></section>
     <section class="cta"><div class="container cta-grid"><div><div class="eyebrow">KORPAY LEDGER</div><h2>사업자가 아니어도,<br>전화 한 통으로 시작하세요.</h2><p>가입비·월 사용료 없이 이용하세요. 신청과 정산 조건은 전화로 안내해드립니다.</p></div><div class="cta-links"><a class="btn btn-primary" href="tel:16445145">전화 신청 1644-5145</a><a class="btn btn-ghost" href="https://play.google.com/store/apps/details?id=com.korpay.mms&amp;hl=ko" target="_blank" rel="noopener">Android ↗</a><a class="btn btn-ghost" href="https://apps.apple.com/kr/app/korpay%EC%9E%A5%EB%B6%80/id6504791094" target="_blank" rel="noopener">iOS ↗</a></div></div></section>
   </main>
-  <footer class="footer"><div class="container footer-inner"><div><strong>주식회사 코페이</strong><p>사업자등록번호 206-81-90716 · 대표 채수철<br>서울 성동구 성수일로 77 서울숲IT밸리 608-611호</p></div><div>대표번호 1644-5145 · A/S 1644-3475<br>Copyright © 2026 주식회사 코페이. All Rights Reserved.</div></div></footer>
-  <a class="top-link" href="#top" aria-label="페이지 맨 위로">TOP ↑</a>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-company">
+        <strong>주식회사 코페이</strong>
+        <div class="footer-details">
+          <p>사업자등록번호: 206-81-90716 <i></i> 대표: 채수철</p>
+          <p>주소: 서울 성동구 성수일로 77 서울숲IT밸리 608-611호</p>
+          <p>대표번호: 1644-5145 <i></i> A/S: 1644-3475 <i></i> FAX: 0505-380-0884</p>
+        </div>
+        <div class="footer-terms" aria-label="이용약관 안내"><a href="/privacy/">개인정보 처리방침</a></div>
+        <p class="footer-copyright">Copyright © 2026 주식회사 코페이. All Rights Reserved.</p>
+      </div>
+      <nav class="footer-nav" aria-label="하단 메뉴"><a href="/support/resources/">자료실</a><a id="top-button" href="#top" aria-label="현재 페이지 최상단으로 이동">TOP ↑</a></nav>
+    </div>
+  </footer>
   <script src="/solutions/app/i18n.js"></script>
   <script src="/navigation.js"></script>
 </body>
