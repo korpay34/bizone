@@ -24,6 +24,73 @@
     @media(max-width:700px){.container,.header-inner{width:min(100% - 36px,1160px)}.site-header{height:64px}.brand img{width:112px}.menu-toggle{display:block}.header-actions .login,.header-actions .mall-link{display:none}.main-nav{display:none;position:absolute;top:64px;left:0;right:0;background:#fff;padding:10px 18px 22px;border-bottom:1px solid var(--line);box-shadow:0 18px 30px #1228491f;align-items:stretch;flex-direction:column;gap:0}.main-nav.show{display:flex}.nav-trigger{width:100%;text-align:left;padding:13px 0}.submenu{position:static;box-shadow:none;border:0;border-radius:0;padding:0 0 9px 12px;min-width:0;display:none}.nav-item.open .submenu{display:grid}.main-nav .mall-link,.main-nav .login{padding:11px 0}.hero-grid{grid-template-columns:1fr;gap:10px;padding:60px 0 42px}.hero h1{font-size:42px}.hero p{font-size:15px}.hero-visual{height:350px}.halo{width:340px;height:340px}.phone.main{width:186px;height:331px}.phone.back{width:156px;height:277px}.app-bar-inner{align-items:flex-start;flex-direction:column;padding:18px 0;gap:10px}.app-switch{width:100%}.app-switch a,.app-switch span{flex:1;justify-content:center;padding:12px 6px;font-size:12px}.overview,.more{padding:76px 0}.overview-heading,.more-heading{display:block}.value-grid{grid-template-columns:1fr}.value-card,.value-card:last-child{grid-column:auto}.value-card{padding:24px}.icon-box{margin:0}.features{padding:76px 0}.feature-head{margin-bottom:30px}.feature-row,.feature-row.reverse{grid-template-columns:1fr;gap:0;margin-bottom:18px}.feature-copy,.reverse .feature-copy{order:2;padding:32px 27px 38px}.feature-media,.feature-row.reverse .feature-media{order:1;min-height:345px;height:345px}.feature-media img{width:175px;height:311px}.feature-media.double img{width:152px;height:270px}.detail-grid{grid-template-columns:1fr 1fr;gap:10px}.detail-card{min-height:175px;padding:19px 17px}.how-grid{grid-template-columns:1fr;gap:30px}.cta-grid,.footer-inner{display:block}.cta-links{margin-top:26px}.footer-inner>div+div{margin-top:16px}}
     @media(max-width:410px){.hero h1{font-size:37px}.hero-points{gap:9px 15px}.detail-grid{grid-template-columns:1fr}.detail-card{min-height:0}.app-switch small{display:none}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+
+    :root{--blue-light:#eef5ff}
+.consult-float { position: fixed; z-index: 90; right: 28px; bottom: 92px; width: 92px; height: 92px; padding: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #fff; background: linear-gradient(145deg,#1680ff,#0c55be); border: 5px solid #fff; border-radius: 50%; box-shadow: 0 18px 45px rgba(9,54,123,.32); cursor: pointer; transition: transform .2s,box-shadow .2s; }
+.consult-float:hover,.consult-float:focus-visible { transform: translateY(-4px); box-shadow: 0 23px 52px rgba(9,54,123,.4); }
+.consult-float span { color: #cfe5ff; font-size: 18px; font-weight: 750; line-height: 1.2; }
+.consult-float strong { font-size: 18px; line-height: 1.2; }
+.consult-dialog { width: min(92vw,560px); max-height: 90vh; margin: auto; padding: 0; overflow: auto; color: var(--ink); background: #fff; border: 0; border-radius: 24px; box-shadow: 0 35px 100px rgba(2,15,39,.4); }
+.consult-dialog::backdrop { background: rgba(3,16,40,.66); backdrop-filter: blur(4px); }
+.consult-close { position: absolute; z-index: 1; right: 19px; top: 17px; width: 40px; height: 40px; padding: 0; color: #fff; background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.22); border-radius: 50%; font-size: 27px; line-height: 1; cursor: pointer; }
+.consult-heading { padding: 34px 38px 30px; color: #fff; background: linear-gradient(120deg,#071c46,#0b4d9f); }
+.consult-heading>span { color: #78b8ff; font-size: 11px; font-weight: 900; letter-spacing: .16em; }
+.consult-heading h2 { margin: 9px 0 5px; font-size: 32px; letter-spacing: -.045em; }
+.consult-heading p { margin: 0; color: #b9cce6; font-size: 14px; }
+.consult-dialog form { padding: 28px 38px 34px; }
+.consult-dialog label:not(.consult-consent),.consult-field { display: block; margin-bottom: 18px; }
+.consult-dialog label>span,.consult-field>span { display: block; margin-bottom: 7px; color: #34425a; font-size: 14px; font-weight: 750; }
+.consult-dialog b { color: var(--blue); }
+.consult-dialog input[type="text"],.consult-dialog input[type="tel"],.consult-dialog select,.consult-dialog textarea { width: 100%; min-height: 48px; padding: 12px 14px; color: var(--ink); background: #f7f9fc; border: 1px solid #dce3ed; border-radius: 10px; outline: none; font: inherit; font-size: 15px; }
+.consult-dialog input:focus,.consult-dialog select:focus,.consult-dialog textarea:focus { border-color: #2b82f1; box-shadow: 0 0 0 3px rgba(25,119,243,.12); }
+.consult-dialog textarea { min-height: 105px; resize: vertical; }
+.region-selects { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; }
+.consult-consent { display: flex; align-items: flex-start; gap: 9px; margin: 3px 0 18px; cursor: pointer; }
+.consult-consent input { margin-top: 4px; accent-color: var(--blue); }
+.consult-consent span { color: #68748a; font-size: 13px; }
+.consult-submit { width: 100%; min-height: 52px; display: flex; align-items: center; justify-content: center; gap: 15px; color: #fff; background: var(--blue); border: 0; border-radius: 11px; font-weight: 850; cursor: pointer; }
+.consult-submit:hover { background: #0866dd; }
+.consult-submit:disabled { opacity: .65; cursor: wait; }
+.consult-status { min-height: 0; margin: 12px 0 0; font-size: 13px; text-align: center; }
+.consult-status.success { color: #09784c; }
+.consult-status.error { color: #c13636; }
+.consult-honey { position: absolute!important; left: -9999px!important; opacity: 0!important; }
+.dialog-open { overflow: hidden; }
+
+.language-selector { position: relative; display: flex; align-items: center; align-self: stretch; margin-left: 2px; }
+.language-toggle { display: inline-flex; align-items: center; gap: 7px; min-height: 40px; padding: 0 4px; border: 0; background: transparent; color: #27354e; font-size: 13px; font-weight: 750; cursor: pointer; white-space: nowrap; }
+.language-toggle svg { width: 17px; height: 17px; stroke-width: 1.7; }
+.language-toggle .language-chevron { width: 7px; height: 7px; margin: -3px 2px 0 1px; border-right: 1.5px solid #66758d; border-bottom: 1.5px solid #66758d; transform: rotate(45deg); transition: transform .18s; }
+.language-selector.open .language-chevron { margin-top: 3px; transform: rotate(225deg); }
+.language-menu { position: absolute; top: calc(100% - 8px); right: 0; z-index: 100; width: 148px; padding: 8px; opacity: 0; visibility: hidden; pointer-events: none; transform: translateY(8px); background: #fff; border: 1px solid var(--line); border-radius: 12px; box-shadow: 0 16px 40px rgba(7,28,70,.16); transition: .18s; }
+.language-selector.open .language-menu { opacity: 1; visibility: visible; pointer-events: auto; transform: translateY(0); }
+.language-option { width: 100%; display: flex; align-items: center; justify-content: space-between; padding: 9px 10px; border: 0; border-radius: 7px; background: transparent; color: #26344d; font-size: 14px; text-align: left; cursor: pointer; }
+.language-option:hover,.language-option:focus-visible { background: var(--blue-light); }
+.language-option.active { color: #0967db; font-weight: 800; }
+.language-option.active::after { content: "✓"; color: #0967db; }
+
+/* Business information footer */
+.site-footer { max-width: none; min-height: 0; margin: 0; padding: 0; color: #aebbd0; background: #071934; }
+.site-footer .footer-inner { width: 100%; max-width: var(--max); margin: auto; padding: 56px 24px 52px; display: flex; align-items: flex-start; justify-content: space-between; gap: 70px; }
+.site-footer .footer-company { min-width: 0; }
+.site-footer .footer-company > strong { display: block; color: #fff; font-size: 20px; letter-spacing: -.025em; }
+.site-footer .footer-details { margin-top: 22px; }
+.site-footer .footer-details p { margin: 2px 0; color: #aebbd0; font-size: 14px; line-height: 1.75; }
+.site-footer .footer-details i { display: inline-block; width: 1px; height: 11px; margin: 0 9px; background: #53627a; vertical-align: -1px; }
+.site-footer .footer-terms { display: flex; flex-wrap: wrap; justify-content: flex-start; gap: 9px 25px; margin-top: 30px; text-align: left; }
+.site-footer .footer-terms a { margin: 0; color: #e9eff8; font-size: 14px; font-weight: 750; }
+.site-footer .footer-terms a:hover,.site-footer .footer-terms a:focus-visible { color: #fff; text-decoration: underline; text-underline-offset: 4px; }
+.site-footer .footer-copyright { margin: 14px 0 0; color: #7f8fa7; font-size: 12px; line-height: 1.6; text-align: left; }
+.site-footer .footer-nav { display: flex; align-items: center; gap: 28px; flex: 0 0 auto; }
+.site-footer .footer-nav a { margin: 0; color: #fff; font-size: 14px; font-weight: 800; }
+.site-footer .footer-nav a:first-child { padding-bottom: 3px; border-bottom: 2px solid var(--blue); }
+.site-footer #top-button { position:fixed;z-index:89;right:39px;bottom:34px;padding:9px 13px;color:#fff;background:#071c46;border:1px solid #344762;border-radius:8px;box-shadow:0 10px 28px rgba(7,28,70,.24); }
+.site-footer #top-button:hover { color: #fff; border-color: #6c84a4; }
+@media(max-width:660px){.site-footer #top-button{right:25px;bottom:18px;padding:8px 11px;font-size:12px}}
+
+
+    .language-toggle svg{fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round}
+    @media(max-width:700px){.main-nav.open{display:flex}.language-selector{width:100%;align-self:auto;flex-direction:column;align-items:stretch;margin:6px 0 0}.language-toggle{min-height:46px;justify-content:flex-start;padding:0}.language-toggle .language-chevron{margin-left:auto}.language-menu{position:static;display:none;width:100%;padding:6px;opacity:1;visibility:visible;pointer-events:auto;transform:none;box-shadow:none;background:#f6f9fd}.language-selector.open .language-menu{display:block}.consult-float{right:16px;bottom:76px;width:78px;height:78px;border-width:4px}.consult-float span,.consult-float strong{font-size:16px}.consult-dialog{width:calc(100vw - 24px);border-radius:20px}.consult-heading{padding:29px 24px 25px}.consult-heading h2{font-size:28px}.consult-dialog form{padding:24px}.region-selects{grid-template-columns:1fr}}
   </style>
 </head>
 <body id="top">
@@ -101,16 +168,7 @@
   </main>
   <footer class="footer"><div class="container footer-inner"><div><strong>주식회사 코페이</strong><p>사업자등록번호 206-81-90716 · 대표 채수철<br>서울 성동구 성수일로 77 서울숲IT밸리 608-611호</p></div><div>대표번호 1644-5145 · A/S 1644-3475<br>Copyright © 2026 주식회사 코페이. All Rights Reserved.</div></div></footer>
   <a class="top-link" href="#top" aria-label="페이지 맨 위로">TOP ↑</a>
-  <script>
-    const menu = document.querySelector('.menu-toggle');
-    const nav = document.querySelector('.main-nav');
-    menu.addEventListener('click', () => { const open = nav.classList.toggle('show'); menu.setAttribute('aria-expanded', String(open)); });
-    document.querySelectorAll('.nav-trigger').forEach(button => button.addEventListener('click', () => {
-      const item = button.closest('.nav-item'); const open = !item.classList.contains('open');
-      document.querySelectorAll('.nav-item').forEach(other => { other.classList.remove('open'); other.querySelector('.nav-trigger').setAttribute('aria-expanded','false'); });
-      item.classList.toggle('open', open); button.setAttribute('aria-expanded',String(open));
-    }));
-    document.addEventListener('click', event => { if(!event.target.closest('.nav-item')) document.querySelectorAll('.nav-item').forEach(item => { item.classList.remove('open'); item.querySelector('.nav-trigger').setAttribute('aria-expanded','false'); }); });
-  </script>
+  <script src="/solutions/app/i18n.js"></script>
+  <script src="/navigation.js"></script>
 </body>
 </html>

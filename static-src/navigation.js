@@ -18,7 +18,10 @@ const closeSubmenus = (except = null) => {
 menuButton?.addEventListener('click', () => {
   const isOpen = navigation.classList.toggle('open');
   menuButton.setAttribute('aria-expanded', String(isOpen));
-  menuButton.setAttribute('aria-label', isOpen ? '메뉴 닫기' : '메뉴 열기');
+  const label = isOpen ? '메뉴 닫기' : '메뉴 열기';
+  let locale = 'ko';
+  try { locale = localStorage.getItem('bizone-locale') || 'ko'; } catch (_) {}
+  menuButton.setAttribute('aria-label', dynamicTranslation(label, locale));
   if (!isOpen) closeSubmenus();
 });
 
@@ -141,7 +144,7 @@ consultForm.addEventListener('submit', async (event) => {
   event.preventDefault();
   const button = consultForm.querySelector('.consult-submit');
   button.disabled = true;
-  button.firstChild.textContent = '전송 중 ';
+  button.firstChild.textContent = dynamicTranslation('전송 중', document.documentElement.lang === 'zh-CN' ? 'zh' : document.documentElement.lang) + ' ';
   consultStatus.className = 'consult-status';
   consultStatus.textContent = '';
   try {
@@ -155,13 +158,17 @@ consultForm.addEventListener('submit', async (event) => {
     districtSelect.innerHTML = '<option value="">시·군·구 선택</option>';
     districtSelect.disabled = true;
     consultStatus.className = 'consult-status success';
-    consultStatus.textContent = '상담신청이 접수되었습니다. 담당자가 확인 후 연락드리겠습니다.';
+    const successMessage = '상담신청이 접수되었습니다. 담당자가 확인 후 연락드리겠습니다.';
+    consultStatus.textContent = dynamicTranslation(successMessage, document.documentElement.lang === 'zh-CN' ? 'zh' : document.documentElement.lang);
+    textSources.set(consultStatus.firstChild, successMessage);
   } catch (error) {
     consultStatus.className = 'consult-status error';
-    consultStatus.textContent = '전송하지 못했습니다. 잠시 후 다시 시도해주세요.';
+    const errorMessage = '전송하지 못했습니다. 잠시 후 다시 시도해주세요.';
+    consultStatus.textContent = dynamicTranslation(errorMessage, document.documentElement.lang === 'zh-CN' ? 'zh' : document.documentElement.lang);
+    textSources.set(consultStatus.firstChild, errorMessage);
   } finally {
     button.disabled = false;
-    button.firstChild.textContent = '상담신청 ';
+    button.firstChild.textContent = dynamicTranslation('상담신청', document.documentElement.lang === 'zh-CN' ? 'zh' : document.documentElement.lang) + ' ';
   }
 });
 
@@ -209,6 +216,7 @@ const preserveSpacing = (value, replacement) => value.replace(value.trim(), repl
 
 function dynamicTranslation(source, locale) {
   if (locale === 'ko') return source;
+  if (window.bizoneAppTranslations?.[source]?.[locale]) return window.bizoneAppTranslations[source][locale];
   const splitCopy = {
     '매장과 업무 환경에 맞는': { en: 'For Every Payment Environment', ja: '店舗と業務環境に合った', zh: '适合门店与业务环境的' },
     '휴대형 결제부터 영수증 출력이 필요한 현장까지,': { en: 'From mobile payments to locations requiring printed receipts,', ja: '携帯型決済からレシート出力が必要な現場まで、', zh: '从移动支付到需要打印收据的现场，' },
@@ -359,6 +367,11 @@ function dynamicTranslation(source, locale) {
 function applyLocale(locale) {
   const dictionary = translations[locale] || {};
   document.documentElement.lang = locale === 'zh' ? 'zh-CN' : locale;
+  const pageMetadata = window.bizoneAppPageMetadata?.[locale];
+  if (pageMetadata) {
+    document.title = pageMetadata.title;
+    document.querySelector('meta[name="description"]')?.setAttribute('content', pageMetadata.description);
+  }
   const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
   const nodes = [];
   while (walker.nextNode()) nodes.push(walker.currentNode);
