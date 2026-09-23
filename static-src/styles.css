@@ -613,3 +613,16 @@ html[lang="en"] .family-links a { padding: 20px 22px; }
   .golf-accessory-grid article>div:last-child { padding: 28px 24px 34px; }
   .faq-shell,.inquiry-section{padding-left:16px;padding-right:16px}.faq-shell{padding-top:78px}.faq-heading h2,.inquiry-heading h2{font-size:35px}.faq-filters{overflow-x:auto;flex-wrap:nowrap;padding-bottom:5px}.faq-filters button{flex:none}.faq-list summary{min-height:76px;padding:0 8px;grid-template-columns:72px 1fr 23px;gap:9px}.faq-list summary strong{font-size:15px}.faq-list details>div{padding:23px 18px}.inquiry-heading>.inquiry-write{display:none}.inquiry-table .col-author,.inquiry-table .col-date{width:88px}.inquiry-table .col-status{width:84px}.inquiry-table th,.inquiry-table td{padding:0 6px;font-size:12px}.inquiry-table th:nth-child(3),.inquiry-table td:nth-child(3){display:none}.lock-mark{display:none}.inquiry-bottom{align-items:stretch;flex-direction:column;gap:12px}.inquiry-search input{width:100%}.inquiry-write.mobile{display:block;width:100%}.inquiry-dialog form{padding:36px 22px 28px}.inquiry-form-row{grid-template-columns:1fr}
 }
+
+/* FAQ interaction refinements (kept after responsive rules for precedence) */
+.faq-heading h2,.inquiry-heading h2{font-size:clamp(30px,3.5vw,44px)}
+.password-dialog{max-width:360px}
+.password-dialog form{padding:32px 30px 28px}
+.password-dialog .inquiry-dialog-head{margin-bottom:20px}
+.password-dialog .inquiry-dialog-head h2{font-size:25px}
+.password-dialog .inquiry-dialog-head span{font-size:13px}
+.password-dialog .inquiry-submit{margin-top:18px}
+.title-lock{position:relative;display:inline-block;width:12px;height:14px;margin-right:8px;vertical-align:-2px;flex:none}
+.title-lock::before{content:"";position:absolute;left:2px;top:0;width:6px;height:6px;border:1.5px solid #738096;border-bottom:0;border-radius:6px 6px 0 0}
+.title-lock::after{content:"";position:absolute;left:0;bottom:0;width:11px;height:8px;background:#738096;border-radius:2px}
+@media(max-width:600px){.faq-heading h2,.inquiry-heading h2{font-size:30px}.password-dialog form{padding:30px 22px 24px}}
