@@ -2,6 +2,10 @@ const navigation = document.querySelector('.main-nav');
 const menuButton = document.querySelector('.menu-toggle');
 const submenuTriggers = document.querySelectorAll('.nav-trigger');
 
+document.querySelectorAll('.main-nav .submenu a').forEach((link) => {
+  if (['라벨프린터', '교육일정'].includes(link.textContent.trim())) link.remove();
+});
+
 const closeSubmenus = (except = null) => {
   document.querySelectorAll('.nav-item.open').forEach((item) => {
     if (item !== except) {

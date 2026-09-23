@@ -527,7 +527,7 @@ html[lang="en"] .family-links a { padding: 20px 22px; }
 .terminal-product-card { min-height: 500px; display: grid; grid-template-columns: 1fr 1fr; overflow: hidden; border: 1px solid var(--line); border-radius: 28px; background: #fff; box-shadow: 0 22px 65px rgba(15,45,91,.07); }
 .terminal-product-card.reverse .terminal-product-visual { order: 2; }
 .terminal-product-visual { position: relative; min-height: 500px; display: grid; place-items: center; padding: 58px; background: linear-gradient(145deg,#f8fbff,#edf4fd); }
-.terminal-product-visual>span { position: absolute; left: 31px; top: 25px; color: var(--blue); font-size: 12px; font-weight: 900; letter-spacing: .12em; }
+.terminal-product-visual>span { display: none; }
 .terminal-product-visual img { display: block; width: 100%; max-width: 390px; max-height: 345px; object-fit: contain; filter: drop-shadow(0 24px 26px rgba(16,43,80,.13)); }
 .terminal-product-pair img { max-width: 470px; }
 .terminal-product-copy { display: flex; flex-direction: column; justify-content: center; padding: 65px 66px; }
