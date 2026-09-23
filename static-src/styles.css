@@ -626,3 +626,5 @@ html[lang="en"] .family-links a { padding: 20px 22px; }
 .title-lock::before{content:"";position:absolute;left:2px;top:0;width:6px;height:6px;border:1.5px solid #738096;border-bottom:0;border-radius:6px 6px 0 0}
 .title-lock::after{content:"";position:absolute;left:0;bottom:0;width:11px;height:8px;background:#738096;border-radius:2px}
 @media(max-width:600px){.faq-heading h2,.inquiry-heading h2{font-size:30px}.password-dialog form{padding:30px 22px 24px}}
+.faq-heading{justify-content:flex-start}
+.faq-heading-description{max-width:490px;margin:8px 0 0;color:var(--muted);font-size:16px;text-align:left}

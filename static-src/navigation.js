@@ -302,6 +302,7 @@ function dynamicTranslation(source, locale) {
     '기타': { en: 'Other', ja: 'その他', zh: '其他' },
     '문의게시판': { en: 'Inquiry Board', ja: 'お問い合わせ掲示板', zh: '咨询板' },
     'FAQ에서 해결되지 않은 내용을 자유롭게 남겨주세요. 문의 내용은 비밀번호로 보호됩니다.': { en: 'Leave any unanswered questions here. Inquiry details are password-protected.', ja: 'FAQで解決しない内容をご自由にお寄せください。内容はパスワードで保護されます。', zh: '欢迎留言咨询FAQ中未解决的问题，内容将由密码保护。' },
+    '문의 내용은 비밀번호로 보호됩니다.': { en: 'Inquiry details are password-protected.', ja: 'お問い合わせ内容はパスワードで保護されます。', zh: '咨询内容受密码保护。' },
     '문의글 작성': { en: 'Write Inquiry', ja: 'お問い合わせ作成', zh: '填写咨询' },
     '처리상태': { en: 'Status', ja: '処理状況', zh: '处理状态' },
     '비밀글': { en: 'Private', ja: '非公開', zh: '私密' },
