@@ -628,3 +628,9 @@ html[lang="en"] .family-links a { padding: 20px 22px; }
 @media(max-width:600px){.faq-heading h2,.inquiry-heading h2{font-size:30px}.password-dialog form{padding:30px 22px 24px}}
 .faq-heading{justify-content:flex-start}
 .faq-heading-description{max-width:490px;margin:8px 0 0;color:var(--muted);font-size:16px;text-align:left}
+.inquiry-write{min-width:0;padding:11px 17px;justify-content:center;font-size:13px}
+.private-post-content{margin-top:8px;padding-top:20px;border-top:1px solid var(--line)}
+.private-post-content>span{display:inline-block;margin-bottom:9px;color:var(--blue);font-size:11px;font-weight:850}
+.private-post-content h3{margin:0 0 20px;color:var(--ink);font-size:20px;letter-spacing:-.03em}
+.private-post-content strong{display:block;margin-bottom:7px;color:#35435a;font-size:12px}
+.private-post-content p{margin:0;padding:14px;color:#536177;background:#f6f8fb;border-radius:9px;white-space:pre-wrap;line-height:1.75}
