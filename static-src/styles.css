@@ -655,3 +655,12 @@ html[lang="en"] .family-links a { padding: 20px 22px; }
 .waiting-answer{background:#f7f8fa;border-left-color:#aab4c2}
 .waiting-answer p{margin-top:8px;color:#728097}
 @media(max-width:600px){.inquiry-password-card{padding:30px 22px}.inquiry-answer{margin:0 18px 24px;padding:22px}.inquiry-answer>div{align-items:flex-start;flex-direction:column;gap:4px}}
+.list-password-dialog{width:min(90vw,370px);border-radius:17px}
+.list-password-dialog form{padding:30px 28px 25px}
+.list-password-dialog .inquiry-dialog-close{right:16px;top:14px;width:32px;height:32px;font-size:20px}
+.list-password-dialog .inquiry-dialog-head{margin-bottom:18px;padding-right:25px}
+.list-password-dialog .inquiry-dialog-head h2{font-size:23px}
+.list-password-dialog .selected-inquiry-title{max-width:270px;margin-top:7px;overflow:hidden;color:var(--muted);font-size:12px;text-overflow:ellipsis;white-space:nowrap}
+.list-password-dialog label{margin-top:0}
+.list-password-dialog input{padding:12px 13px}
+.list-password-dialog .inquiry-submit{margin-top:14px;padding:12px}
