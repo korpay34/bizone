@@ -211,7 +211,7 @@ const translations = {
 
 const textSources = new WeakMap();
 const attributeSources = new WeakMap();
-const translatableAttributes = ['placeholder','aria-label','title'];
+const translatableAttributes = ['placeholder','aria-label','title','alt'];
 const preserveSpacing = (value, replacement) => value.replace(value.trim(), replacement);
 
 function dynamicTranslation(source, locale) {
@@ -397,6 +397,8 @@ function applyLocale(locale) {
   document.querySelectorAll('.language-option').forEach((button) => button.classList.toggle('active', button.dataset.locale === locale));
   const current = document.querySelector('.language-current');
   if (current) current.textContent = localeLabels[locale];
+  const languageToggle = document.querySelector('.language-toggle');
+  if (languageToggle) languageToggle.setAttribute('aria-label', dynamicTranslation('언어 선택', locale));
   try { localStorage.setItem('bizone-locale', locale); } catch (_) {}
 }
 
