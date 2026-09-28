@@ -20,7 +20,7 @@ menuButton?.addEventListener('click', () => {
   menuButton.setAttribute('aria-expanded', String(isOpen));
   const label = isOpen ? '메뉴 닫기' : '메뉴 열기';
   let locale = 'ko';
-  try { locale = localStorage.getItem('bizone-locale') || 'ko'; } catch (_) {}
+  try { locale = sessionStorage.getItem('bizone-locale') || 'ko'; } catch (_) {}
   menuButton.setAttribute('aria-label', dynamicTranslation(label, locale));
   if (!isOpen) closeSubmenus();
 });
@@ -399,7 +399,7 @@ function applyLocale(locale) {
   if (current) current.textContent = localeLabels[locale];
   const languageToggle = document.querySelector('.language-toggle');
   if (languageToggle) languageToggle.setAttribute('aria-label', dynamicTranslation('언어 선택', locale));
-  try { localStorage.setItem('bizone-locale', locale); } catch (_) {}
+  try { sessionStorage.setItem('bizone-locale', locale); } catch (_) {}
 }
 
 function initLanguageSelector() {
@@ -418,6 +418,10 @@ function initLanguageSelector() {
     applyLocale(button.dataset.locale);
     selector.classList.remove('open');
     toggle.setAttribute('aria-expanded','false');
+    navigation.classList.remove('open');
+    menuButton?.setAttribute('aria-expanded', 'false');
+    menuButton?.setAttribute('aria-label', dynamicTranslation('메뉴 열기', button.dataset.locale));
+    closeSubmenus();
   }));
   document.addEventListener('click', (event) => {
     if (!event.target.closest('.language-selector')) {
@@ -426,7 +430,7 @@ function initLanguageSelector() {
     }
   });
   let saved = 'ko';
-  try { saved = localStorage.getItem('bizone-locale') || 'ko'; } catch (_) {}
+  try { saved = sessionStorage.getItem('bizone-locale') || 'ko'; } catch (_) {}
   applyLocale(localeLabels[saved] ? saved : 'ko');
 }
 
