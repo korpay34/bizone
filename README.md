@@ -28,3 +28,22 @@ BizOne 회사 홈페이지와 공지사항·자료실 관리자 기능을 제공
 
 R2를 사용하지 않으므로 결제수단 등록 없이 운영할 수 있습니다.
 최초 배포 연결 완료
+
+
+## 2026-10-14 홈페이지 교체
+
+승인된 새 홈페이지를 `static-src`에 적용했습니다. 루트 주소는 새 메인화면이며 회사소개, 도입사례, 코페이장부, 개인정보 처리방침도 함께 제공됩니다.
+
+- 기존 Cloudflare Worker 이름 `bizone`과 자동배포 저장소를 유지합니다.
+- 기존 D1 `bizone-db`, 관리자 로그인 설정, 게시판 API 및 게시글을 유지합니다.
+- 사진은 Worker 코드에 포함하지 않고 Workers Static Assets로 제공합니다.
+- `npm run build`로 `dist/worker.js`와 `dist/assets`를 생성합니다.
+- `npm run validate`로 새 홈페이지와 기존 관리자/게시판 경로를 검사합니다.
+- 이전 소스는 `backup/pre-renewal-20261014` 브랜치에 있습니다.
+
+관리자: `/admin/`
+공지사항: `/support/notices/`
+자료실: `/support/resources/`
+FAQ 및 문의게시판: `/support/faq/`
+
+DB 초기화나 마이그레이션은 홈페이지 교체 과정에서 실행하지 않습니다. 기존 Cloudflare 환경변수와 비밀 설정을 그대로 사용합니다.

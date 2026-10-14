@@ -1,4 +1,4 @@
-const STATIC_FILES = __STATIC_FILES__;
+
 const SESSION_COOKIE = "bizone_admin_session";
 const SESSION_MAX_AGE = 60 * 60 * 8;
 const LOGIN_WINDOW_SECONDS = 60 * 15;
@@ -34,7 +34,7 @@ async function route(request, env) {
   match = path.match(/^\/api\/admin\/inquiries\/(\d+)$/);
   if (match && method === "POST") return answerInquiry(Number(match[1]), request, env);
   if (match && method === "DELETE") return deleteInquiry(Number(match[1]), request, env);
-  return serveStatic(path);
+  return serveStatic(path,request,env);
 }
 
 async function ensureInquirySchema(db){
@@ -57,9 +57,9 @@ async function faqPage(env){
   await ensureInquirySchema(env.DB);
   const result=await env.DB.prepare("SELECT id,title,author,answer,created_at FROM inquiries ORDER BY id DESC LIMIT 100").all(),rows=result.results||[];
   const tableRows=rows.length?rows.map((item,index)=>`<tr><td>${rows.length-index}</td><td class="inquiry-title"><a href="/support/faq/${item.id}"><span class="title-lock" aria-hidden="true"></span>${escapeHtml(item.title)}</a></td><td>${escapeHtml(maskAuthor(item.author))}</td><td>${formatDate(item.created_at)}</td><td><span class="status ${item.answer?"answered":"waiting"}">${item.answer?"답변완료":"접수완료"}</span></td></tr>`).join(""):`<tr><td class="resource-empty" colspan="5">등록된 문의글이 없습니다.</td></tr>`;
-  const file=STATIC_FILES["/support/faq/index.html"];
-  if(!file)return new Response("Not found",{status:404});
-  const source=file.encoding==="base64"?new TextDecoder().decode(Uint8Array.from(atob(file.body),c=>c.charCodeAt(0))):file.body;
+  const template=await env.ASSETS.fetch(new Request("https://assets.local/support/faq/index.html"));
+  if(!template.ok)return new Response("Not found",{status:404});
+  const source=await template.text();
   return html(source.replace('<tbody id="inquiry-list"></tbody>',`<tbody id="inquiry-list">${tableRows}</tbody>`));
 }
 
@@ -256,7 +256,24 @@ function base64UrlEncode(bytes){let binary="";for(const byte of bytes)binary+=St
 function base64UrlDecode(value){try{const normalized=value.replaceAll("-","+").replaceAll("_","/")+"=".repeat((4-value.length%4)%4),binary=atob(normalized),bytes=new Uint8Array(binary.length);for(let i=0;i<binary.length;i++)bytes[i]=binary.charCodeAt(i);return bytes}catch{return new Uint8Array()}}
 async function sha256Hex(value){const bytes=new Uint8Array(await crypto.subtle.digest("SHA-256",new TextEncoder().encode(value)));return Array.from(bytes,b=>b.toString(16).padStart(2,"0")).join("")}
 
-function serveStatic(pathname){let path=pathname;if(path==="/")path="/index.html";else if(path.endsWith("/"))path+="index.html";else if(!path.includes("."))path+="/index.html";const file=STATIC_FILES[path];if(!file)return new Response("Not found",{status:404});const body=file.encoding==="base64"?Uint8Array.from(atob(file.body),c=>c.charCodeAt(0)):file.body;const noCache=path.endsWith(".html")||path.endsWith(".css")||path.endsWith(".js"),headers={"content-type":mime(path),"cache-control":noCache?"no-cache":"public, max-age=3600"};if(path.startsWith("/downloads/")&&!path.endsWith("README.md"))headers["content-disposition"]=`attachment; filename*=UTF-8''${encodeURIComponent(path.split("/").pop()||"download")}`;return new Response(body,{headers})}
+async function serveStatic(pathname,request,env){
+  let path=pathname;
+  if(path==="/a-app-20260928.html")return Response.redirect(new URL("/a-app-20260928-v2.html",request.url).toString(),302);
+  if(path==="/a-cases"||path==="/a-cases/")path="/a-cases.html";
+  else if(path==="/a-about-20260928")path="/a-about-20260928.html";
+  else if(path==="/a-app-20260928-v2")path="/a-app-20260928-v2.html";
+  else if(path==="/a-privacy-20260928")path="/a-privacy-20260928.html";
+  else if(path==="/")path="/index.html";
+  else if(path.endsWith("/"))path+="index.html";
+  else if(!path.split("/").pop().includes("."))path+="/index.html";
+  const assetUrl=new URL(request.url);assetUrl.pathname=path;
+  const response=await env.ASSETS.fetch(new Request(assetUrl,request));
+  const headers=new Headers(response.headers);
+  if(/\.(html|css|js)$/.test(path))headers.set("cache-control","no-cache");
+  headers.set("x-content-type-options","nosniff");
+  if(path.startsWith("/downloads/")&&!path.endsWith("README.md"))headers.set("content-disposition",`attachment; filename*=UTF-8''${encodeURIComponent(path.split("/").pop()||"download")}`);
+  return new Response(response.body,{status:response.status,statusText:response.statusText,headers});
+}
 function pageShell(title,main){return `<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>BizOne | ${escapeHtml(title)}</title><link rel="icon" href="/favicon.svg"><link rel="stylesheet" href="/styles.css?v=22"></head><body class="resource-page"><header class="site-header" id="top">${header()}</header><main>${main}</main>${footer()}<script src="/navigation.js?v=22"></script><script src="/script.js?v=22"></script></body></html>`}
 function resourceHero(){return `<section class="resource-hero"><div class="resource-hero-inner"><p class="section-label">SUPPORT</p><h1>자료실</h1><p>비즈원 제품과 서비스 이용에 필요한 자료를 확인하세요.</p></div></section>`}
 function noticeHero(){return `<section class="resource-hero"><div class="resource-hero-inner"><p class="section-label">SUPPORT</p><h1>공지사항</h1><p>비즈원의 새로운 소식과 주요 안내를 확인하세요.</p></div></section>`}

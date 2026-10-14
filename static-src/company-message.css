@@ -1,0 +1,38 @@
+.ceo{position:relative;isolation:isolate;overflow:hidden;padding:100px 0 42px;background:linear-gradient(180deg,#fff 45%,#f2f9ff)}
+.ceo::after{content:'';position:absolute;z-index:-1;left:-15%;right:-15%;bottom:-230px;height:370px;border:32px solid #dceeff55;border-radius:50%;transform:rotate(-4deg);pointer-events:none}
+.ceo-grid{grid-template-columns:420px minmax(0,1fr);gap:66px;align-items:stretch;position:relative;z-index:1}
+.ceo-title{padding:42px;min-height:490px;background:#0b2038 url('/images/ceo-ribbon-background.webp') center/cover;box-shadow:0 20px 50px #244d7b0d;display:flex;flex-direction:column}
+.ceo-title::before{font-size:250px;bottom:5px;right:8px;color:#9ecaff14;pointer-events:none}
+.ceo-title .section-label,.ceo-title h2,.ceo-sign{position:relative;z-index:1}
+.ceo-title h2{font-size:clamp(35px,3.5vw,47px);margin:52px 0 45px;line-height:1.38}
+.ceo-sign{left:auto;bottom:auto;margin-top:auto;padding-top:23px;gap:7px}
+.ceo-sign::before{content:'';position:absolute;top:0;left:0;width:104px;height:2px;background:linear-gradient(90deg,#b0f1ff,#3994ff,transparent);box-shadow:0 0 12px #66c3ff66}
+.ceo-copy{padding-top:16px;min-width:0;display:flex;flex-direction:column}
+.ceo-copy p{font-size:15px;line-height:2;margin-bottom:20px}
+.ceo-copy p:first-child{font-size:21px;line-height:1.6;margin-bottom:25px}
+.ceo-principles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:auto;border:1px solid #e3f1ff;border-radius:20px;background:#edf6ff;min-height:128px;padding:13px 0}
+.ceo-principle{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;text-align:center;border-right:1px solid #cbdff4;min-width:0;color:#15365d;font-size:15px;font-weight:800}
+.ceo-principle:last-child{border-right:0}
+.company-glass-icon{display:block;width:78px;height:78px;flex-shrink:0;background-image:url('/images/company-glass-atlas.webp');background-size:400% 200%;background-repeat:no-repeat;transition:transform .4s;mix-blend-mode:multiply}
+.glass-success{background-position:0% 0%}.glass-trust{background-position:33.333333% 0%}.glass-innovation{background-position:66.666667% 0%}.glass-calendar{background-position:100% 0%}.glass-person{background-position:0% 100%}.glass-business{background-position:33.333333% 100%}.glass-office{background-position:66.666667% 100%}
+.ceo-principle:hover .company-glass-icon,.facts .fact:hover .company-glass-icon{transform:translateY(-4px)}
+.facts{position:relative;overflow:hidden;background:linear-gradient(180deg,#f2f9ff,#eaf5ff 60%,#f6fbff);padding:12px 0 54px}
+.facts::before{content:'';position:absolute;left:-15%;right:-15%;top:-245px;height:340px;border:25px solid #d8edff66;border-radius:50%;transform:rotate(-4deg);pointer-events:none}
+.facts-grid{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;padding:20px 0;border:1px solid #fff;border-radius:20px;background:#ffffff85;box-shadow:0 16px 35px #4890cb06;backdrop-filter:blur(8px)}
+.facts .fact,.facts .fact:first-child,.facts .fact:nth-child(3){padding:0 16px;display:flex;gap:12px;align-items:center;border-right:1px solid #cbdff4;min-width:0}
+.facts .fact:last-child{border-right:0}.fact-content{min-width:0}.facts .company-glass-icon{width:62px;height:62px}
+.facts .fact small{font-size:11px;letter-spacing:0;color:#6388b4;margin-bottom:6px}.facts .fact strong{margin:0;font-size:clamp(14px,1.16vw,18px);line-height:1.5;letter-spacing:-.04em;white-space:nowrap}
+@media(max-width:1200px){.facts .fact{gap:8px}.facts .company-glass-icon{width:52px;height:52px}}
+@media(max-width:1040px){.ceo-grid{grid-template-columns:300px minmax(0,1fr);gap:32px}.ceo-title{padding:30px;min-height:490px}.ceo-title h2{font-size:35px;line-height:1.4;margin-top:42px}.ceo-copy p:first-child{font-size:19px}.ceo-principle{font-size:13px}.company-glass-icon{width:66px;height:66px}.facts-grid{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:24px}.facts .fact:nth-child(2){border-right:0}.facts .fact strong{font-size:17px}.facts .company-glass-icon{width:64px;height:64px}}
+@media(max-width:700px){.ceo{padding:68px 0 30px}.ceo-grid{display:block}.ceo-title{min-height:390px;padding:30px}.ceo-title h2{font-size:clamp(33px,8vw,45px);margin:34px 0 28px}.ceo-sign{left:auto;bottom:auto}.ceo-copy{padding-top:32px}.ceo-copy p{font-size:14px}.ceo-copy p:first-child{font-size:19px}.ceo-principles{margin-top:8px;min-height:118px}.facts{padding-bottom:38px}.facts .fact,.facts .fact:first-child,.facts .fact:nth-child(3){padding:0 12px;gap:8px}.facts .fact strong{font-size:15px;white-space:normal;overflow-wrap:break-word}.facts .company-glass-icon{width:48px;height:48px}}
+@media(max-width:460px){.facts-grid{grid-template-columns:1fr;padding:8px 18px;gap:0}.facts .fact,.facts .fact:first-child,.facts .fact:nth-child(3){padding:13px 0;border-right:0;border-bottom:1px solid #d7e7f5;gap:16px}.facts .fact:last-child{border-bottom:0}.facts .company-glass-icon{width:58px;height:58px}.facts .fact strong{font-size:17px}.ceo-principle{font-size:12px}.company-glass-icon{width:60px;height:60px}}
+@media(prefers-reduced-motion:reduce){.company-glass-icon{transition:none}.ceo-principle:hover .company-glass-icon,.facts .fact:hover .company-glass-icon{transform:none}}
+/* Equal company information cells, with identical icon and text alignment. */
+.facts-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;padding:0;border:0;background:transparent;box-shadow:none;backdrop-filter:none}
+.facts .fact,.facts .fact:first-child,.facts .fact:nth-child(2),.facts .fact:nth-child(3),.facts .fact:last-child{display:grid;grid-template-columns:56px minmax(0,1fr);gap:10px;padding:18px 14px;min-height:104px;width:100%;border:1px solid #dceafb;border-radius:16px;background:#f8fcff;align-items:center}
+.facts .company-glass-icon{width:56px;height:56px}
+.facts .fact strong{font-size:16px;white-space:nowrap;line-height:1.5}
+.facts .fact small{font-size:11px;margin-bottom:6px;line-height:1.5}
+@media(max-width:1040px){.facts-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.facts .fact strong{font-size:17px}}
+@media(max-width:700px){.facts .fact,.facts .fact:first-child,.facts .fact:nth-child(2),.facts .fact:nth-child(3),.facts .fact:last-child{grid-template-columns:48px minmax(0,1fr);padding:16px 12px;gap:9px;min-height:100px}.facts .company-glass-icon{width:48px;height:48px}.facts .fact strong{font-size:15px;white-space:normal}}
+@media(max-width:460px){.facts-grid{grid-template-columns:1fr;gap:10px}.facts .fact,.facts .fact:first-child,.facts .fact:nth-child(2),.facts .fact:nth-child(3),.facts .fact:last-child{grid-template-columns:56px minmax(0,1fr);padding:14px 18px;min-height:88px;gap:16px}.facts .company-glass-icon{width:56px;height:56px}.facts .fact strong{font-size:17px}}

@@ -1,0 +1,30 @@
+.hero{isolation:isolate;background:#071321}
+.hero .hero-image{opacity:1;object-position:center;transform-origin:75% 50%;animation:about-graphic-drift 16s ease-in-out infinite alternate;will-change:transform}
+.hero::before{background:linear-gradient(90deg,#071321b8 0%,#07132145 38%,transparent 66%),linear-gradient(0deg,#071321a6,transparent 25%)}
+.about-particles{position:absolute;inset:0;width:100%;height:100%;z-index:2;pointer-events:none}
+.hero-copy .eyebrow{display:inline-flex;align-items:center;gap:12px;animation:about-copy-enter .9s .08s both}
+.hero-copy .eyebrow::before{content:'';width:6px;height:6px;border-radius:50%;background:#98caff;box-shadow:0 0 15px #5eacff}
+.hero h1{position:relative;margin-bottom:30px;padding-bottom:24px}
+.hero h1 .title-line{display:block;width:fit-content;max-width:100%;animation:about-copy-enter 1.1s .18s both}
+.hero h1 .title-white{background:linear-gradient(110deg,#fff 20%,#fff 40%,#c6e5ff 49%,#fff 58%,#fff 80%);background-size:260% 100%;background-clip:text;-webkit-background-clip:text;color:transparent;animation:about-title-sheen 12s 1.4s ease-in-out infinite}
+.hero h1 .title-line-second{animation-delay:.36s}
+.hero h1 em{display:block;background:linear-gradient(105deg,#76adff 10%,#aacfff 30%,#e1f7ff 44%,#83b7ff 57%,#548fee 75%,#aedbff 90%);background-size:260% 100%;background-clip:text;-webkit-background-clip:text;color:transparent;animation:about-title-sheen 9s 1.1s ease-in-out infinite;text-shadow:none;filter:drop-shadow(0 0 18px #579dff20)}
+.hero h1::after{content:'';position:absolute;bottom:0;left:2px;width:98px;height:2px;background:linear-gradient(90deg,#6daeff,#b6edff,transparent);transform-origin:left;animation:about-rule-enter 1s .65s both;box-shadow:0 0 16px #6dacff55}
+.hero-copy .lead{animation:about-copy-enter 1s .58s both}
+.hero-copy .hero-actions{animation:about-copy-enter 1s .76s both}
+.hero-copy .hero-action{transition:transform .3s,background .3s,box-shadow .3s;box-shadow:0 7px 26px #167aff25}
+.hero-copy .hero-action:hover{transform:translateY(-3px);box-shadow:0 10px 30px #167aff50}
+.hero-copy .hero-action.secondary{box-shadow:none;backdrop-filter:blur(8px)}
+.hero-stamp{animation:about-copy-enter 1.2s .9s both}
+@keyframes about-copy-enter{from{opacity:0;transform:translateY(22px);filter:blur(6px)}to{opacity:1;transform:translateY(0);filter:blur(0)}}
+@keyframes about-title-sheen{0%,18%{background-position:100% 50%}68%,100%{background-position:0% 50%}}
+@keyframes about-rule-enter{from{opacity:0;transform:scaleX(0)}to{opacity:1;transform:scaleX(1)}}
+@keyframes about-graphic-drift{from{transform:scale(1.02) translateY(3px)}to{transform:scale(1.06) translateY(-7px)}}
+@media(max-width:1000px){.hero .hero-image{object-position:62% center}.hero::before{background:linear-gradient(90deg,#071321e6,#07132168 58%,#07132115)}}
+@media(max-width:700px){.hero .hero-image{object-position:67% center;opacity:.65}.hero::before{background:linear-gradient(90deg,#071321ee,#07132170),linear-gradient(0deg,#071321b3,transparent 60%)}.hero h1{padding-bottom:22px}.hero h1::after{width:76px}.about-particles{opacity:.45}.hero-copy .lead{max-width:95%}}
+@media(prefers-reduced-motion:reduce){.hero .hero-image,.hero-copy .eyebrow,.hero h1 .title-line,.hero h1 .title-white,.hero h1 em,.hero h1::after,.hero-copy .lead,.hero-copy .hero-actions,.hero-stamp{animation:none!important;opacity:1;transform:none;filter:none}.about-particles{display:none}.hero-copy .hero-action{transition:none}}
+
+/* Keep the longer approved heading on two lines. */
+.hero h1{font-size:clamp(42px,5vw,72px)}
+.hero h1 .title-line{white-space:nowrap}
+@media(max-width:700px){.hero h1{font-size:clamp(26px,7.5vw,50px)}}

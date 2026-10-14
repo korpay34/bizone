@@ -1,0 +1,10 @@
+/* Identical floating controls on the main and company pages. */
+.floating-actions{position:fixed;right:26px;top:68.5%;transform:translateY(-50%);display:flex;flex-direction:column;align-items:center;gap:14px;z-index:90}
+.floating-actions .inquiry-float,.floating-actions .cinematic-top{position:relative;inset:auto;bottom:auto!important;width:72px;height:72px;flex:0 0 72px;box-sizing:border-box;border:1.5px solid #fff;border-radius:50%;margin:0;padding:0;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;text-decoration:none;letter-spacing:-.04em;box-shadow:0 12px 30px #00143350;transition:transform .2s,box-shadow .2s}
+.floating-actions .inquiry-float{background:linear-gradient(145deg,#2188ff,#0758d0);font-size:16px;font-weight:800;line-height:1.25}
+.floating-actions .cinematic-top{background:#142e55;font-size:14px;font-weight:800;line-height:1}
+.floating-actions .inquiry-float::before,.floating-actions .inquiry-float::after{display:none;animation:none}
+.floating-actions .inquiry-float:hover,.floating-actions .cinematic-top:hover{transform:translateY(-3px);box-shadow:0 16px 34px #00143370}
+.floating-actions .inquiry-float:focus-visible,.floating-actions .cinematic-top:focus-visible{outline:3px solid #98caff;outline-offset:4px}
+@media(max-width:700px){.floating-actions{right:16px;gap:10px}.floating-actions .inquiry-float,.floating-actions .cinematic-top{width:56px;height:56px;flex-basis:56px;border-width:1.5px}.floating-actions .inquiry-float{font-size:13px}.floating-actions .cinematic-top{font-size:11px}}
+@media(prefers-reduced-motion:reduce){.floating-actions .inquiry-float,.floating-actions .cinematic-top{transition:none}}

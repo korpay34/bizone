@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "build": "bash scripts/build.sh",
-    "validate": "node scripts/validate-artifact.mjs",
+    "validate": "node scripts/validate-artifact.mjs && node scripts/validate-migration.mjs",
     "deploy": "npm run build && npm run validate && wrangler deploy",
     "db:migrate": "wrangler d1 migrations apply bizone-db --remote"
   },
