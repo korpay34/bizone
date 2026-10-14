@@ -22,3 +22,19 @@ const config=JSON.parse(await readFile('wrangler.jsonc','utf8'));
 assert.equal(config.name,'bizone');assert.equal(config.d1_databases[0].database_id,'366fa980-9b86-4777-a4de-f1f5ae900522');assert.equal(config.keep_vars,true);
 assert.ok(!code.includes('__STATIC_FILES__'));
 console.log('Migration verified: public pages, assets, admin and board routes; existing D1 binding and runtime settings retained.');
+// Exercise rendered support details and authenticated admin views with test-only data.
+const item={id:7,title:'검증 게시글 <test>',author:'고객지원팀',category:'제품 문의',content:'본문 내용',answer:'답변 내용',answer_author:'고객지원팀',created_at:'2026-10-14 10:00:00',answered_at:'2026-10-14',file_name:'guide.pdf',file_url:'/downloads/guide.pdf',view_count:2,download_count:1};
+const populated={prepare(sql){return{bind(){return this},async run(){return{}},async all(){return{results:[item]}},async first(){return sql.includes('COUNT(')?{count:1}:item}}}};
+for(const path of ['/support/notices/','/support/resources/','/support/faq/','/support/notices/7','/support/resources/7','/support/faq/7']){
+ const response=await worker.fetch(new Request('https://bizone.korpay.workers.dev'+path),{ASSETS:assets,DB:populated});assert.equal(response.status,200,path);const body=await response.text();assert.ok(body.includes('/customer-center.css')&&body.includes('cc-orbit')&&body.includes('aria-current="page"'),path);assert.ok(body.includes('검증 게시글 &lt;test&gt;'),path);
+}
+const {createHmac}=await import('node:crypto');
+const payload=Buffer.from(JSON.stringify({username:'test-admin',exp:Math.floor(Date.now()/1000)+3600})).toString('base64url');
+const signature=createHmac('sha256','test-only-secret').update(payload).digest('base64url');
+for(const path of ['/admin/','/admin/notices/','/admin/inquiries/']){
+ const response=await worker.fetch(new Request('https://bizone.korpay.workers.dev'+path,{headers:{cookie:'bizone_admin_session='+payload+'.'+signature}}),{ASSETS:assets,DB:populated,SESSION_SECRET:'test-only-secret',ADMIN_USERNAME:'test-admin'});assert.equal(response.status,200,path);const body=await response.text();assert.ok(body.includes('/admin-renewal.css')&&body.includes('admin-brand')&&body.includes('admin-dialog'),path);assert.ok(!body.includes('/bizone-logo-text-only.png'),path);
+}
+for(const file of ['index.html','a-about-20260928.html','a-cases.html','a-app-20260928-v2.html','a-privacy-20260928.html']){
+ const body=await readFile(resolve(root,'dist/assets',file),'utf8');assert.doesNotMatch(body,/href="[^" ]*#(?:notice|qa|downloads)"/,file);for(const name of ['notices','faq','resources'])assert.ok(body.includes('/support/'+name+'/'),file);
+}
+console.log('Support navigation, populated boards, protected inquiry view, and all authenticated admin screens verified.');
