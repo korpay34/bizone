@@ -49,3 +49,8 @@ for(const tab of ['notices','faq','resources']){
 }
 const defaultCenter=await worker.fetch(new Request('https://bizone.korpay.workers.dev/support/'),{ASSETS:assets,DB:populated});assert.ok((await defaultCenter.text()).includes('data-tab="notices"'));
 console.log('Unified customer center: default tab, all three panels, search state, and direct navigation verified.');
+for(const path of ['/support/','/support/?tab=faq','/support/?tab=resources','/support/notices/7','/support/resources/7','/support/faq/7']){
+ const response=await worker.fetch(new Request('https://bizone.korpay.workers.dev'+path),{ASSETS:assets,DB:populated});const body=await response.text();assert.ok(body.includes('class="floating-actions"')&&body.includes('class="cinematic-top"')&&body.includes('/support-consultation.js?v=1'),path);assert.ok(response.headers.get('content-security-policy').includes('https://formsubmit.co'),path);
+}
+const consultation=await readFile('static-src/support-consultation.js','utf8');assert.ok(consultation.includes("getElementById('consult-form')")&&!consultation.includes("getElementById('inquiry-form')"));
+console.log('Floating consultation/TOP controls verified across center tabs and details; Q&A and consultation forms use separate identifiers.');
