@@ -8,7 +8,7 @@ const assets={async fetch(request){const p=new URL(request.url).pathname;try{con
 const db={prepare(){return{bind(){return this},async run(){return{}},async all(){return{results:[]}},async first(){return{count:0}}}}};
 for(const path of ['/','/about/','/solutions/app/','/privacy/','/a-cases','/a-cases.html','/a-about-20260928.html','/support/faq/','/support/notices/','/support/resources/','/admin/']){
  const response=await worker.fetch(new Request('https://bizone.korpay.workers.dev'+path),{ASSETS:assets,DB:db});assert.equal(response.status,200,path);const body=await response.text();assert.match(body,/<html/i,path);
- if(path==='/')assert.ok(body.includes('큰 매장은')&&body.includes('/support/faq/'));
+ if(path==='/')assert.ok(body.includes('큰 매장은')&&body.includes('/support/?tab=faq'));
  if(path.includes('a-about'))assert.ok(body.includes('운영의 가치를 높이고,')&&!body.includes('HISTORY / 01'));
 }
 for(const file of ['index.html','a-about-20260928.html','a-cases.html','a-app-20260928-v2.html','a-privacy-20260928.html']){
@@ -35,7 +35,7 @@ for(const path of ['/admin/','/admin/notices/','/admin/inquiries/']){
  const response=await worker.fetch(new Request('https://bizone.korpay.workers.dev'+path,{headers:{cookie:'bizone_admin_session='+payload+'.'+signature}}),{ASSETS:assets,DB:populated,SESSION_SECRET:'test-only-secret',ADMIN_USERNAME:'test-admin'});assert.equal(response.status,200,path);const body=await response.text();assert.ok(body.includes('/admin-renewal.css')&&body.includes('admin-brand')&&body.includes('admin-dialog'),path);assert.ok(!body.includes('/bizone-logo-text-only.png'),path);
 }
 for(const file of ['index.html','a-about-20260928.html','a-cases.html','a-app-20260928-v2.html','a-privacy-20260928.html']){
- const body=await readFile(resolve(root,'dist/assets',file),'utf8');assert.doesNotMatch(body,/href="[^" ]*#(?:notice|qa|downloads)"/,file);for(const name of ['notices','faq','resources'])assert.ok(body.includes('/support/'+name+'/'),file);
+ const body=await readFile(resolve(root,'dist/assets',file),'utf8');assert.doesNotMatch(body,/href="[^" ]*#(?:notice|qa|downloads)"/,file);assert.ok(body.includes('href="/support/">고객센터</a>'),file);
 }
 console.log('Support navigation, populated boards, protected inquiry view, and all authenticated admin screens verified.');
 
@@ -43,3 +43,9 @@ for(const [path,name] of [['/support/notices/','notice'],['/support/faq/','qa'],
  const response=await worker.fetch(new Request('https://bizone.korpay.workers.dev'+path),{ASSETS:assets,DB:populated});const body=await response.text();assert.ok(body.includes('/images/support-'+name+'-v1.webp'),path);assert.ok(!body.includes('CONNECTED SUPPORT'),path);const image=await assets.fetch(new Request('https://assets.local/images/support-'+name+'-v1.webp'));assert.equal(image.status,200,name);
 }
 console.log('Distinct support artwork assets and list/detail hero mappings verified.');
+
+for(const tab of ['notices','faq','resources']){
+ const response=await worker.fetch(new Request('https://bizone.korpay.workers.dev/support/?tab='+tab+'&q=test'),{ASSETS:assets,DB:populated});assert.equal(response.status,200);const body=await response.text();assert.ok(body.includes('id="customer-center-content" data-tab="'+tab+'"'));assert.ok(!body.includes('support-submenu'));assert.ok(body.includes('href="/support/">고객센터</a>'));if(tab!=='faq')assert.ok(body.includes('name="tab" value="'+tab+'"'));
+}
+const defaultCenter=await worker.fetch(new Request('https://bizone.korpay.workers.dev/support/'),{ASSETS:assets,DB:populated});assert.ok((await defaultCenter.text()).includes('data-tab="notices"'));
+console.log('Unified customer center: default tab, all three panels, search state, and direct navigation verified.');
