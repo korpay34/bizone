@@ -8,7 +8,7 @@ const assets={async fetch(request){const p=new URL(request.url).pathname;try{con
 const db={prepare(){return{bind(){return this},async run(){return{}},async all(){return{results:[]}},async first(){return{count:0}}}}};
 for(const path of ['/','/about/','/solutions/app/','/privacy/','/a-cases','/a-cases.html','/a-about-20260928.html','/support/faq/','/support/notices/','/support/resources/','/admin/']){
  const response=await worker.fetch(new Request('https://bizone.korpay.workers.dev'+path),{ASSETS:assets,DB:db});assert.equal(response.status,200,path);const body=await response.text();assert.match(body,/<html/i,path);
- if(path==='/')assert.ok(body.includes('큰 매장은')&&body.includes('/support/?tab=faq'));
+ if(path==='/')assert.ok(body.includes('큰 매장은')&&body.includes('href="/support/">고객센터</a>'));
  if(path.includes('a-about'))assert.ok(body.includes('운영의 가치를 높이고,')&&!body.includes('HISTORY / 01'));
 }
 for(const file of ['index.html','a-about-20260928.html','a-cases.html','a-app-20260928-v2.html','a-privacy-20260928.html']){
