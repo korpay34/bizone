@@ -26,7 +26,7 @@ console.log('Migration verified: public pages, assets, admin and board routes; e
 const item={id:7,title:'검증 게시글 <test>',author:'고객지원팀',category:'제품 문의',content:'본문 내용',answer:'답변 내용',answer_author:'고객지원팀',created_at:'2026-10-14 10:00:00',answered_at:'2026-10-14',file_name:'guide.pdf',file_url:'/downloads/guide.pdf',view_count:2,download_count:1};
 const populated={prepare(sql){return{bind(){return this},async run(){return{}},async all(){return{results:[item]}},async first(){return sql.includes('COUNT(')?{count:1}:item}}}};
 for(const path of ['/support/notices/','/support/resources/','/support/faq/','/support/notices/7','/support/resources/7','/support/faq/7']){
- const response=await worker.fetch(new Request('https://bizone.korpay.workers.dev'+path),{ASSETS:assets,DB:populated});assert.equal(response.status,200,path);const body=await response.text();assert.ok(body.includes('/customer-center.css')&&body.includes('cc-orbit')&&body.includes('aria-current="page"'),path);assert.ok(body.includes('검증 게시글 &lt;test&gt;'),path);
+ const response=await worker.fetch(new Request('https://bizone.korpay.workers.dev'+path),{ASSETS:assets,DB:populated});assert.equal(response.status,200,path);const body=await response.text();assert.ok(body.includes('/customer-center.css')&&body.includes('cc-artwork')&&body.includes('aria-current="page"'),path);assert.ok(body.includes('검증 게시글 &lt;test&gt;'),path);
 }
 const {createHmac}=await import('node:crypto');
 const payload=Buffer.from(JSON.stringify({username:'test-admin',exp:Math.floor(Date.now()/1000)+3600})).toString('base64url');
@@ -38,3 +38,8 @@ for(const file of ['index.html','a-about-20260928.html','a-cases.html','a-app-20
  const body=await readFile(resolve(root,'dist/assets',file),'utf8');assert.doesNotMatch(body,/href="[^" ]*#(?:notice|qa|downloads)"/,file);for(const name of ['notices','faq','resources'])assert.ok(body.includes('/support/'+name+'/'),file);
 }
 console.log('Support navigation, populated boards, protected inquiry view, and all authenticated admin screens verified.');
+
+for(const [path,name] of [['/support/notices/','notice'],['/support/faq/','qa'],['/support/resources/','resources'],['/support/faq/7','qa']]){
+ const response=await worker.fetch(new Request('https://bizone.korpay.workers.dev'+path),{ASSETS:assets,DB:populated});const body=await response.text();assert.ok(body.includes('/images/support-'+name+'-v1.webp'),path);assert.ok(!body.includes('CONNECTED SUPPORT'),path);const image=await assets.fetch(new Request('https://assets.local/images/support-'+name+'-v1.webp'));assert.equal(image.status,200,name);
+}
+console.log('Distinct support artwork assets and list/detail hero mappings verified.');
