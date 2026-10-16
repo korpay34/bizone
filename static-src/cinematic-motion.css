@@ -449,3 +449,20 @@ html{scroll-padding-top:85px}body{overflow-x:clip}.header{position:fixed;z-index
 
 /* Remove the gallery scroll hint, progress line, and slide counter. */
 .film-gallery .field-footer { display: none; }
+
+/* Fit all three app benefit labels on one row on mobile. */
+@media (max-width: 700px) {
+  .ledger-benefits {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 4px;
+  }
+  .ledger-benefits span {
+    min-width: 0;
+    padding: 9px 3px;
+    font-size: clamp(8px, 2.4vw, 11px);
+    letter-spacing: -.04em;
+    white-space: nowrap;
+    text-align: center;
+  }
+}
