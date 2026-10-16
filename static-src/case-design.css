@@ -91,5 +91,6 @@ body.motion-off .gallery-progress{display:none}
 }
 @media(prefers-reduced-motion:reduce){.case-image-glint,.case-art-flow{animation:none}.case-visual .case-image{transition:none;transform:none}}
 
-/* Remove the label, square marker, divider, and plus from the case photograph. */
-.case-visual .case-photo-mark { display: none; }
+/* Keep only the branch name and main caption over the case photograph. */
+.case-visual .case-photo-mark,
+.case-visual .case-image-glint { display: none; }
