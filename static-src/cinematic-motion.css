@@ -446,3 +446,6 @@ html{scroll-padding-top:85px}body{overflow-x:clip}.header{position:fixed;z-index
     box-shadow: 0 -5px 0 currentColor, 0 5px 0 currentColor;
   }
 }
+
+/* Remove the gallery scroll hint, progress line, and slide counter. */
+.film-gallery .field-footer { display: none; }
