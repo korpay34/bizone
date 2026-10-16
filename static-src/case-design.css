@@ -90,3 +90,6 @@ body.motion-off .gallery-progress{display:none}
  .gallery-progress{display:none}.gallery-bottom{line-height:1.8;gap:20px;font-size:9px}.gallery-orbit{width:220px;height:220px;right:-130px;bottom:-120px}
 }
 @media(prefers-reduced-motion:reduce){.case-image-glint,.case-art-flow{animation:none}.case-visual .case-image{transition:none;transform:none}}
+
+/* Remove the label, square marker, divider, and plus from the case photograph. */
+.case-visual .case-photo-mark { display: none; }
