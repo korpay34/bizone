@@ -419,3 +419,30 @@ html{scroll-padding-top:85px}body{overflow-x:clip}.header{position:fixed;z-index
 .hero-pin .hero-shade{background:linear-gradient(90deg,#050c16eb 0%,#050c16bd 26%,#050c1652 48%,#050c1622 70%,#050c1608 100%),linear-gradient(0deg,#070b12,#070b1200 36%)}
 .hero-pin .cinema-light i{min-width:0;width:2px;opacity:.3;filter:none;background:linear-gradient(transparent,#91bfff60,transparent)}
 @media(max-width:700px){.hero-pin .hero-shade{background:linear-gradient(90deg,#050c16dc,#050c169e 48%,#050c1658),linear-gradient(0deg,#070b12,#070b1200 45%)}}
+
+/* Keep the compact mobile menu at the right edge of the header. */
+@media (max-width: 620px) {
+  .header .header-actions { display: none; }
+  .header .mobile-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 36px;
+    width: 36px;
+    height: 36px;
+    margin-left: auto !important;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 0;
+    line-height: 0;
+  }
+  .header .mobile-menu::before {
+    content: "";
+    display: block;
+    width: 16px;
+    height: 2px;
+    border-radius: 1px;
+    background: currentColor;
+    box-shadow: 0 -5px 0 currentColor, 0 5px 0 currentColor;
+  }
+}
