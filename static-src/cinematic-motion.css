@@ -466,3 +466,9 @@ html{scroll-padding-top:85px}body{overflow-x:clip}.header{position:fixed;z-index
     text-align: center;
   }
 }
+
+/* Align terminal feature labels along the bottom of each card. */
+#card-terminals .terminal-tags {
+  margin-top: auto;
+  padding-top: 22px;
+}
