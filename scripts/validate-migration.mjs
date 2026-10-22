@@ -59,6 +59,6 @@ for(const path of ['/support/?tab=selfhelp','/support/?tab=faq','/support/faq/in
 }
 for(const file of ['index.html','product/barcode-scanner/index.html','product/card-terminal/index.html']){
  const body=await readFile(resolve(root,'dist/assets',file),'utf8');const models=[...body.matchAll(/data-chatbot-model="([^"]+)"/g)].map(m=>m[1]);assert.ok(models.length>=3&&body.includes('/chatbot-links.js'),file);
- for(const model of models)assert.ok(body.includes('href="/support/?tab=selfhelp&amp;model='+encodeURIComponent(model)+'"'),file+' '+model);
+ for(const model of models)assert.ok(body.includes('href="/support/?tab=selfhelp&amp;model='+encodeURIComponent(model)+'" data-chatbot-model="'+model+'" hidden>'),file+' '+model);
 }
-console.log('Chatbot disabled without CHATBOT_URL: no widget, selfhelp tab hidden and falls back to notices; model links point to the selfhelp tab.');
+console.log('Chatbot disabled without CHATBOT_URL: no widget, selfhelp tab hidden and falls back to notices; model links stay hidden and point to the selfhelp tab.');
