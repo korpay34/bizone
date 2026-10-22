@@ -1,0 +1,7 @@
+/* '이 모델 문제 해결하기' links on the main page and product pages (see chatbot-links.js). */
+.chatbot-model-link{display:inline-flex;align-items:center;align-self:flex-start;margin-top:18px;padding:10px 16px;border:1px solid currentColor;border-radius:999px;color:inherit;font-size:13px;font-weight:700;line-height:1.2;text-decoration:none;transition:background .2s,border-color .2s,color .2s}
+/* Hidden until the Worker enables the chatbot (CHATBOT_URL). */
+.chatbot-model-link[hidden]{display:none}
+.chatbot-model-link:hover,.chatbot-model-link:focus-visible{background:#2377ff;border-color:#2377ff;color:#fff}
+.chatbot-model-link:focus-visible{outline:3px solid #98caff;outline-offset:3px}
+@media(prefers-reduced-motion:reduce){.chatbot-model-link{transition:none}}
