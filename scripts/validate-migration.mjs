@@ -54,3 +54,11 @@ for(const path of ['/support/','/support/?tab=faq','/support/?tab=resources','/s
 }
 const consultation=await readFile('static-src/support-consultation.js','utf8');assert.ok(consultation.includes("getElementById('consult-form')")&&!consultation.includes("getElementById('inquiry-form')"));
 console.log('Floating consultation/TOP controls verified across center tabs and details; Q&A and consultation forms use separate identifiers.');
+for(const path of ['/support/?tab=selfhelp','/support/?tab=faq','/support/faq/index.html']){
+ const response=await worker.fetch(new Request('https://bizone.korpay.workers.dev'+path),{ASSETS:assets,DB:populated});const body=await response.text();assert.ok(!body.includes('/widget.js'),path);assert.ok(body.includes('data-chatbot-tab hidden')||!body.includes('data-chatbot-tab'),path);if(path.includes('selfhelp'))assert.ok(body.includes('data-tab="notices"'),path);
+}
+for(const file of ['index.html','product/barcode-scanner/index.html','product/card-terminal/index.html']){
+ const body=await readFile(resolve(root,'dist/assets',file),'utf8');const models=[...body.matchAll(/data-chatbot-model="([^"]+)"/g)].map(m=>m[1]);assert.ok(models.length>=3&&body.includes('/chatbot-links.js'),file);
+ for(const model of models)assert.ok(body.includes('href="/support/?tab=selfhelp&amp;model='+encodeURIComponent(model)+'"'),file+' '+model);
+}
+console.log('Chatbot disabled without CHATBOT_URL: no widget, selfhelp tab hidden and falls back to notices; model links point to the selfhelp tab.');

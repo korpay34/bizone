@@ -5,6 +5,9 @@
   "compatibility_date": "2026-09-18",
   "workers_dev": true,
   "keep_vars": true,
+  "vars": {
+    "CHATBOT_URL": ""
+  },
   "d1_databases": [
     {
       "binding": "DB",
