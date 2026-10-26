@@ -6,7 +6,7 @@
   "workers_dev": true,
   "keep_vars": true,
   "vars": {
-    "CHATBOT_URL": ""
+    "CHATBOT_URL": "https://bizone-chatbot.pages.dev"
   },
   "d1_databases": [
     {
