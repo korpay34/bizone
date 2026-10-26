@@ -19,6 +19,16 @@ BizOne 회사 홈페이지와 공지사항·자료실 관리자 기능을 제공
 - `TURNSTILE_SITE_KEY`: Turnstile 사이트 키
 - `TURNSTILE_SECRET_KEY`: Turnstile 비밀 키
 
+## 장비 챗봇 연동
+
+`wrangler.jsonc` 의 `vars.CHATBOT_URL` 에 챗봇(bizone-chatbot) 주소를 넣으면 Worker 가 켭니다. 비워 두면 아무것도 나타나지 않습니다.
+
+- 관리자 화면을 뺀 모든 HTML 페이지에 챗봇 플로팅 버튼(`widget.js`)을 자동으로 넣습니다.
+- 고객센터에 '장비 셀프해결' 탭(`/support/?tab=selfhelp`)이 나타나고, 본문에 챗봇이 크게 열립니다.
+- 상품 카드의 '이 모델 문제 해결하기'는 위젯이 있으면 그 자리에서 챗봇을 열고, 없으면 셀프해결 탭으로 이동합니다.
+- 챗봇 쪽 `ALLOWED_ORIGINS` 에 홈페이지 주소를 등록해야 위젯이 동작합니다.
+- 로컬은 `.dev.vars` 에 `CHATBOT_URL=http://localhost:8788` 을 넣습니다.
+
 ## 자료실 파일 등록
 
 1. 다운로드할 파일을 `static-src/downloads` 폴더에 올립니다.

@@ -4,7 +4,7 @@ const SESSION_MAX_AGE = 60 * 60 * 8;
 const LOGIN_WINDOW_SECONDS = 60 * 15;
 const MAX_LOGIN_FAILURES = 5;
 
-export default { async fetch(request, env) { try { return await route(request, env); } catch (error) { console.error(error); if(new URL(request.url).pathname.startsWith("/api/"))return json({error:"저장하지 못했습니다. 잠시 후 다시 시도해주세요."},500); return html(pageShell("오류",`<section class="resource-shell"><div class="admin-message"><h2>요청을 처리하지 못했습니다.</h2><p>잠시 후 다시 시도해주세요.</p><a href="/support/?tab=resources">자료실로 돌아가기</a></div></section>`),500); } } };
+export default { async fetch(request, env) { try { return withChatbot(await route(request, env), request, env); } catch (error) { console.error(error); if(new URL(request.url).pathname.startsWith("/api/"))return json({error:"저장하지 못했습니다. 잠시 후 다시 시도해주세요."},500); return html(pageShell("오류",`<section class="resource-shell"><div class="admin-message"><h2>요청을 처리하지 못했습니다.</h2><p>잠시 후 다시 시도해주세요.</p><a href="/support/?tab=resources">자료실로 돌아가기</a></div></section>`),500); } } };
 
 async function route(request, env) {
   const url = new URL(request.url), path = url.pathname, method = request.method.toUpperCase();
@@ -55,7 +55,9 @@ async function ensureInquirySchema(db){
 }
 
 async function customerCenterPage(url,env){
-  const tab=["notices","faq","resources"].includes(url.searchParams.get("tab"))?url.searchParams.get("tab"):"notices";
+  const tabs=chatbotUrl(env)?["notices","faq","resources","selfhelp"]:["notices","faq","resources"];
+  const tab=tabs.includes(url.searchParams.get("tab"))?url.searchParams.get("tab"):"notices";
+  if(tab==="selfhelp")return selfhelpPage(env);
   const response=tab==="faq"?await faqPage(env):tab==="resources"?await resourcesList(url,env):await noticesList(url,env);
   let source=await response.text();
   source=source.replace('<main>','<main id="customer-center-content" data-tab="'+tab+'">');
@@ -63,6 +65,11 @@ async function customerCenterPage(url,env){
   source=source.replace(/(<form class="resource-search"[^>]*>)/g,'$1<input type="hidden" name="tab" value="'+tab+'">');
   source=source.replace(/href="\?page=/g,'href="?tab='+tab+'&page=');
   return html(source,response.status);
+}
+
+function selfhelpPage(env){
+  const base=escapeHtml(chatbotUrl(env));
+  return html(pageShell("장비 셀프해결",`${selfhelpHero()}<section class="resource-shell"><div id="chatbot" style="height:680px"></div><script src="${base}/widget.js" data-inline="#chatbot" data-channel="bizone-web" defer></script></section>`).replace('<main>','<main id="customer-center-content" data-tab="selfhelp">'));
 }
 
 async function faqPage(env){
@@ -340,11 +347,34 @@ async function serveStatic(pathname,request,env){
   if(path.startsWith("/downloads/")&&!path.endsWith("README.md"))headers.set("content-disposition",`attachment; filename*=UTF-8''${encodeURIComponent(path.split("/").pop()||"download")}`);
   return new Response(response.body,{status:response.status,statusText:response.statusText,headers});
 }
+function chatbotUrl(env){
+  const value=String(env.CHATBOT_URL||"").trim().replace(/\/+$/,"");
+  try{return /^https?:$/.test(new URL(value).protocol)?value:""}catch{return ""}
+}
+// When CHATBOT_URL is set: reveals the selfhelp tab and model links, and adds the floating widget to every HTML page
+// (static assets and pageShell pages) except admin screens and the selfhelp tab, which embeds its own inline widget.
+function withChatbot(response,request,env){
+  const url=new URL(request.url),base=chatbotUrl(env);
+  if(!base||!response.body||!(response.headers.get("content-type")||"").includes("text/html")||url.pathname.startsWith("/admin"))return response;
+  const headers=new Headers(response.headers),csp=headers.get("content-security-policy"),origin=new URL(base).origin;
+  if(csp)headers.set("content-security-policy",csp.replace(/(script-src|connect-src|img-src)([^;]*)/g,`$1$2 ${origin}`));
+  headers.delete("content-length");headers.delete("etag");
+  const rewriter=new HTMLRewriter().on("[data-chatbot-tab],[data-chatbot-model]",{element(el){el.removeAttribute("hidden")}});
+  const rewritten=new Response(response.body,{status:response.status,statusText:response.statusText,headers});
+  if(/^\/support\/?$/.test(url.pathname)&&url.searchParams.get("tab")==="selfhelp")return rewriter.transform(rewritten);
+  // Pages with the .floating-actions stack keep 문의하기/TOP at mid-height, so the chatbot button takes the bottom-right
+  // corner. Other pages pin their TOP/상담 buttons near the bottom (up to ~240px), so it goes above them.
+  let bottom=256;
+  return rewriter.on(".floating-actions",{element(){bottom=16}}).on("body",{element(el){el.onEndTag(end=>{end.before(`<script src="${escapeHtml(base)}/widget.js" data-channel="bizone-web" data-bottom="${bottom}" defer></script>`,{html:true})})}}).transform(rewritten);
+}
 function pageShell(title,main){return `<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>BizOne | ${escapeHtml(title)}</title><link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-<link rel="icon" href="/favicon.png" type="image/png" sizes="256x256"><link rel="stylesheet" href="/styles.css?v=22"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap"><link rel="stylesheet" href="/customer-center.css?v=6"><link rel="stylesheet" href="/support-consultation.css?v=1"></head><body class="resource-page"><header class="cc-header" id="top">${header()}</header><main>${main}</main>${footer()}<aside class="floating-actions" aria-label="빠른 문의 및 페이지 이동"><a class="cinematic-top" href="#top" aria-label="처음으로 이동">TOP</a></aside><script src="/support-consultation.js?v=1"></script><script src="/customer-center.js?v=2"></script></body></html>`}
-function resourceHero(){return `<section class="resource-hero"><div class="resource-hero-inner"><div class="cc-hero-copy"><p class="section-label">BIZONE · CUSTOMER CENTER</p><h1>자료실</h1><p>매장 운영에 필요한 자료를 한곳에서 확인하세요.</p></div><div class="cc-artwork cc-artwork--resources" aria-hidden="true"><img src="/images/support-resources-v1.webp" alt="" width="768" height="768" decoding="async" fetchpriority="high"></div></div></section><nav class="cc-tabs" aria-label="고객센터 메뉴"><a href="/support/?tab=notices">공지사항</a><a href="/support/?tab=faq">Q&amp;A</a><a href="/support/?tab=resources" aria-current="page">자료실</a></nav>`}
-function noticeHero(){return `<section class="resource-hero"><div class="resource-hero-inner"><div class="cc-hero-copy"><p class="section-label">BIZONE · CUSTOMER CENTER</p><h1>공지사항</h1><p>비즈원의 새로운 소식과 주요 안내를 전합니다.</p></div><div class="cc-artwork cc-artwork--notice" aria-hidden="true"><img src="/images/support-notice-v1.webp" alt="" width="768" height="768" decoding="async" fetchpriority="high"></div></div></section><nav class="cc-tabs" aria-label="고객센터 메뉴"><a href="/support/?tab=notices" aria-current="page">공지사항</a><a href="/support/?tab=faq">Q&amp;A</a><a href="/support/?tab=resources">자료실</a></nav>`}
-function faqHero(){return `<section class="resource-hero"><div class="resource-hero-inner"><div class="cc-hero-copy"><p class="section-label">BIZONE · CUSTOMER CENTER</p><h1>Q&amp;A</h1><p>궁금한 점을 남겨주세요. 비즈원이 함께 해결합니다.</p></div><div class="cc-artwork cc-artwork--qa" aria-hidden="true"><img src="/images/support-qa-v1.webp" alt="" width="768" height="768" decoding="async" fetchpriority="high"></div></div></section><nav class="cc-tabs" aria-label="고객센터 메뉴"><a href="/support/?tab=notices">공지사항</a><a href="/support/?tab=faq" aria-current="page">Q&amp;A</a><a href="/support/?tab=resources">자료실</a></nav>`}
+<link rel="icon" href="/favicon.png" type="image/png" sizes="256x256"><link rel="stylesheet" href="/styles.css?v=22"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap"><link rel="stylesheet" href="/customer-center.css?v=8"><link rel="stylesheet" href="/support-consultation.css?v=1"></head><body class="resource-page"><header class="cc-header" id="top">${header()}</header><main>${main}</main>${footer()}<aside class="floating-actions" aria-label="빠른 문의 및 페이지 이동"><a class="cinematic-top" href="#top" aria-label="처음으로 이동">TOP</a></aside><script src="/support-consultation.js?v=1"></script><script src="/customer-center.js?v=2"></script></body></html>`}
+function resourceHero(){return `<section class="resource-hero"><div class="resource-hero-inner"><div class="cc-hero-copy"><p class="section-label">BIZONE · CUSTOMER CENTER</p><h1>자료실</h1><p>매장 운영에 필요한 자료를 한곳에서 확인하세요.</p></div><div class="cc-artwork cc-artwork--resources" aria-hidden="true"><img src="/images/support-resources-v1.webp" alt="" width="768" height="768" decoding="async" fetchpriority="high"></div></div></section>${supportTabs("resources")}`}
+function noticeHero(){return `<section class="resource-hero"><div class="resource-hero-inner"><div class="cc-hero-copy"><p class="section-label">BIZONE · CUSTOMER CENTER</p><h1>공지사항</h1><p>비즈원의 새로운 소식과 주요 안내를 전합니다.</p></div><div class="cc-artwork cc-artwork--notice" aria-hidden="true"><img src="/images/support-notice-v1.webp" alt="" width="768" height="768" decoding="async" fetchpriority="high"></div></div></section>${supportTabs("notices")}`}
+function faqHero(){return `<section class="resource-hero"><div class="resource-hero-inner"><div class="cc-hero-copy"><p class="section-label">BIZONE · CUSTOMER CENTER</p><h1>Q&amp;A</h1><p>궁금한 점을 남겨주세요. 비즈원이 함께 해결합니다.</p></div><div class="cc-artwork cc-artwork--qa" aria-hidden="true"><img src="/images/support-qa-v1.webp" alt="" width="768" height="768" decoding="async" fetchpriority="high"></div></div></section>${supportTabs("faq")}`}
+function selfhelpHero(){return `<section class="resource-hero"><div class="resource-hero-inner"><div class="cc-hero-copy"><p class="section-label">BIZONE · CUSTOMER CENTER</p><h1>장비 셀프해결</h1><p>바코드스캐너·카드단말기 문제를 챗봇과 함께 바로 해결하세요.</p></div><div class="cc-artwork cc-artwork--qa" aria-hidden="true"><img src="/images/support-qa-v1.webp" alt="" width="768" height="768" decoding="async" fetchpriority="high"></div></div></section>${supportTabs("selfhelp")}`}
+// The selfhelp tab (and the model links in static pages) start hidden; withChatbot() reveals them only when CHATBOT_URL is set.
+function supportTabs(current){return `<nav class="cc-tabs" aria-label="고객센터 메뉴">${[["notices","공지사항"],["faq","Q&amp;A"],["resources","자료실"],["selfhelp",'<b class="cc-tab-label"><i class="cc-tab-prefix">장비 </i>셀프해결</b>']].map(([tab,label])=>`<a href="/support/?tab=${tab}"${tab==="selfhelp"?" data-chatbot-tab hidden":""}${tab===current?' aria-current="page"':""}>${label}</a>`).join("")}</nav>`}
 function header(){return `<div class="cc-header-inner"><a class="cc-brand" href="/" aria-label="비즈원 홈">BIZONE<span>주식회사 코페이</span></a><button class="cc-menu" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="cc-nav">☰</button><nav class="cc-nav" id="cc-nav" aria-label="주요 메뉴"><a href="/about/">회사소개</a><div class="cc-group"><button type="button" aria-expanded="false">서비스</button><div class="cc-dropdown"><a href="/#solutions">비즈원+</a><a href="/solutions/app/">APP</a><a href="/#barcode">바코드스캐너</a></div></div><a href="/a-cases.html">도입사례</a><a href="/support/">고객센터</a></nav><a class="cc-login" href="https://pops.wavepos.co.kr/login" target="_blank" rel="noopener noreferrer">가맹점 로그인</a></div>`}
 function footer(){return `<footer class="cc-footer"><div class="cc-footer-content"><div class="cc-footer-company"><strong>주식회사 코페이</strong><p>사업자등록번호: 206-81-90716 <i></i> 대표: 채수철</p><p>주소: 서울 성동구 성수일로 77 서울숲IT밸리 505-507호</p><p>대표번호: 1833-3272</p><a class="cc-footer-privacy" href="/privacy/">개인정보 처리방침</a><p class="cc-footer-copy">Copyright © 2026 주식회사 코페이. All Rights Reserved.</p></div><a class="cc-footer-resources" href="/support/?tab=resources">자료실</a></div></footer>`}
 
