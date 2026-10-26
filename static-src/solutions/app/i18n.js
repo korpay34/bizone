@@ -129,7 +129,7 @@ window.bizoneAppTranslations = {
   },
   '전화 신청 1833-3272': { en: 'Call to apply · 1833-3272', ja: '電話で申し込む · 1833-3272', zh: '电话申请 · 1833-3272' },
   '사업자등록번호 206-81-90716 · 대표 채수철': { en: 'Business registration no. 206-81-90716 · CEO Chae Su-cheol', ja: '事業者登録番号 206-81-90716 · 代表 チェ・スチョル', zh: '营业执照号码 206-81-90716 · 代表 Chae Su-cheol' },
-  '서울 성동구 성수일로 77 서울숲IT밸리 608-611호': { en: 'Units 608–611, Seoul Forest IT Valley, 77 Seongsuil-ro, Seongdong-gu, Seoul', ja: 'ソウル特別市城東区聖水一路77 ソウルフォレストITバレー608～611号', zh: '首尔特别市城东区圣水一路77号 首尔林IT谷608–611室' },
+  '서울 성동구 성수일로 77 서울숲IT밸리 505-507호': { en: 'Units 505–507, Seoul Forest IT Valley, 77 Seongsuil-ro, Seongdong-gu, Seoul', ja: 'ソウル特別市城東区聖水一路77 ソウルフォレストITバレー505～507号', zh: '首尔特别市城东区圣水一路77号 首尔林IT谷505–507室' },
   '대표번호 1833-3272 · A/S 1644-3475': { en: 'Main line 1833-3272 · Support 1644-3475', ja: '代表電話 1833-3272 · アフターサービス 1644-3475', zh: '总机 1833-3272 · 售后服务 1644-3475' },
   'Copyright © 2026 주식회사 코페이. All Rights Reserved.': { en: 'Copyright © 2026 KORPAY Co., Ltd. All rights reserved.', ja: 'Copyright © 2026 株式会社KORPAY. All Rights Reserved.', zh: '版权所有 © 2026 KORPAY Co., Ltd.' },
   '페이지 맨 위로': { en: 'Back to top', ja: 'ページの先頭へ', zh: '返回顶部' }
