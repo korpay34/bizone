@@ -88,7 +88,7 @@ consultationUI.innerHTML = `
       <input type="text" name="_honey" tabindex="-1" autocomplete="off" class="consult-honey" aria-hidden="true" />
       <label><span>성명 <b>*</b></span><input type="text" name="성명" autocomplete="name" placeholder="성명을 입력해주세요" required maxlength="30" /></label>
       <label><span>연락처 <b>*</b></span><input type="tel" name="연락처" autocomplete="tel" inputmode="tel" placeholder="010-0000-0000" required maxlength="20" /></label>
-      <label><span>업종</span><input type="text" name="업종" placeholder="업종을 입력해주세요 (예: 약국, 마트, 음식점)" maxlength="100" /></label>
+      <label><span>업종 <b>*</b></span><input type="text" name="업종" placeholder="업종을 입력해주세요 (예: 약국, 마트, 음식점)" maxlength="100" required /></label>
       <div class="consult-field"><span>지역 <b>*</b></span><div class="region-selects"><select id="consult-province" name="시도" required><option value="">시·도 선택</option></select><select id="consult-district" name="시군구" required disabled><option value="">시·군·구 선택</option></select></div></div>
       <label><span>상담내용 <b>*</b></span><textarea name="상담내용" placeholder="상담받으실 내용을 입력해주세요" required maxlength="1000"></textarea></label>
       <label class="consult-consent"><input type="checkbox" required /><span>상담을 위한 개인정보 수집 및 이용에 동의합니다.</span></label>
