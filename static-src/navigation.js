@@ -86,7 +86,7 @@ consultationUI.innerHTML = `
       <input type="hidden" name="_subject" value="[BizOne] 홈페이지 상담신청" />
       <input type="hidden" name="_template" value="table" />
       <input type="text" name="_honey" tabindex="-1" autocomplete="off" class="consult-honey" aria-hidden="true" />
-      <label class="consult-field"><span>문의유형 <b>*</b></span><select name="문의유형" required><option value="">문의유형 선택</option><option value="ERP">ERP</option><option value="POS">POS</option><option value="스캐너">스캐너</option></select></label>
+      <label class="consult-field"><span>문의유형 <b>*</b></span><select name="문의유형" required><option value="">문의유형 선택</option><option value="ERP">ERP</option><option value="POS">POS</option><option value="스캐너">스캐너</option><option value="그룹웨어">그룹웨어</option></select></label>
       <label><span>상호 <b>*</b></span><input type="text" name="상호" autocomplete="organization" placeholder="상호를 입력해주세요" maxlength="100" required /></label>
       <label><span>성명 <b>*</b></span><input type="text" name="성명" autocomplete="name" placeholder="성명을 입력해주세요" required maxlength="30" /></label>
       <label><span>연락처 <b>*</b></span><input type="tel" name="연락처" autocomplete="tel" inputmode="tel" placeholder="010-0000-0000" required maxlength="20" /></label>
