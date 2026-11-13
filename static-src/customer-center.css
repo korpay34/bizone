@@ -17,3 +17,6 @@
 .cc-tabs a[hidden]{display:none}
 .cc-tab-label,.cc-tab-label i{font:inherit;white-space:nowrap}
 @media(max-width:480px){.cc-tab-prefix{display:none}}
+
+/* Show complete board titles on mobile instead of ellipsizing them. */
+@media(max-width:800px){body.resource-page .resource-table td.resource-title a{white-space:normal;overflow:visible;text-overflow:clip;overflow-wrap:anywhere;word-break:normal;line-height:1.65}}
