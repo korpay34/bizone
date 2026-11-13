@@ -20,3 +20,19 @@
 
 /* Show complete board titles on mobile instead of ellipsizing them. */
 @media(max-width:800px){body.resource-page .resource-table td.resource-title a{white-space:normal;overflow:visible;text-overflow:clip;overflow-wrap:anywhere;word-break:normal;line-height:1.65}}
+
+/* Compact mobile resource list: full-width title, metadata below. */
+@media(max-width:800px){
+ body.resource-page .resource-download-table{display:block;min-width:0;width:100%;border-top:1px solid #e5eaf2}
+ body.resource-page .resource-download-table colgroup,body.resource-page .resource-download-table thead{display:none}
+ body.resource-page .resource-download-table tbody{display:block;width:100%}
+ body.resource-page .resource-download-table tbody tr{display:flex;flex-wrap:wrap;align-items:center;gap:4px 12px;padding:16px 0;border-bottom:1px solid #e5eaf2}
+ body.resource-page .resource-download-table td:nth-child(n){display:block;width:auto;min-width:0;padding:0;border:0;font-size:11px;line-height:1.6;text-align:left}
+ body.resource-page .resource-download-table td.resource-title{flex:0 0 100%;order:-1;padding:0 0 5px}
+ body.resource-page .resource-download-table td.resource-title a{font-size:14px;line-height:1.6;white-space:normal;overflow:visible;overflow-wrap:anywhere;word-break:normal}
+ body.resource-page .resource-download-table td:first-child:before{content:'No. '}
+ body.resource-page .resource-download-table td:nth-child(5):before{content:'조회 '}
+ body.resource-page .resource-download-table td:nth-child(6){margin-left:auto}
+ body.resource-page .resource-download-table td:nth-child(6) a{display:inline-flex;align-items:center;justify-content:center;min-width:32px;min-height:32px}
+ body.resource-page .resource-download-table td.resource-empty{flex-basis:100%;padding:20px;text-align:center}
+}
