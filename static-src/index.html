@@ -6,7 +6,7 @@
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#080e17">
+  <meta name="theme-color" content="#101820">
   <title>BIZONE | 새로운 매장 운영의 기준</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap');
@@ -182,6 +182,8 @@
 </style>
 <link rel="stylesheet" href="/inquiry.css?v=3">
 <link rel="stylesheet" href="/cinematic-motion.css?v=20261014-clarity-1">
+<link rel="stylesheet" href="/bright-home.css?v=20261118-1">
+<link rel="stylesheet" href="/refined-home.css?v=20261118-1">
 <link rel="stylesheet" href="/floating-actions.css?v=1">
 <link rel="stylesheet" href="/case-design.css?v=20261012-4">
 <link rel="stylesheet" href="/scanner-design.css?v=1">
@@ -190,8 +192,8 @@
 <link rel="stylesheet" href="/scanner-customers.css?v=3">
 <link rel="stylesheet" href="/chatbot-links.css?v=1"><script src="/chatbot-links.js?v=1" defer></script>
 </head>
-<body>
-<div class="reading-progress" aria-hidden="true"></div>
+<body class="bright-home motion-off">
+
   <header class="header"><div class="wrap header-inner">
     <a class="brand" href="#top" aria-label="비즈원 홈">BIZONE<span>주식회사 코페이</span></a>
     <button class="mobile-menu" aria-label="메뉴 열기" aria-expanded="false" onclick="let n=document.querySelector('.nav');let o=n.classList.toggle('open');this.setAttribute('aria-expanded',o);this.setAttribute('aria-label',o?'메뉴 닫기':'메뉴 열기')">☰</button>
@@ -201,20 +203,26 @@
       <a href="/a-cases.html">도입사례</a>
       <a href="/support/">고객센터</a>
     </nav>
-    <div class="header-actions"><button class="motion-toggle pill" type="button" hidden aria-pressed="false">모션 끄기</button><a class="pill" href="https://pops.wavepos.co.kr/login" target="_blank" rel="noopener noreferrer">가맹점 로그인</a></div>
+    <div class="header-actions"><a class="pill" href="https://pops.wavepos.co.kr/login" target="_blank" rel="noopener noreferrer">가맹점 로그인</a></div>
   </div></header>
   <main id="top">
-    <section class="hero-scroll" id="about"><div class="hero-pin motion-scene"><div class="hero-frames"><img class="hero-frame current" src="/images/hero-megafactory-gwanggyo.webp" alt="메가팩토리약국 광교점 실제 매장 전경" data-branch="메가팩토리약국 광교점" width="1200" height="800" fetchpriority="high"><img class="hero-frame" src="/images/hero-megafactory-seoul.jpg" alt="메가팩토리약국 서울점 실제 매장 전경" data-branch="메가팩토리약국 서울점" width="2048" height="1365"><img class="hero-frame" src="/images/hero-megafactory-seongnam.jpg" alt="메가팩토리약국 성남점 실제 매장 전경" data-branch="메가팩토리약국 성남점" width="2048" height="1365"></div><div class="hero-shade"></div><div class="cinema-light" aria-hidden="true"><i></i><i></i><i></i></div><div class="hero-copy"><h1><span class="line-mask"><span>큰 매장은</span></span><span class="line-mask"><span class="gradient-text">시스템부터 다릅니다.</span></span></h1><p>대형약국, 코스메틱, 골프, 대형 식자재마트까지.<br>복잡한 상업공간의 운영을 하나의 시스템으로 구축합니다.</p><div class="actions"><a href="#contact" class="button primary" data-open-inquiry>상담문의</a><a href="#case" class="button glass">실제 구축 사례</a></div></div><div class="hero-caption"><span>실제 구축 현장</span><b>메가팩토리약국 광교점</b></div><div class="hero-footer"><span>SCROLL TO DISCOVER</span></div><div class="hero-word" aria-hidden="true">BIZONE.</div></div></section>
-    <div class="ticker" aria-hidden="true"><div>POS <span>✦</span> PAYMENT <span>✦</span> INVENTORY <span>✦</span> BACK OFFICE <span>✦</span> BIZONE <span>✦</span> POS <span>✦</span> PAYMENT <span>✦</span> INVENTORY <span>✦</span> BACK OFFICE <span>✦</span> BIZONE <span>✦</span></div></div>
+    <section class="hero-scroll" id="about" aria-labelledby="home-title">
+      <div class="hero-pin"><div class="bright-hero-layout wrap">
+        <div class="bright-hero-copy"><p class="bright-eyebrow">BIZONE · 매장 운영 솔루션</p>
+          <h1 id="home-title">큰 매장은,<br><span>운영의 방식부터 다릅니다.</span></h1>
+          <p>대형 매장에 필요한 POS·결제·스캐너·운영 솔루션을<br>현장의 규모와 업무에 맞춰 연결합니다.</p>
+          <div class="actions"><a href="#contact" class="button primary" data-open-inquiry>도입 상담하기 <span aria-hidden="true">↗</span></a><a href="#solutions" class="button glass">솔루션 살펴보기</a></div>
+        </div>
+        <figure class="bright-hero-visual"><img src="/images/hero-megafactory-gwanggyo.webp" alt="메가팩토리약국 광교점 실제 매장 전경" width="1200" height="800" fetchpriority="high"><figcaption><span>실제 구축 현장</span><b>메가팩토리약국 광교점</b></figcaption></figure>
+      </div></div>
+    </section>
+    <section class="bright-paths" aria-label="서비스 바로가기"><div class="wrap bright-path-grid">
+      <a href="#solutions"><span>01</span><strong>매장 운영</strong><small>POS · 재고 · 매출</small><i aria-hidden="true">↗</i></a>
+      <a href="#card-terminals"><span>02</span><strong>결제 · 장비</strong><small>단말기 · 스캐너</small><i aria-hidden="true">↗</i></a>
+      <a href="#groupware"><span>03</span><strong>그룹웨어</strong><small>업무 · 전자결재</small><i aria-hidden="true">↗</i></a>
+    </div></section>
 
-<section class="statement section-pad motion-scene" data-chapter="intro"><div class="connect-art" aria-hidden="true">
-<svg class="connect-network" viewBox="0 0 460 460" fill="none"><defs><linearGradient id="connect-blue" x1="40" y1="30" x2="410" y2="430" gradientUnits="userSpaceOnUse"><stop stop-color="#87C6FF"/><stop offset=".5" stop-color="#2979ED"/><stop offset="1" stop-color="#87C6FF"/></linearGradient><radialGradient id="connect-halo"><stop stop-color="#3D84F4" stop-opacity=".22"/><stop offset="1" stop-color="#3D84F4" stop-opacity="0"/></radialGradient></defs><circle cx="230" cy="230" r="215" fill="url(#connect-halo)"/><g class="connect-orbits" stroke="#7CB8FF"><circle cx="230" cy="230" r="170" stroke-opacity=".13"/><circle cx="230" cy="230" r="121" stroke-opacity=".12" stroke-dasharray="2 10"/><ellipse cx="230" cy="230" rx="205" ry="135" transform="rotate(-25 230 230)" stroke-opacity=".08"/></g><g class="connect-traces" stroke="#559EF9" stroke-opacity=".3" stroke-width="1.3"><path d="M91 113h49q28 0 28 28v34q0 26 26 26h36"/><path d="M369 101h-55q-25 0-25 25v49q0 26-26 26h-33"/><path d="M369 344h-54q-26 0-26-26v-53q0-25-26-25h-33"/><path d="M91 344h47q30 0 30-30v-49q0-25 26-25h36"/></g><g class="connect-packets" stroke="url(#connect-blue)" stroke-width="2.5" stroke-linecap="round"><path d="M91 113h49q28 0 28 28v34q0 26 26 26h36"/><path d="M369 101h-55q-25 0-25 25v49q0 26-26 26h-33"/><path d="M369 344h-54q-26 0-26-26v-53q0-25-26-25h-33"/><path d="M91 344h47q30 0 30-30v-49q0-25 26-25h36"/></g><g fill="#86C2FF"><circle class="connect-star" cx="247" cy="60" r="2.5"/><circle class="connect-star" cx="426" cy="241" r="2"/><circle class="connect-star" cx="62" cy="249" r="2"/><circle class="connect-star" cx="217" cy="410" r="2.5"/></g></svg>
-<div class="connect-center"><span>BIZONE</span><i></i></div>
-<div class="connect-chip connect-pay"><img src="/images/system-icons/pay.svg" alt="" width="96" height="96"><b>PAY</b></div>
-<div class="connect-chip connect-pos"><img src="/images/system-icons/pos.svg" alt="" width="96" height="96"><b>POS</b></div>
-<div class="connect-chip connect-erp"><img src="/images/system-icons/erp.svg" alt="" width="96" height="96"><b>ERP</b></div>
-<div class="connect-chip connect-app"><img src="/images/system-icons/app.svg" alt="" width="96" height="96"><b>APP</b></div>
-</div><div class="eyebrow reveal">ONE STORE. ONE SYSTEM.</div><h2 class="scroll-words">판매가 일어나는 순간,<br>데이터는 움직이고.<br><span>비즈니스는 이어집니다.</span></h2><div class="statement-bottom reveal"><p>여러 화면을 오가던 업무를 하나의 흐름으로.<br><span class="statement-detail-line">POS의 판매 데이터가 ERP로 이어지고, 핵심 운영 현황은 모바일에서 확인합니다.</span></p></div></section>
+<section class="statement section-pad" data-chapter="intro"><div class="eyebrow">ONE STORE. ONE SYSTEM.</div><h2>매장의 운영을<br><span>하나의 흐름으로.</span></h2><p>POS의 판매 데이터가 ERP로 이어지고,<br>핵심 운영 현황은 모바일에서 확인합니다.</p></section>
     <section class="film-gallery field-scroll" id="inside"><div class="field-pin"><div class="film-heading"><div><div class="eyebrow">INSIDE THE SPACE</div><h2>공간을 잇고,<br><span>운영을 완성하다.</span></h2></div></div><div class="field-window"><div class="field-track"><figure class="field-card"><img src="/images/field-seongnam-01.webp" alt="메가팩토리약국 성남점 — 상품 진열 공간" loading="lazy" width="2048" height="1365"><figcaption><span>메가팩토리약국 성남점</span><h3>상품 진열 공간</h3></figcaption></figure><figure class="field-card"><img src="/images/field-seongnam-02.webp" alt="메가팩토리약국 성남점 — 매장 중앙 공간" loading="lazy" width="2048" height="1365"><figcaption><span>메가팩토리약국 성남점</span><h3>매장 중앙 공간</h3></figcaption></figure><figure class="field-card"><img src="/images/field-seongnam-05.webp" alt="메가팩토리약국 성남점 — 매장 입구와 동선" loading="lazy" width="2048" height="1365"><figcaption><span>메가팩토리약국 성남점</span><h3>매장 입구와 동선</h3></figcaption></figure><figure class="field-card"><img src="/images/field-gwanggyo-02.webp" alt="메가팩토리약국 광교점 — 넓게 이어지는 매장" loading="lazy" width="1200" height="800"><figcaption><span>메가팩토리약국 광교점</span><h3>넓게 이어지는 매장</h3></figcaption></figure><figure class="field-card"><img src="/images/field-gwanggyo-03.webp" alt="메가팩토리약국 광교점 — 공간을 채우는 디테일" loading="lazy" width="1200" height="800"><figcaption><span>메가팩토리약국 광교점</span><h3>공간을 채우는 디테일</h3></figcaption></figure><figure class="field-card"><img src="/images/field-seoul-03.webp" alt="메가팩토리약국 서울점 — 상품과 동선의 연결" loading="lazy" width="2048" height="1365"><figcaption><span>메가팩토리약국 서울점</span><h3>상품과 동선의 연결</h3></figcaption></figure></div></div><div class="field-footer"><span>SCROLL TO EXPLORE</span><div class="field-progress"><i></i></div><span class="field-counter">01 / 06</span></div></div></section>
     <section class="data-journey motion-scene" id="solutions"><div class="journey-pin section-pad"><div class="eyebrow reveal">FROM SALES TO INSIGHT</div><h2 class="reveal">하나의 판매가,<br><span>다음 판단의 기준으로.</span></h2><div class="journey-ui"><div class="journey-line" aria-hidden="true"><i></i><span class="data-pulse pulse-one"></span><span class="data-pulse pulse-two"></span></div><article><span class="journey-icon">01</span><h3>상품 스캔</h3><p>판매의 시작</p></article><article><span class="journey-icon">02</span><h3>결제 승인</h3><p>빠른 처리</p></article><article><span class="journey-icon">03</span><h3>재고 반영</h3><p>정보 연결</p></article><article><span class="journey-icon">04</span><h3>매출 확인</h3><p>운영 파악</p></article><article><span class="journey-icon">05</span><h3>모바일 조회</h3><p>언제 어디서나</p></article></div><div class="journey-detail" aria-live="off"><b>상품을 읽는 순간, 운영이 시작됩니다.</b></div><div class="journey-caption" aria-hidden="true"></div></div></section>
 
@@ -283,7 +291,7 @@
 
     <section class="contact" id="contact"><div class="wrap"><p class="label">CONTACT BIZONE</p><h2>매장에 맞는 시스템,<br>비즈원과 함께 설계하세요.</h2><a class="btn primary" href="tel:18333272">도입 상담하기 <span>↗</span></a></div></section>
   </main><aside class="floating-actions" aria-label="빠른 문의 및 페이지 이동"><a class="cinematic-top" href="#top" aria-label="처음으로 이동">TOP</a></aside><footer class="footer"><div class="wrap footer-content"><div class="footer-company"><strong>주식회사 코페이</strong><p>사업자등록번호: 206-81-90716 <i></i> 대표: 채수철</p><p>주소: 서울 성동구 성수일로 77 서울숲IT밸리 505-507호</p><p>대표번호: 1833-3272</p><a class="footer-privacy" href="/a-privacy-20260928.html">개인정보 처리방침</a><p class="footer-copy">Copyright © 2026 주식회사 코페이. All Rights Reserved.</p></div><span class="footer-resources">자료실</span></div></footer>
-<script src="/cinematic-motion.js?v=20261014-clarity-1" defer></script>
+<script src="/bright-home.js?v=20261118-1" defer></script>
 
 <script src="/inquiry.js?v=3" defer></script>
 
