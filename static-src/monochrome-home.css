@@ -1,0 +1,56 @@
+/* Monochrome editorial direction: large real imagery, typography and quiet motion. */
+body.monochrome{--blue:#171717;--ink:#151515;--muted:#666;--line:#dadada;background:#fff;color:#181818}
+.monochrome .header,.monochrome .header.is-scrolled{background:#fff;color:#111;border-color:#e4e4e4;box-shadow:none}
+.monochrome .brand span{color:#777}.monochrome .nav a:hover,.monochrome .nav-toggle:hover,.monochrome .nav a:focus-visible,.monochrome .nav-toggle:focus-visible{color:#111;text-decoration:underline;text-underline-offset:6px}
+.monochrome .nav a::after{background:#111}.monochrome .header-actions .pill{color:#111;border-color:#aaa}.monochrome .submenu{border-color:#e2e2e2;box-shadow:0 20px 45px #0002}.monochrome .submenu a:hover,.monochrome .submenu a:focus-visible{color:#111;background:#f2f2f2}
+.monochrome .hero-scroll,.monochrome.motion-off .hero-scroll{background:#f5f5f3}
+.monochrome .bright-hero-layout{width:min(1440px,calc(100% - 9vw));grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:6%;min-height:760px;padding-top:76px;padding-bottom:112px}
+.monochrome .bright-eyebrow{color:#262626;font-size:11px;letter-spacing:.22em;margin-bottom:32px}
+.monochrome .bright-hero-copy h1{font-size:clamp(47px,4.8vw,76px);line-height:1.21;color:#111;letter-spacing:-.075em}
+.monochrome .bright-hero-copy h1 span{color:#111}
+.monochrome .bright-hero-copy h1 span:after{content:"";display:block;width:74px;height:4px;background:#171717;margin-top:30px}
+.monochrome .bright-hero-copy>p:not(.bright-eyebrow){color:#5f5f5f;margin-top:30px}
+.monochrome .bright-hero-copy .button{border-radius:0;padding:15px 26px}
+.monochrome .button.primary,.monochrome .btn.primary{background:#111!important;border-color:#111!important;color:#fff!important;box-shadow:none!important}
+.monochrome .button.glass{background:transparent;border-color:#aaa;color:#111}
+.monochrome .bright-hero-visual{aspect-ratio:.92;border-radius:0;box-shadow:20px 20px 0 #dededb;max-height:670px}
+.monochrome .bright-hero-visual img{filter:grayscale(1) contrast(1.08);object-position:50% 50%}
+.monochrome .bright-hero-visual figcaption{background:linear-gradient(transparent,#000b);padding:90px 30px 25px}
+.monochrome .hero-proof{color:#777}.monochrome .hero-proof span{border-color:#222}
+.monochrome .bright-paths{background:linear-gradient(to bottom,transparent 44px,#fff 44px);padding-bottom:85px}
+.monochrome .bright-path-grid{gap:0;border:1px solid #d9d9d9;background:#fff}
+.monochrome .bright-path-grid a{border:0;border-right:1px solid #ddd;border-radius:0;box-shadow:none;min-height:190px;padding:28px 32px}
+.monochrome .bright-path-grid a:last-child{border-right:0}.monochrome .bright-path-grid a:hover,.monochrome .bright-path-grid a:focus-visible{transform:none;background:#f5f5f4;box-shadow:none}
+.monochrome .bright-path-grid span,.monochrome .bright-path-grid i{color:#181818}.monochrome .bright-path-grid small{color:#777}
+.monochrome .statement{background:#fff;color:#151515;border-top:1px solid #eee}
+.monochrome .statement h2,.monochrome .statement h2.scroll-words,.monochrome .scroll-words .scroll-word,.monochrome .statement h2>span,.monochrome .scroll-words>span .scroll-word{color:#1a1a1a}
+.monochrome .statement-bottom p{color:#666}.monochrome .statement .eyebrow,.monochrome .eyebrow,.monochrome .label{color:#555;letter-spacing:.17em}
+.monochrome .connect-art{filter:grayscale(1);opacity:.65}
+.monochrome .field-scroll,.monochrome.motion-off .field-scroll{background:#f1f1ef;color:#151515}
+.monochrome .field-pin h2,.monochrome .field-pin h2 span{color:#161616}
+.monochrome .field-card{border-radius:0;height:390px;background:#d7d7d7}.monochrome .field-card img{filter:grayscale(1) contrast(1.04)}
+.monochrome .field-card figcaption{color:#fff}.monochrome .field-card figcaption span{color:#ddd}
+.monochrome .data-journey,.monochrome.motion-off .data-journey{background:#fff;color:#161616;border-bottom:1px solid #eee}
+.monochrome .journey-pin h2,.monochrome .journey-pin h2 span,.monochrome .journey-ui h3{color:#171717}
+.monochrome .journey-ui p{color:#777}.monochrome .journey-icon{background:#fff;color:#111;border-color:#c9c9c9;border-radius:0}.monochrome .journey-line{background:#ddd}.monochrome .journey-line i{background:#161616}
+.monochrome .case.case-immersive{background:#141414;color:#f5f5f5}.monochrome .case-atmosphere,.monochrome .case-system-art{filter:grayscale(1)}.monochrome .case-image{filter:grayscale(1)}
+.monochrome .case-heading .label,.monochrome .case-heading h2>span,.monochrome .case-heading-note>span{color:#fff}.monochrome .case-heading-note p{color:#bbb}
+.monochrome .case-stage{background:#1a1a1a;border-color:#444}.monochrome .case-summary{filter:grayscale(1)}
+.monochrome .app-presentation{background:#f3f3f1;color:#191919}
+.monochrome .ledger-copy h2 span,.monochrome .terminal-heading h2 span{color:#1a1a1a}.monochrome .product-kicker,.monochrome .ledger-start>a,.monochrome .product-consult{color:#333}
+.monochrome .product-lead,.monochrome .ledger-feature p{color:#666}.monochrome .ledger-benefits span,.monochrome .ledger-feature{border-color:#d6d6d6;background:#fff;color:#333;box-shadow:none}
+.monochrome .feature-tag{color:#444;border-color:#ddd}.monochrome .ledger-extra{border-color:#d0d0d0}.monochrome .ledger-extra b{color:#222}.monochrome .ledger-extra span,.monochrome .product-note,.monochrome .other-app-soon{color:#777}
+.monochrome .ledger-screen{filter:grayscale(1);border-color:#aaa}.monochrome .ledger-glow{display:none}
+.monochrome .terminal-presentation{background:#fff;color:#181818}.monochrome .terminal-card{border-color:#d6d6d6;box-shadow:none;border-radius:0}.monochrome .terminal-art,.monochrome .scanner-art{background:#f1f1f1}.monochrome .terminal-art img{filter:grayscale(1)}
+.monochrome .terminal-copy p,.monochrome .terminal-consult p{color:#777}.monochrome .terminal-tags span{color:#444;border-color:#d8d8d8}.monochrome .terminal-consult{border-color:#ccc}
+.monochrome .scanner-presentation{background:#f4f4f2}.monochrome .scanner-presentation:before{display:none}.monochrome .scanner-signal{background:#fff;border-color:#d4d4d4}.monochrome .scanner-signal:after{background:#222}
+.monochrome .scanner-signal-art,.monochrome .scanner-signal-copy h3,.monochrome .scanner-signal-copy h3 b,.monochrome .scanner-signal-types b{color:#242424}
+.monochrome .scanner-beam{background:#333;box-shadow:none}.monochrome .scanner-scan-frame{filter:grayscale(1)}
+.monochrome #groupware{background:#fff;padding:48px 0;border-block:1px solid #e4e4e4}
+.monochrome #groupware-frame{border-block:1px solid #ddd!important}
+.monochrome .why{background:#fff}.monochrome .why-card{border-color:#ddd;border-radius:0}.monochrome .why-card span{color:#333}
+.monochrome .contact{background:#111;color:#fff}.monochrome .contact h2,.monochrome .contact .label{color:#fff}.monochrome .contact .btn.primary{background:#fff!important;border-color:#fff!important;color:#111!important}
+.monochrome .footer{background:#101010}.monochrome .cinematic-top{background:#202020;color:#fff;border-color:#666}
+.monochrome .customer-logo-track{animation:none!important;transform:none!important}.monochrome .customer-logo-window{overflow-x:auto;scrollbar-width:thin}
+@media(max-width:900px){.monochrome .bright-hero-layout{grid-template-columns:1fr;min-height:0;gap:40px;padding-top:65px}.monochrome .bright-hero-visual{aspect-ratio:1.6;max-height:none;box-shadow:12px 12px 0 #dededb}.monochrome .field-card{height:340px}}
+@media(max-width:620px){.monochrome .header,.monochrome .header.is-scrolled{height:68px}.monochrome .mobile-menu{color:#111;border-color:#aaa}.monochrome .nav{background:#fff}.monochrome .submenu{background:#f3f3f3}.monochrome .bright-hero-layout{width:calc(100% - 36px);padding-top:55px;padding-bottom:72px}.monochrome .bright-hero-copy h1{font-size:clamp(36px,9.3vw,48px)}.monochrome .bright-hero-visual{aspect-ratio:1.08}.monochrome .bright-paths{background:linear-gradient(to bottom,transparent 27px,#fff 27px)}.monochrome .bright-path-grid{border:0;gap:0}.monochrome .bright-path-grid a{border:1px solid #ddd;border-bottom:0;min-height:0;padding:22px}.monochrome .bright-path-grid a:last-child{border:1px solid #ddd}.monochrome .field-card{height:285px}.monochrome #groupware{padding:20px 0}}
