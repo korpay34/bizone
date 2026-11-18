@@ -31,3 +31,11 @@ document.querySelectorAll('.nav a, .submenu a').forEach((link) => {
     serviceToggle?.setAttribute('aria-expanded', 'false');
   });
 });
+
+const hero = document.querySelector('.motion-hero');
+if (hero && 'IntersectionObserver' in window) {
+  const heroObserver = new IntersectionObserver(([entry]) => {
+    document.body.classList.toggle('past-hero', !entry.isIntersecting && entry.boundingClientRect.bottom <= 0);
+  });
+  heroObserver.observe(hero);
+}
