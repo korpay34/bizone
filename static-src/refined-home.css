@@ -51,7 +51,7 @@ body.bright-home{--blue:#195bd7;--ink:#17232f;color:#17232f}
 .bright-home .app-presentation{background:#fff;color:#182735}.bright-home .terminal-presentation{background:#f6f8fa;color:#182735}
 .bright-home .ledger-feature,.bright-home .terminal-card{border-radius:2px;box-shadow:none}.bright-home .ledger-screen{animation:none}.bright-home .ledger-glow{display:none}
 .bright-home .scanner-presentation{background:#fff}.bright-home .scanner-presentation:before{display:none}.bright-home .scanner-signal{border-radius:2px;background:#f5f8fb}
-.bright-home .scanner-beam{animation:none}.bright-home .why{background:#f7f8f9}.bright-home .why-card{border-radius:2px}
+.bright-home .why{background:#f7f8f9}.bright-home .why-card{border-radius:2px}
 .bright-home .contact{background:#17232f;color:#fff}.bright-home .contact h2{color:#fff}.bright-home .contact .label{color:#b5cce7}
 .bright-home .footer{background:#101923}
 @media(max-width:900px){.bright-home .bright-hero-layout{min-height:660px;padding:75px 6vw 105px}.bright-home .bright-hero-copy{width:min(740px,85%)}.bright-home .bright-hero-visual{aspect-ratio:auto}.bright-home .field-track,.bright-home.motion-off .field-track{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:230px}.bright-home .field-card:first-child{grid-column:1/3;grid-row:auto;height:460px}.bright-home .journey-ui{grid-template-columns:repeat(5,minmax(0,1fr))}}
