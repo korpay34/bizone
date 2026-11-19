@@ -1,0 +1,8 @@
+.app-detail-page .app-presentation{min-height:calc(100svh - 76px);padding:72px 0 100px;background:#fff}
+.app-detail-page .app-presentation .ledger-hero{min-height:0}
+.app-detail-page .app-presentation .ledger-feature-grid{margin-top:42px}
+.app-detail-page .nav a[aria-current="page"]{color:#1767e9}
+@media(max-width:700px){
+  .app-detail-page .app-presentation{min-height:calc(100svh - 68px);padding:56px 0 76px}
+  .app-detail-page .app-presentation .ledger-feature-grid{margin-top:24px}
+}

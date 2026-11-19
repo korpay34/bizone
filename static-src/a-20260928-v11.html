@@ -19,7 +19,7 @@
     .flow-section{background:#081320;color:#fff;padding:112px 0 120px}.flow-section>div>p:not(.label){color:#a5b3c4;font-size:16px}.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:11px;align-items:center;margin-top:50px}.flow-item{border:1px solid #ffffff2a;border-radius:11px;padding:22px 18px;min-height:130px;background:#ffffff08}.flow-item b{display:block;font-size:16px}.flow-item span{color:#70aaff;font-size:12px;font-weight:700}.flow-arrow{text-align:center;color:#5d99f7}.contact{padding:100px 0;background:#0d1c31;color:#fff}.contact .wrap{display:flex;justify-content:space-between;gap:35px;align-items:center}.contact h2{font-size:38px}.footer{padding:29px 0;background:#07101b;color:#8794a4;font-size:12px}.footer .wrap{display:flex;justify-content:space-between;gap:20px}.preview-badge{position:fixed;bottom:20px;left:20px;background:#fff;color:#172438;border:1px solid #d6deea;border-radius:999px;padding:8px 13px;font-size:11px;font-weight:700;box-shadow:0 5px 22px #0002;z-index:10}
     @media(max-width:900px){.wrap{width:min(100% - 40px,700px)}.header{height:68px}.header-inner{gap:15px}.nav{gap:17px}.nav a{font-size:12px}.header-actions{display:none}.hero{min-height:690px}.hero::before{background-image:linear-gradient(90deg,#070c14df,#070c1466),linear-gradient(0deg,#070c14,transparent 35%),linear-gradient(#0000,#0000)}.hero-content{padding-top:180px}.hero-caption{bottom:80px}.service-grid{grid-template-columns:repeat(2,1fr)}.why-grid{grid-template-columns:repeat(2,1fr)}.flow{grid-template-columns:repeat(3,1fr)}.case-facts{grid-template-columns:1fr 1fr}.fact:last-child{grid-column:1/-1}.fact:nth-child(2){border:0}}
     @media(max-width:620px){.wrap{width:calc(100% - 36px)}.brand{font-size:23px}.nav{display:none;position:absolute;top:68px;left:0;right:0;background:#0b1521;padding:18px;flex-direction:column;align-items:stretch;gap:0;border-bottom:1px solid #ffffff30}.nav.open{display:flex}.nav a{font-size:16px;padding:13px 8px}.mobile-menu{display:block;margin-left:auto;border:1px solid #ffffff60;background:transparent;color:#fff;border-radius:6px;padding:7px 10px;font-size:20px}.hero{min-height:700px}.hero::before{background-position:center,center,55% center}.hero-content{padding-top:177px}.hero h1{font-size:46px}.hero p.lead{font-size:14px}.hero-caption{left:18px;right:auto;bottom:85px;text-align:left}.services,.case,.why,.flow-section{padding:75px 0}.services-intro,.case-head,.case-more{display:block}.services-intro>p,.case-head>p,.case-more p{margin-top:20px}.service-grid{grid-template-columns:repeat(2,1fr);gap:8px}.service-card{min-height:150px;padding:18px}.service-card strong{font-size:14px}.case-image{height:280px}.case-facts{grid-template-columns:1fr;gap:20px}.fact,.fact:nth-child(2){border:0;border-bottom:1px solid var(--line);padding-bottom:18px}.fact:last-child{border:0;grid-column:auto}.case-more h3{font-size:26px}.case-gallery{gap:6px}.case-gallery img{height:115px}.why-grid{gap:8px}.why-card{min-height:190px;padding:18px}.why-card h3{font-size:15px}.why-card p{font-size:12px}.flow{grid-template-columns:1fr 1fr}.flow-item{min-height:105px}.contact .wrap,.footer .wrap{display:block}.contact .btn{margin-top:25px}.contact h2{font-size:31px}.footer p{line-height:1.7}}
-  
+
 /* Full-bleed A composition, with motion isolated from the photographs. */
 .hero{background-image:url('/images/scene-01-clean.png');background-size:cover;background-position:center 43%;min-height:min(790px,100svh)}
 .hero-stills,.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 43%;z-index:0}
@@ -48,7 +48,7 @@
 @media(max-width:620px){.hero{min-height:700px}.hero-stills img,.hero-video{object-position:58% center}.hero::before{background-image:linear-gradient(90deg,#070c14df,#070c1466),linear-gradient(0deg,#070c14,transparent 35%)!important}.hero h1{font-size:clamp(38px,10vw,46px)}.hero-caption{font-size:11px}.motion-control{top:82px}.ticker{height:48px}.ticker span{margin:0 22px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.hero h1 span,.hero .eyebrow,.hero-progress,.ticker div{animation:none!important}.hero-stills img,.hero-video,.case-image,[data-reveal],.btn,.pill,.service-card,.why-card,.flow-item{transition:none!important}[data-reveal].is-pending{opacity:1!important;transform:none!important}.case-image.is-pending{clip-path:none}}
 
-  
+
 /* Cinematic sequence: native stills stay pixel-stationary; only masks move. */
 .hero{background-image:url('/images/scene-01-clean.png')}
 .hero-scenes{position:absolute;inset:0;z-index:0}.hero-scenes .scene{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 43%;visibility:hidden;clip-path:inset(0 100% 0 0);transform:none!important;filter:none!important;max-width:none}
@@ -68,7 +68,7 @@
 @media(max-width:620px){.hero-scenes .scene{object-position:58% center}.scene-index{top:83px;left:18px}.scene-index b{font-size:14px}.showcase{height:270vh}.showcase-triggers{grid-template-rows:repeat(3,90vh)}.showcase-layout{display:block;height:100%;padding-top:95px}.showcase-copy{min-height:250px}.showcase-copy>.label{margin:0 0 28px}.showcase-copy-item{top:60px}.showcase-copy-item h2{font-size:38px;margin:13px 0}.showcase-copy-item p{font-size:14px}.showcase-visual{height:42vh;min-height:250px;max-height:390px}.showcase-corner{font-size:9px;bottom:17px;left:17px}}
 @media(prefers-reduced-motion:reduce){.hero-lights i,.hero .eyebrow::before{animation:none}.hero-scenes .scene{transition:none!important}.showcase{height:auto}.showcase-sticky{position:relative;height:auto;padding:60px 0}.showcase-triggers{display:none}.showcase-copy-item:not(:first-of-type){display:none}.showcase-copy-item{position:relative;top:auto;opacity:1;visibility:visible;transform:none}.showcase-copy{min-height:auto}.showcase-copy>.label{margin-bottom:20px}.showcase-visual{height:400px}.showcase-visual img:first-child{opacity:1;visibility:visible;clip-path:inset(0)}}
 
-  
+
 /* The first photo stays fixed and never receives a transform, a filter or a video encode. */
 .hero-fixed{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 43%;z-index:0;max-width:none;transform:none!important;filter:none!important;animation:none!important}
 .hero-progress{animation:none!important;transform:none!important;width:24%;height:2px;background:#67a6ff}
@@ -196,14 +196,14 @@
     <button class="mobile-menu" aria-label="메뉴 열기" aria-expanded="false" onclick="let n=document.querySelector('.nav');let o=n.classList.toggle('open');this.setAttribute('aria-expanded',o);this.setAttribute('aria-label',o?'메뉴 닫기':'메뉴 열기')">☰</button>
     <nav class="nav" aria-label="주요 메뉴">
       <a href="/a-about-20260928.html">회사소개</a>
-      <div class="nav-group"><button class="nav-toggle" type="button" aria-expanded="false" aria-controls="service-submenu">서비스</button><div class="submenu" id="service-submenu"><a href="#solutions">비즈원+</a><a href="#company-apps">APP</a><a href="#card-terminals">카드단말기</a><a href="#barcode">바코드스캐너</a><a href="/#groupware">그룹웨어</a></div></div>
+      <div class="nav-group"><button class="nav-toggle" type="button" aria-expanded="false" aria-controls="service-submenu">서비스</button><div class="submenu" id="service-submenu"><a href="#solutions">비즈원+</a><a href="/a-app-20260928-v2.html">APP</a><a href="/card-terminals/">카드단말기</a><a href="#barcode">바코드스캐너</a><a href="/#groupware">그룹웨어</a></div></div>
       <a href="/a-cases.html">도입사례</a>
       <a href="/support/">고객센터</a>
     </nav>
     <div class="header-actions"><button class="motion-toggle pill" type="button" hidden aria-pressed="false">모션 끄기</button><a class="pill" href="https://pops.wavepos.co.kr/login" target="_blank" rel="noopener noreferrer">가맹점 로그인</a></div>
   </div></header>
   <main id="top">
-    <section class="hero-scroll" id="about"><div class="hero-pin motion-scene"><div class="hero-frames"><img class="hero-frame current" src="/images/hero-megafactory-gwanggyo.webp" alt="메가팩토리약국 광교점 실제 매장 전경" data-branch="메가팩토리약국 광교점" width="1200" height="800" fetchpriority="high"><img class="hero-frame" src="/images/hero-megafactory-seoul.jpg" alt="메가팩토리약국 서울점 실제 매장 전경" data-branch="메가팩토리약국 서울점" width="2048" height="1365"><img class="hero-frame" src="/images/hero-megafactory-seongnam.jpg" alt="메가팩토리약국 성남점 실제 매장 전경" data-branch="메가팩토리약국 성남점" width="2048" height="1365"></div><div class="hero-shade"></div><div class="cinema-light" aria-hidden="true"><i></i><i></i><i></i></div><div class="hero-copy"><h1><span class="line-mask"><span>큰 매장은</span></span><span class="line-mask"><span class="gradient-text">시스템부터 다릅니다.</span></span></h1><p>대형약국, 코스메틱, 골프, 대형 식자재마트까지.<br>복잡한 상업공간의 운영을 하나의 시스템으로 구축합니다.</p><div class="actions"><a href="#contact" class="button primary" data-open-inquiry>상담문의</a><a href="#case" class="button glass">실제 구축 사례</a></div></div><div class="hero-caption"><span>실제 구축 현장</span><b>메가팩토리약국 광교점</b></div><div class="hero-footer"><span>SCROLL TO DISCOVER</span></div><div class="hero-word" aria-hidden="true">BIZONE.</div></div></section>
+    <section class="hero-scroll" id="about"><div class="hero-pin motion-scene"><div class="hero-frames"><img class="hero-frame current" src="/images/hero-megafactory-gwanggyo.webp" alt="메가팩토리약국 광교점 실제 매장 전경" data-branch="메가팩토리약국 광교점" width="1200" height="800" fetchpriority="high"><img class="hero-frame" src="/images/hero-megafactory-seoul.jpg" alt="메가팩토리약국 서울점 실제 매장 전경" data-branch="메가팩토리약국 서울점" width="2048" height="1365"><img class="hero-frame" src="/images/hero-megafactory-seongnam.jpg" alt="메가팩토리약국 성남점 실제 매장 전경" data-branch="메가팩토리약국 성남점" width="2048" height="1365"></div><div class="hero-shade"></div><div class="cinema-light" aria-hidden="true"><i></i><i></i><i></i></div><div class="hero-copy"><h1><span class="line-mask"><span>큰 매장은</span></span><span class="line-mask"><span class="gradient-text">시스템부터 다릅니다.</span></span></h1><p>대형약국, 코스메틱, 골프, 대형 식자재마트까지.<br>복잡한 상업공간의 운영을 하나의 시스템으로 구축합니다.</p><div class="actions"><a href="tel:18333272" class="button primary" data-open-inquiry>상담문의</a><a href="#case" class="button glass">실제 구축 사례</a></div></div><div class="hero-caption"><span>실제 구축 현장</span><b>메가팩토리약국 광교점</b></div><div class="hero-footer"><span>SCROLL TO DISCOVER</span></div><div class="hero-word" aria-hidden="true">BIZONE.</div></div></section>
     <div class="ticker" aria-hidden="true"><div>POS <span>✦</span> PAYMENT <span>✦</span> INVENTORY <span>✦</span> BACK OFFICE <span>✦</span> BIZONE <span>✦</span> POS <span>✦</span> PAYMENT <span>✦</span> INVENTORY <span>✦</span> BACK OFFICE <span>✦</span> BIZONE <span>✦</span></div></div>
 
 <section class="statement section-pad motion-scene" data-chapter="intro"><div class="connect-art" aria-hidden="true">
@@ -228,44 +228,10 @@
  </div>
  <div class="case-story" data-reveal><h3>복잡한 대형 매장도,<br><span>흐름은 간결하게.</span></h3><p>상품이 많은 공간에서도 판매와 결제, 재고·매출 데이터를 이어서 관리할 수 있도록 매장 규모와 동선에 맞춰 구축했습니다.</p></div>
 </div></section>
-<section class="app-presentation motion-scene" id="company-apps" aria-labelledby="ledger-title">
-<div class="wrap">
- <div class="ledger-hero">
-  <div class="ledger-copy" data-reveal>
-   <p class="label">BIZONE APP · KORPAY LEDGER</p>
-   <h2 id="ledger-title">결제와 매출 관리,<br><span>코페이장부 하나로.</span></h2>
-   <p class="product-lead">멀리 있는 고객의 카드결제부터 매출·정산 확인까지.<br>매장에 필요한 업무를 하나의 앱에서 이어갑니다.</p>
-   <div class="ledger-benefits"><span>비사업자도 이용 가능</span><span>가입비·월 사용료 없이</span><span>Android · iOS 지원</span></div>
-   <div class="actions"><a class="btn primary" href="tel:15444138">앱 이용 상담</a><a class="btn" href="https://play.google.com/store/apps/details?id=com.korpay.mms&amp;hl=ko" target="_blank" rel="noopener noreferrer">Android</a><a class="btn" href="https://apps.apple.com/kr/app/korpay%EC%9E%A5%EB%B6%80/id6504791094" target="_blank" rel="noopener noreferrer">iOS</a></div>
-   <p class="product-note">카드결제 수수료는 별개입니다.<br>D+3·D+1·즉시정산 등 정산 주기와 제공 조건은 상담 시 안내됩니다.</p>
-   <div class="other-app"><span>BIZONE MOBILE APPS</span><b>코페이장부</b><span class="other-app-soon">기브어클락 · 소개 준비 중</span></div>
-  </div>
-  <div class="ledger-art" aria-label="코페이장부 공식 앱 화면">
-   <div class="ledger-glow" aria-hidden="true"></div>
-   <img class="ledger-screen ledger-screen-left" src="/images/ledger-chart.webp" alt="코페이장부 매출 추이와 결제유형 그래프 화면" width="333" height="592" loading="lazy">
-   <img class="ledger-screen ledger-screen-center" src="/images/ledger-sales.webp" alt="코페이장부 현재 매출과 정산 금액 화면" width="333" height="592" loading="lazy">
-   <img class="ledger-screen ledger-screen-right" src="/images/ledger-sms.webp" alt="코페이장부 SMS 결제 요청 화면" width="333" height="592" loading="lazy">
-   <span class="ledger-art-caption">판매에서 정산까지, 손안의 매장 관리.</span>
-  </div>
- </div>
- <div class="ledger-feature-grid">
-  <article class="ledger-feature" data-reveal><span class="product-kicker">SALES OVERVIEW</span><h3>매출과 정산을 한눈에.</h3><p>실시간 매출과 당일 정산 금액, 최근 2주간 매출 추이를 확인합니다. 결제 유형과 총 거래 건수도 함께 살펴볼 수 있습니다.</p><span class="feature-tag">실시간 매출 · 정산 · 분석</span></article>
-  <article class="ledger-feature" data-reveal><span class="product-kicker">TRANSACTION DETAILS</span><h3>필요한 거래를 빠르게.</h3><p>사업자번호·MID·단말기번호·승인번호와 날짜로 거래를 검색합니다. 거래 합계부터 상세내역, 영수증까지 확인하세요.</p><span class="feature-tag">거래 검색 · 상세내역 · 영수증</span></article>
-  <article class="ledger-feature" data-reveal><span class="product-kicker">REMOTE PAYMENT</span><h3>멀리 있어도 결제는 가까이.</h3><p>SMS 문자로 고객에게 카드결제를 요청합니다. 수기·카메라 결제 요청과 요청 내역, 처리 상태 확인도 지원합니다.</p><span class="feature-tag">SMS · 수기 · 카메라 결제</span></article>
- </div>
- <div class="ledger-extra" data-reveal><div><b>입금보고서</b><span>총 입금액 · 월별 입금 내역</span></div><div><b>부가세 신고자료</b><span>월별 부가세 신고 금액 조회</span></div><div><b>거래 실패내역</b><span>검색어 · 날짜별 상세 조회</span></div><div><b>공지사항 · FAQ</b><span>무이자 할부 · 서비스 운영 안내</span></div></div>
-
-</div></section>
 
 
-<section class="terminal-presentation" id="card-terminals" aria-labelledby="terminal-title"><div class="wrap">
- <div class="terminal-heading" data-reveal><div><p class="label">PAYMENT DEVICE</p><h2 id="terminal-title">매장과 업무 환경에 맞는<br><span>카드단말기.</span></h2></div></div>
- <div class="terminal-grid">
-  <article class="terminal-card" data-reveal><a class="terminal-art" href="https://www.bizonemall.com/" target="_blank" rel="noopener noreferrer" aria-label="흰색 블루투스 단말기 — 비즈원몰 열기 (새 창)"><img src="/images/bluetooth-device.png" alt="흰색 블루투스 단말기" width="512" height="512" loading="lazy"></a><div class="terminal-copy"><span class="product-kicker">MOBILE PAYMENT</span><h3>블루투스 단말기</h3><p>휴대가 간편하고 스마트폰과 연동되어 결제가 이루어집니다. 별도의 통신비 없이 사용할 수 있습니다.</p><div class="terminal-tags"><span>스마트폰 연동</span><span>영수증 출력 불가</span></div></div></article>
-  <article class="terminal-card" data-reveal><a class="terminal-art" href="https://www.bizonemall.com/" target="_blank" rel="noopener noreferrer" aria-label="검은색 무선 결제 디바이스 — 비즈원몰 열기 (새 창)"><img src="/images/wireless-device.png" alt="검은색 무선 결제 디바이스" width="456" height="436" loading="lazy"></a><div class="terminal-copy"><span class="product-kicker">WIRELESS DEVICE</span><h3>무선 결제 디바이스</h3><p>SK Telecom 품질 인증을 거친 제품입니다. 빠른 통신과 안정적인 연결, 튼튼한 내구성으로 현장 결제를 지원합니다.</p><div class="terminal-tags"><span>무선 통신</span><span>안정적인 결제</span></div></div></article>
-  <article class="terminal-card" data-reveal><a class="terminal-art" href="https://www.bizonemall.com/" target="_blank" rel="noopener noreferrer" aria-label="휴대폰과 영수증 일체형 단말기로 구성된 무선 카드단말기 — 비즈원몰 열기 (새 창)"><img src="/images/wireless-card-terminal.png" alt="휴대폰과 영수증 일체형 단말기로 구성된 무선 카드단말기" width="753" height="555" loading="lazy"></a><div class="terminal-copy"><span class="product-kicker">MOBILE TERMINAL</span><h3>무선 카드단말기</h3><p>휴대폰과 결제 디바이스를 조합한 영수증 일체형 단말기입니다. 월 비용 없이 사용하며 영수증이 필요한 결제에 적합합니다.</p><div class="terminal-tags"><span>영수증 출력</span><span>방문판매 · 키오스크 연동</span></div></div></article>
- </div>
-</div></section>
+
+
 
 <section class="terminal-presentation scanner-presentation motion-scene" id="barcode" aria-labelledby="scanner-title"><div class="wrap">
 <div class="terminal-heading" data-reveal><div><p class="label">BARCODE SCANNER</p><h2 id="scanner-title">상품을 읽는 순간,<br><span>업무는 더 간결하게.</span></h2></div></div>
@@ -277,10 +243,9 @@
 <section id="groupware" aria-label="비즈원 그룹웨어"><iframe id="groupware-frame" title="비즈원 그룹웨어 소개 및 사용 시연" src="/groupware.html?embed=1" loading="lazy" style="display:block;width:100%;height:3900px;border:0" scrolling="no"></iframe></section>
 <script>addEventListener('message',function(e){const f=document.getElementById('groupware-frame');if(f&&e.origin===location.origin&&e.source===f.contentWindow&&e.data?.type==='bizone-groupware-height'&&Number.isFinite(e.data.height)&&e.data.height>0&&e.data.height<20000)f.style.height=Math.ceil(e.data.height)+'px'});</script>
 
-    <section class="why"><div class="wrap"><div class="why-head" data-reveal><p class="label" data-reveal>WHY BIZONE?</p><h2>대형 매장의 운영 노하우가<br>결과의 차이를 만듭니다.</h2></div><div class="why-grid"><div class="why-card" data-reveal><span>01</span><h3>대형 매장 맞춤 설계</h3><p>업종과 매장 동선에 맞춘 운영 구성을 제안합니다.</p></div><div class="why-card" data-reveal><span>02</span><h3>안정적인 시스템 구축</h3><p>POS부터 백오피스까지 필요한 환경을 연결합니다.</p></div><div class="why-card" data-reveal><span>03</span><h3>다양한 업종 경험</h3><p>약국, 코스메틱, 골프, 식자재마트를 고려합니다.</p></div><div class="why-card" data-reveal><span>04</span><h3>지속적인 운영 지원</h3><p>설치 이후에도 운영을 이어갈 수 있도록 지원합니다.</p></div></div></div></section>
-    
 
-    <section class="contact" id="contact"><div class="wrap"><p class="label">CONTACT BIZONE</p><h2>매장에 맞는 시스템,<br>비즈원과 함께 설계하세요.</h2><a class="btn primary" href="tel:18333272">도입 상담하기 <span>↗</span></a></div></section>
+
+
   </main><aside class="floating-actions" aria-label="빠른 문의 및 페이지 이동"><a class="cinematic-top" href="#top" aria-label="처음으로 이동">TOP</a></aside><footer class="footer"><div class="wrap footer-content"><div class="footer-company"><strong>주식회사 코페이</strong><p>사업자등록번호: 206-81-90716 <i></i> 대표: 채수철</p><p>주소: 서울 성동구 성수일로 77 서울숲IT밸리 505-507호</p><p>대표번호: 1833-3272</p><a class="footer-privacy" href="/a-privacy-20260928.html">개인정보 처리방침</a><p class="footer-copy">Copyright © 2026 주식회사 코페이. All Rights Reserved.</p></div><span class="footer-resources">자료실</span></div></footer>
 <script src="/cinematic-motion.js?v=20261014-clarity-1" defer></script>
 

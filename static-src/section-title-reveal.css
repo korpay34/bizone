@@ -1,0 +1,5 @@
+/* Restrained title entrance, replayed whenever a section comes back into view. */
+@media(prefers-reduced-motion:no-preference){
+  html.section-title-motion .section-title-reveal{opacity:0;transform:translate3d(0,26px,0);filter:blur(4px);transition:opacity .8s ease,transform .9s cubic-bezier(.2,.7,.2,1),filter .8s ease}
+  html.section-title-motion .section-title-reveal.is-visible{opacity:1;transform:none;filter:blur(0)}
+}

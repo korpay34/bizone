@@ -1,0 +1,23 @@
+/* Keep the homepage introduction identical to the company page's WHO WE ARE section. */
+.bright-home .company-intro-home{color:#122039;font-family:'Noto Sans KR','Apple SD Gothic Neo',Arial,sans-serif}
+.bright-home .company-intro-home .wrap{width:min(1200px,calc(100% - 80px));margin-inline:auto}
+.bright-home .company-intro-home .intro-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:7%;align-items:start}
+.bright-home .company-intro-home .section-label{font-size:12px;font-weight:900;letter-spacing:.16em;color:#2578ef}
+.bright-home .company-intro-home .section-heading{font-size:clamp(34px,3.8vw,55px);font-weight:900;line-height:1.25;letter-spacing:-.075em;margin:17px 0 0;white-space:nowrap}
+.bright-home .company-intro-home .section-heading em{font-style:normal;background:linear-gradient(110deg,#2377ef,#4798ff 55%,#2476ed);background-clip:text;-webkit-background-clip:text;color:transparent}
+.bright-home .company-intro-home .intro-copy{color:#596b83;font-size:16px;line-height:2;padding-top:16px}
+.bright-home .company-intro-home .intro-copy p{margin:0 0 22px;font-size:16px;line-height:2}
+.bright-home .company-intro-home .intro-copy p:first-child{color:#1b3355;font-weight:700;line-height:1.9}
+@media(max-width:1040px){
+  .bright-home .company-intro-home .wrap{width:min(800px,calc(100% - 44px))}
+  .bright-home .company-intro-home .intro-grid{gap:5%}
+  .bright-home .company-intro-home .section-heading{font-size:clamp(27px,3.5vw,36px)}
+  .bright-home .company-intro-home .intro-copy p{font-size:14px}
+}
+@media(max-width:700px){
+  .bright-home .company-intro-home .wrap{width:calc(100% - 36px)}
+  .bright-home .company-intro-home .intro-grid{display:block}
+  .bright-home .company-intro-home .section-heading{font-size:clamp(27px,6.8vw,44px)}
+  .bright-home .company-intro-home .intro-copy{padding-top:0;margin-top:26px}
+  .bright-home .company-intro-home .intro-copy p{font-size:14px}
+}
