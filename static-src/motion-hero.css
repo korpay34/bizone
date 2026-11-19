@@ -20,7 +20,6 @@
 .motion-hero-foot{position:absolute;left:0;right:0;bottom:30px;display:flex;justify-content:space-between;gap:20px;padding-top:18px;border-top:1px solid #ffffff2c;color:#91a6ba;font:600 10px Arial,'Noto Sans KR',sans-serif;letter-spacing:.12em;animation:hero-enter .6s .85s both}
 .bright-home .floating-actions .inquiry-float{background:#1e3347;border-color:#627e99;box-shadow:0 10px 24px #020a1399}
 .bright-home .floating-actions .cinematic-top{background:#1e3347;border-color:#627e99}
-.bright-home:not(.past-hero) .floating-actions .cinematic-top{opacity:0;pointer-events:none}
 @keyframes hero-enter{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
 @keyframes art-reveal{to{opacity:1}}@keyframes art-trace{to{stroke-dashoffset:0}}@keyframes art-appear{to{opacity:1}}@keyframes core-enter{to{opacity:1;transform:scale(1)}}
 @media(max-width:900px){.bright-home .motion-hero-layout{width:calc(100% - 12vw);min-height:670px;grid-template-columns:1fr;align-content:center;padding:80px 0 100px}.motion-hero-copy{z-index:2}.motion-hero-copy h1{font-size:clamp(52px,9vw,90px)}.motion-hero-art{position:absolute;right:-18%;top:2%;width:min(72vw,680px);opacity:.45;pointer-events:none}.motion-hero-layout::before{z-index:1;background:linear-gradient(90deg,#0c121af2,#0c121a77 70%,transparent)}}

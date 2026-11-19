@@ -23,7 +23,6 @@
 .centered-hero-scroll span:last-child{display:block;font-size:20px;line-height:1;letter-spacing:0;animation:hero-scroll-arrow 1.8s 1.8s ease-in-out infinite}.centered-hero-scroll:hover,.centered-hero-scroll:focus-visible{color:#fff;border-color:#fff}
 .bright-home .floating-actions .inquiry-float{background:#1b2a3a;border-color:#61788e;box-shadow:0 12px 25px #0005}
 .bright-home .floating-actions .cinematic-top{background:#1b2a3a;border-color:#61788e}
-.bright-home:not(.past-hero) .floating-actions .cinematic-top{opacity:0;pointer-events:none}
 .centered-hero.hero-awaiting-reentry .centered-hero-kicker,.centered-hero.hero-awaiting-reentry .centered-hero-content h1,.centered-hero.hero-awaiting-reentry .hero-title-sheen,.centered-hero.hero-awaiting-reentry .centered-hero-rule,.centered-hero.hero-awaiting-reentry .centered-hero-subtitle,.centered-hero.hero-awaiting-reentry .centered-hero-scroll{animation:none!important;opacity:0!important}
 @keyframes centered-bg-in{to{opacity:1}}@keyframes centered-enter{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}@keyframes centered-rule{from{opacity:0;transform:scaleX(0)}to{opacity:1;transform:scaleX(1)}}@keyframes centered-scroll-in{from{opacity:0;transform:translate(-50%,12px)}to{opacity:1;transform:translate(-50%,0)}}
 @keyframes hero-light-one{from{transform:translate3d(-6%,8%,0) scale(.95)}to{transform:translate3d(20%,-9%,0) scale(1.15)}}
