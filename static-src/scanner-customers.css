@@ -6,8 +6,7 @@
 .customer-motion-toggle:hover{color:#fff;border-color:#91bdff}
 .customer-motion-toggle:focus-visible{outline:2px solid #a5caff;outline-offset:4px}
 .customer-logo-window{overflow:hidden;padding:9px 0;mask-image:linear-gradient(90deg,transparent,#000 3%,#000 97%,transparent)}
-.customer-logo-track{display:flex;width:max-content;animation:customer-logo-flow 80s linear infinite;animation-play-state:paused;will-change:transform}
-.scanner-presentation.motion-visible .customer-logo-track{animation-play-state:running}
+.customer-logo-track{display:flex;width:max-content;animation:customer-logo-flow 80s linear infinite;will-change:transform}
 .customer-logo-group{display:flex;align-items:center;gap:18px;flex-shrink:0;list-style:none;margin:0;padding:0 18px 0 0}
 .customer-logo-group>li{width:190px;height:108px;flex:0 0 190px;display:grid;place-items:center;background:#fff;border-radius:10px;border:1px solid #c9dbf0;box-shadow:0 8px 20px #0002}
 .customer-logo{display:block;flex:none;background-image:url('/images/scanner-customers.png');background-repeat:no-repeat}
