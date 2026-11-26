@@ -4,7 +4,7 @@ const SESSION_MAX_AGE = 60 * 60 * 8;
 const LOGIN_WINDOW_SECONDS = 60 * 15;
 const MAX_LOGIN_FAILURES = 5;
 
-export default { async fetch(request, env) { try { return withChatbot(await route(request, env), request, env); } catch (error) { console.error(error); if(new URL(request.url).pathname.startsWith("/api/"))return json({error:"저장하지 못했습니다. 잠시 후 다시 시도해주세요."},500); return html(pageShell("오류",`<section class="resource-shell"><div class="admin-message"><h2>요청을 처리하지 못했습니다.</h2><p>잠시 후 다시 시도해주세요.</p><a href="/support/?tab=resources">자료실로 돌아가기</a></div></section>`),500); } } };
+export default { async fetch(request, env) { try { return withNaverTracking(withChatbot(await route(request, env), request, env), request); } catch (error) { console.error(error); if(new URL(request.url).pathname.startsWith("/api/"))return json({error:"저장하지 못했습니다. 잠시 후 다시 시도해주세요."},500); return html(pageShell("오류",`<section class="resource-shell"><div class="admin-message"><h2>요청을 처리하지 못했습니다.</h2><p>잠시 후 다시 시도해주세요.</p><a href="/support/?tab=resources">자료실로 돌아가기</a></div></section>`),500); } } };
 
 async function route(request, env) {
   const url = new URL(request.url), path = url.pathname, method = request.method.toUpperCase();
@@ -366,6 +366,16 @@ function withChatbot(response,request,env){
   // corner. Other pages pin their TOP/상담 buttons near the bottom (up to ~240px), so it goes above them.
   let bottom=256;
   return rewriter.on(".floating-actions",{element(){bottom=16}}).on("body",{element(el){el.onEndTag(end=>{end.before(`<script src="${escapeHtml(base)}/widget.js" data-channel="bizone-web" data-bottom="${bottom}" defer></script>`,{html:true})})}}).transform(rewritten);
+}
+// Add Naver's common pageview script to public HTML, including static assets and Worker-rendered pages.
+function withNaverTracking(response,request){
+  const url=new URL(request.url),host=url.hostname;
+  if(!["www.bizone.co.kr","bizone.co.kr"].includes(host)||!response.body||!(response.headers.get("content-type")||"").includes("text/html")||url.pathname.startsWith("/admin"))return response;
+  const headers=new Headers(response.headers),csp=headers.get("content-security-policy");
+  if(csp)headers.set("content-security-policy",csp.replace("img-src 'self' data:","img-src 'self' data: https://*.naver.com https://*.naver.net").replace("script-src 'self'","script-src 'self' https://wcs.naver.net").replace("connect-src 'self'","connect-src 'self' https://*.naver.com https://*.naver.net"));
+  headers.delete("content-length");headers.delete("etag");
+  const rewritten=new Response(response.body,{status:response.status,statusText:response.statusText,headers});
+  return new HTMLRewriter().on("head",{element(el){el.onEndTag(end=>end.before('<script src="https://wcs.naver.net/wcslog.js"></script><script>if(window.wcs){window.wcs_add=window.wcs_add||{};window.wcs_add["wa"]="s_22b95e74d84c";window.wcs.inflow();window.wcs_do();}</script>',{html:true}))}}).transform(rewritten);
 }
 function pageShell(title,main){return `<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>BizOne | ${escapeHtml(title)}</title><link rel="shortcut icon" href="https://www.bizone.co.kr/favicon.ico" type="image/x-icon">
 <link rel="icon" href="https://www.bizone.co.kr/favicon.png" type="image/png" sizes="256x256"><link rel="stylesheet" href="/styles.css?v=22"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap"><link rel="stylesheet" href="/customer-center.css?v=8"><link rel="stylesheet" href="/support-consultation.css?v=1"></head><body class="resource-page"><header class="cc-header" id="top">${header()}</header><main>${main}</main>${footer()}<aside class="floating-actions" aria-label="빠른 문의 및 페이지 이동"><a class="cinematic-top" href="#top" aria-label="처음으로 이동">TOP</a></aside><script src="/support-consultation.js?v=1"></script><script src="/customer-center.js?v=2"></script></body></html>`}
