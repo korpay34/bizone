@@ -196,8 +196,23 @@
 <style>a.scanner-card{cursor:pointer}a.scanner-card:focus-visible{outline:3px solid #88baff;outline-offset:4px}</style>
 <link rel="stylesheet" href="/scanner-customers.css?v=20261119-restore-2">
 <link rel="stylesheet" href="/chatbot-links.css?v=1"><script src="/chatbot-links.js?v=1" defer></script>
+<link rel="stylesheet" href="/business-notice.css?v=20261126-1">
 </head>
 <body class="bright-home motion-off">
+<div class="business-notice-backdrop" id="business-notice" role="presentation" hidden>
+  <section class="business-notice-dialog" role="dialog" aria-modal="true" aria-labelledby="business-notice-title" aria-describedby="business-notice-description" tabindex="-1">
+    <button class="business-notice-close" type="button" aria-label="팝업 닫기">×</button>
+    <div class="business-notice-inner">
+      <div class="business-notice-kicker">BIZONE NOTICE</div>
+      <h2 id="business-notice-title">홈페이지 개편 안내</h2>
+      <p class="business-notice-lead">코페이플랫폼으로<br>새롭게 준비합니다.</p>
+      <p id="business-notice-description" class="business-notice-copy"><span>운영 사업자가 <strong>주식회사 코페이</strong>에서</span><span><strong>주식회사 코페이플랫폼</strong>으로 변경됩니다.</span><span>이에 따라 홈페이지를 순차적으로 개편합니다.</span></p>
+      <div class="business-notice-period"><span>개편 기간</span><strong>2026. 11. 26. — 12월 중</strong></div>
+      <p class="business-notice-footnote">개편 기간에는 일부 페이지의 정보와 표시 내용이 변경될 수 있습니다. 이용에 참고 부탁드립니다.</p>
+    </div>
+    <div class="business-notice-actions"><label><input type="checkbox" id="business-notice-today"><span>오늘 하루 보지 않기</span></label></div>
+  </section>
+</div>
 
   <header class="header"><div class="wrap header-inner">
     <a class="brand" href="#top" aria-label="비즈원 홈">BIZONE<span>주식회사 코페이</span></a>
@@ -274,5 +289,6 @@
 <script src="/inquiry.js?v=3" defer></script>
 
 <script src="/scanner-customers.js?v=1" defer></script>
+<script src="/business-notice.js?v=20261126-1" defer></script>
 </body>
 </html>
