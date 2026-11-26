@@ -1,0 +1,22 @@
+/* Main-page sections below the dark opening screen share a white canvas. */
+.bright-home .intro,
+.bright-home .case.case-immersive,
+.bright-home .scanner-presentation,
+.bright-home #groupware {
+  background: #fff;
+  color: #17232f;
+}
+
+.bright-home .intro::before { display: none; }
+.bright-home .scanner-presentation { border-top: 0; }
+
+.bright-home .footer {
+  background: #fff;
+  color: #526a87;
+  border-top: 1px solid #dce5f0;
+}
+.bright-home .footer-company strong,
+.bright-home .footer-privacy,
+.bright-home .footer-resources { color: #19375d; }
+.bright-home .footer-company .footer-copy { color: #71839a; }
+.bright-home .footer-company i { background: #c6d5e5; }
