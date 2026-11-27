@@ -14,13 +14,13 @@
 .business-notice-list strong{color:#172e49}
 .business-notice-list ul{list-style:disc;margin:7px 0 0;padding-left:19px}
 .business-notice-list ul li{margin:3px 0}
-.business-notice-signature{display:flex;flex-direction:column;align-items:center;gap:4px;margin:24px 0 19px;font-size:13px;color:#496078}
+.business-notice-signature{position:relative;display:flex;flex-direction:column;align-items:center;gap:4px;min-height:108px;margin:24px 0 2px;font-size:13px;color:#496078}
 .business-notice-signature strong{margin-top:8px;font-size:17px;color:#172638}
-.business-notice-original{display:inline-flex;justify-content:center;border:1px solid #ccd8e6;border-radius:999px;padding:10px 16px;font-size:12px;font-weight:700;color:#235cbb}
-.business-notice-original:hover,.business-notice-original:focus-visible{border-color:#235cbb;background:#f3f7ff}
+.business-notice-signature::after{content:'';position:absolute;left:calc(50% + 45px);bottom:-5px;width:119px;height:119px;background:url('/company-division-seal.webp') center/contain no-repeat;pointer-events:none}
+.business-notice-original{display:none}
 .business-notice-actions{flex:none;display:flex;align-items:center;justify-content:center;padding:16px 24px;background:#f8fafc;border-top:1px solid #e9eef4}
 .business-notice-actions label{display:flex;align-items:center;gap:9px;color:#53677c;font-size:14px;cursor:pointer}
 .business-notice-actions input{width:17px;height:17px;margin:0;accent-color:#246ce1;cursor:pointer}
 @keyframes notice-appear{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
-@media(max-width:480px){.business-notice-inner{padding:44px 23px 24px}.business-notice-close{top:9px;right:9px}.business-notice-dialog h2{font-size:21px}.business-notice-intro{font-size:13px}.business-notice-list{font-size:12px}.business-notice-actions{padding:14px 20px}}
+@media(max-width:480px){.business-notice-inner{padding:44px 23px 24px}.business-notice-close{top:9px;right:9px}.business-notice-dialog h2{font-size:21px}.business-notice-intro{font-size:13px}.business-notice-list{font-size:12px}.business-notice-signature::after{left:calc(50% + 28px);transform:scale(.82);transform-origin:bottom left}.business-notice-actions{padding:14px 20px}}
 @media(prefers-reduced-motion:reduce){.business-notice-dialog{animation:none}}
