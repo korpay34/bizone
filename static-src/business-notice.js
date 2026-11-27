@@ -5,6 +5,8 @@
   const key='bizone-business-notice-hidden-date';
   const today=()=>new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Seoul',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
   const force=new URLSearchParams(location.search).has('popup-preview');
+  // Keep the notice available for review while public display is paused.
+  if(!force)return;
   try{if(!force&&localStorage.getItem(key)===today())return}catch{}
   const previousFocus=document.activeElement;
   modal.hidden=false;
